@@ -1,0 +1,132 @@
+.badge-container {
+	@apply relative inline-flex shrink-0;
+	& > .badge {
+		@apply flex z-10 flex-wrap absolute box-border rounded-full whitespace-nowrap place-content-center items-center select-none subpixel-antialiased text-sm px-0 transition-all duration-300 border-2 border-white bg-base-default text-base-foreground w-5 h-5 min-w-5 min-h-5 top-[5%] right-[5%] translate-x-1/2 -translate-y-1/2;
+
+		&.no-outline {
+			@apply border-none;
+		}
+		/* sizes */
+		&.size-sm {
+			@apply w-4	h-4 text-xs;
+		}
+		&.size-lg {
+			@apply w-6 h-6 text-base;
+		}
+		/* Colors */
+		&.foreground,
+		&.primary,
+		&.secondary,
+		&.danger {
+			@apply text-white;
+		}
+		&.foreground {
+			@apply bg-base-foreground;
+		}
+		&.primary {
+			@apply bg-base-primary;
+		}
+		&.secondary {
+			@apply bg-base-secondary;
+		}
+		&.success {
+			@apply bg-base-success;
+		}
+		&.warning {
+			@apply bg-base-warning;
+		}
+		&.danger {
+			@apply bg-base-danger;
+		}
+		/* Vaiants */
+		/* Faded */
+		&.faded {
+			@apply border-base-default;
+			&.faded {
+				@apply bg-default-100;
+			}
+
+			&.foreground {
+				@apply text-base-foreground;
+			}
+			&.default {
+				@apply text-base-foreground;
+			}
+			&.primary {
+				@apply text-base-primary;
+			}
+			&.secondary {
+				@apply text-base-secondary;
+			}
+			&.success {
+				@apply text-base-success;
+			}
+			&.warning {
+				@apply text-base-warning;
+			}
+			&.danger {
+				@apply text-base-danger;
+			}
+		}
+		/* Flat */
+		&.flat {
+			&.foreground {
+				@apply text-base-foreground bg-base-foreground/20;
+			}
+			&.default {
+				@apply text-default-400 bg-base-default/20;
+			}
+			&.primary {
+				@apply text-base-primary bg-base-primary/20;
+			}
+			&.secondary {
+				@apply text-base-secondary bg-base-secondary/20;
+			}
+			&.success {
+				@apply text-base-success bg-base-success/20;
+			}
+			&.warning {
+				@apply text-base-warning bg-base-warning/20;
+			}
+			&.danger {
+				@apply text-base-danger bg-base-danger/20;
+			}
+		}
+		/* Shadow */
+		&.shadow {
+			@apply shadow-lg;
+
+			&.foreground {
+				@apply shadow-base-foreground/40;
+			}
+			&.default {
+				@apply shadow-base-default;
+			}
+			&.primary {
+				@apply shadow-base-primary/40;
+			}
+			&.secondary {
+				@apply shadow-base-secondary/40;
+			}
+			&.success {
+				@apply shadow-base-success/40;
+			}
+			&.warning {
+				@apply shadow-base-warning/40;
+			}
+			&.danger {
+				@apply shadow-base-danger/40;
+			}
+		}
+		/* Placements */
+		&.top-left {
+			@apply top-[5%] left-[5%] -translate-x-1/2 right-[unset] -translate-y-1/2;
+		}
+		&.bottom-left {
+			@apply bottom-[5%] left-[5%] -translate-x-1/2 translate-y-1/2 top-[unset];
+		}
+		&.bottom-right {
+			@apply bottom-[5%] right-[5%] translate-x-1/2 translate-y-1/2 top-[unset];
+		}
+	}
+}

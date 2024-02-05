@@ -1,0 +1,30 @@
+{
+	"name": "luxeyui",
+	"version": "0.2.0",
+	"description": "LuxeyUI is a tailwindCSS UI component library built on top of PostCSS and TypeScript for basic use. It features components inspired by shadcn-ui and @nextui-org, tailored for non-react use.",
+	"main": "index.js",
+	"scripts": {
+		"build:js": "esbuild src/index.ts --bundle --outfile=dist/all.min.js --watch=forever --minify & tsc -noEmit --watch",
+		"build:css": "postcss src/all.css -o dist/all.min.css --watch"
+	},
+	"keywords": [
+		"css",
+		"ui",
+		"ui library",
+		"tailwindcss",
+		"typetcript",
+		"css ui library"
+	],
+	"author": "Atif Ali Jaedi",
+	"license": "MIT",
+	"devDependencies": {
+		"autoprefixer": "^10.4.16",
+		"cssnano": "^6.0.2",
+		"esbuild": "^0.19.10",
+		"esbuild-plugin-tsc": "^0.4.0",
+		"postcss": "^8.4.32",
+		"postcss-cli": "^11.0.0",
+		"postcss-import": "^15.1.0",
+		"tailwindcss": "^3.4.0"
+	}
+}

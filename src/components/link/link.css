@@ -1,0 +1,67 @@
+a.link {
+	/* Base */
+	@apply relative inline-flex items-center hover:opacity-80 transition-all duration-300 outline-none active:opacity-50 select-none underline-offset-2 gap-1;
+
+	/* Colors */
+	&.primary {
+		@apply text-base-primary;
+	}
+	&.secondary {
+		@apply text-base-secondary;
+	}
+	&.success {
+		@apply text-base-success;
+	}
+	&.warning {
+		@apply text-base-warning;
+	}
+	&.danger {
+		@apply text-base-danger;
+	}
+
+	/* Disabled */
+	&[data-disabled] {
+		@apply pointer-events-none opacity-50;
+	}
+
+	/* Sizes */
+	&.size-sm {
+		@apply text-sm;
+	}
+	&.size-lg {
+		@apply text-lg;
+	}
+
+	/* Underlines */
+	&.underline {
+		text-decoration: solid underline 1.5px transparent;
+	}
+
+	&.underline-hover:hover,
+	&.underline-active:active,
+	&.underline-focus:focus,
+	&.underline-always {
+		text-decoration-color: currentColor;
+	}
+
+	/* Block */
+	&[data-block] {
+		@apply active:opacity-100 hover:opacity-100 no-underline hover:bg-base-foreground/10 px-2 py-1 rounded-xl;
+
+		&.primary {
+			@apply hover:bg-base-primary/20;
+		}
+		&.secondary {
+			@apply hover:bg-base-secondary/20;
+		}
+		&.success {
+			@apply hover:bg-base-success/20;
+		}
+		&.warning {
+			@apply hover:bg-base-warning/20;
+		}
+		&.danger {
+			@apply hover:bg-base-danger/20;
+		}
+	}
+}

@@ -1,0 +1,127 @@
+.checkbox-wrapper {
+	@apply flex items-center gap-2;
+	&[data-disabled],
+	&:has(.checkbox-icon > input[type="checkbox"].checkbox:disabled) {
+		@apply opacity-50 pointer-events-none;
+	}
+	&:has (.checkbox-icon > input[type="checkbox"].checkbox:checked) {
+		&.line-through-text > .checkbox-label {
+			@apply line-through text-default-500;
+		}
+		& > .checkbox-icon {
+			&::before {
+				@apply opacity-100 scale-100;
+			}
+			& > svg {
+				& > polyline {
+					stroke-dashoffset: 44;
+					opacity: 1;
+				}
+			}
+		}
+	}
+	& > .checkbox-icon {
+		@apply relative inline-flex items-center justify-center w-5 h-5 rounded-lg text-white;
+		&::before {
+			@apply content-[''] absolute inset-0 bg-base-foreground rounded-[inherit] z-[2] opacity-0 transition-all duration-200 ease-linear scale-50;
+		}
+		&::after {
+			@apply content-[''] absolute inset-0 border-2 border-base-default rounded-[inherit];
+		}
+		& > svg {
+			@apply w-4 h-3 z-[3];
+			& > polyline {
+				opacity: 0;
+				transition:
+					stroke-dashoffset 250ms linear 0.2s,
+					opacity 75ms linear;
+			}
+		}
+		& > input[type="checkbox"].checkbox {
+			@apply invisible absolute;
+		}
+	}
+	/*
+	  Sizes
+	*/
+	&.size-sm {
+		@apply text-sm;
+
+		& > .checkbox-icon {
+			@apply w-4 h-4 rounded-md;
+			& > svg {
+				@apply w-3 h-2;
+			}
+		}
+	}
+	&.size-lg {
+		@apply text-lg;
+		& > .checkbox-icon {
+			@apply w-6 h-6;
+			& > svg {
+				@apply w-5 h-4;
+			}
+		}
+	}
+	/* radiuses */
+	&.radius-full {
+		& > .checkbox-icon {
+			@apply rounded-full;
+		}
+	}
+	&.radius-lg {
+		& > .checkbox-icon {
+			@apply rounded-[14px];
+		}
+	}
+	&.radius-sm {
+		& > .checkbox-icon {
+			@apply rounded-md;
+		}
+	}
+	&.radius-none {
+		& > .checkbox-icon {
+			@apply rounded-none;
+		}
+	}
+	/* Colors */
+	&.default {
+		& > .checkbox-icon {
+			@apply text-base-foreground;
+			&::before {
+				@apply bg-base-default;
+			}
+		}
+	}
+	&.primary {
+		& > .checkbox-icon::before {
+			@apply bg-base-primary;
+		}
+	}
+	&.secondary {
+		& > .checkbox-icon::before {
+			@apply bg-base-secondary;
+		}
+	}
+	&.success {
+		& > .checkbox-icon {
+			@apply text-base-foreground;
+			&::before {
+				@apply bg-base-success;
+			}
+		}
+	}
+	&.warning {
+		& > .checkbox-icon {
+			@apply text-base-foreground;
+			&::before {
+				@apply bg-base-warning;
+			}
+		}
+	}
+	&.danger {
+		& > .checkbox-icon::before {
+			@apply bg-base-danger;
+		}
+	}
+}

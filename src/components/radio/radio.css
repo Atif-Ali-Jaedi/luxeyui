@@ -1,0 +1,127 @@
+/*
+  Radio Group styles
+*/
+
+.radio-group {
+	/*
+    Base
+  */
+	@apply flex flex-col gap-2;
+	/*
+	  Label of the group 
+	*/
+	& > .label {
+		@apply text-base-foreground/70;
+	}
+	/* 
+	  Radio Inputs
+	*/
+	& .radios {
+		@apply flex flex-col flex-wrap gap-2;
+		&[data-disabled] {
+			@apply opacity-50 pointer-events-none;
+		}
+		&[data-orientation="horizontal"] {
+			@apply flex-row;
+		}
+		/* 
+		  Checking if has any invalid input that is checked
+		*/
+		&:has(.radio[data-is-invalid] > input[type="radio"]:checked) {
+			& > .radio > input[type="radio"] {
+				@apply border-base-danger;
+				&::before {
+					@apply bg-base-danger;
+				}
+			}
+			& > .radio > .label {
+				@apply text-base-danger;
+			}
+		}
+	}
+}
+
+/* 
+Main radio styles 
+Don't know why I used ".radio" 2 times.
+*/
+
+.radio,
+.radio {
+	/* 
+    Base styles
+  */
+	@apply max-w-fit inline-flex items-center justify-start cursor-pointer p-2 -m-2;
+	&[data-disabled] {
+		@apply opacity-50 pointer-events-none;
+	}
+	/* 
+	  Radio input
+	*/
+	& > input[type="radio"] {
+		@apply relative appearance-none w-5 h-5 rounded-full border-2 border-base-default transition-all duration-300;
+		&:checked {
+			@apply border-base-foreground;
+			&::before {
+				@apply bg-base-foreground scale-100;
+			}
+		}
+
+		&::before {
+			@apply content-[''] absolute top-1/2 left-1/2 w-1/2 h-1/2 rounded-full scale-0 bg-base-foreground transition-all duration-300 -translate-x-1/2 -translate-y-1/2;
+		}
+	}
+	/* 
+	  Label 
+	*/
+	& > .label {
+		@apply flex flex-col ml-2 text-base-foreground select-none transition-all duration-300;
+		& > .description {
+			@apply text-base-foreground/40 text-sm;
+		}
+	}
+	/* 
+	  Colors 
+	*/
+	&.default > input[type="radio"]:checked {
+		@apply border-default-500;
+		&::before {
+			@apply bg-default-500;
+		}
+	}
+
+	&.primary > input[type="radio"]:checked {
+		@apply border-base-primary;
+		&::before {
+			@apply bg-base-primary;
+		}
+	}
+
+	&.secondary > input[type="radio"]:checked {
+		@apply border-base-secondary;
+		&::before {
+			@apply bg-base-secondary;
+		}
+	}
+
+	&.success > input[type="radio"]:checked {
+		@apply border-base-success;
+		&::before {
+			@apply bg-base-success;
+		}
+	}
+
+	&.warning > input[type="radio"]:checked {
+		@apply border-base-warning;
+		&::before {
+			@apply bg-base-warning;
+		}
+	}
+
+	&.danger > input[type="radio"]:checked {
+		@apply border-base-danger;
+		&::before {
+			@apply bg-base-danger;
+		}
+	}
+}

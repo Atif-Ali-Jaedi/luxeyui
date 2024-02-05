@@ -1,0 +1,53 @@
+input[type="checkbox"].switch {
+	/*
+    Basic styles 
+  */
+	@apply appearance-none bg-default-200 mr-2 w-12 h-7 rounded-full transition-all duration-300 relative;
+	&:checked {
+		&::before {
+			@apply translate-x-full origin-right;
+		}
+		&::after {
+			@apply scale-x-110;
+		}
+	}
+	/* Sizes */
+	&.size-sm {
+		@apply w-10 h-6;
+	}
+	&.size-lg {
+		@apply w-14 h-8;
+	}
+
+	/* Colors */
+	&.foreground:checked {
+		@apply bg-base-foreground;
+	}
+	&.primary:checked {
+		@apply bg-base-primary;
+	}
+	&.secondary:checked {
+		@apply bg-base-secondary;
+	}
+	&.success:checked {
+		@apply bg-base-success;
+	}
+	&.warning:checked {
+		@apply bg-base-warning;
+	}
+	&.danger:checked {
+		@apply bg-base-danger;
+	}
+
+	/* Disabled */
+	&[data-disabled] {
+		@apply pointer-events-none opacity-0;
+	}
+
+	/* 
+    Circle
+  */
+	&::before {
+		@apply content-[''] absolute w-[calc((100%-0.45em)/2)] h-[calc(100%-0.45em)] rounded-full top-1/2 -translate-y-1/2 transition-all duration-300 left-[0.225em] bg-white shadow-sm origin-left;
+	}
+}

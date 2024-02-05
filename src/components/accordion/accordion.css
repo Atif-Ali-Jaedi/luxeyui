@@ -1,0 +1,18 @@
+.accordions > .accordion {
+	&:not(:last-child) {
+		@apply border-b-2;
+	}
+	&[data-disabled] {
+		@apply pointer-events-none opacity-50;
+	}
+	& > .accordion-header {
+		@apply flex items-center justify-between py-3.5;
+	}
+	& > .accordion-body {
+		--_height: 0;
+		@apply relative overflow-y-hidden h-0 opacity-0 pointer-events-none transition-all duration-300;
+		&.active {
+			@apply pointer-events-auto opacity-100 h-[--_height];
+		}
+	}
+}

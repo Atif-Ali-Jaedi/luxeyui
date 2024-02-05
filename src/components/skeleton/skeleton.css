@@ -1,0 +1,21 @@
+.skeleton {
+	@apply bg-[#e4e4e7] bg-no-repeat inline-block relative;
+	background-image: linear-gradient(
+		to right,
+		#e4e4e7 0%,
+		#d4d4d8 20%,
+		#e4e4e7 40%,
+		#e4e4e7 100%
+	);
+	background-size: 800px 104px;
+
+	animation: placeholderShimmer 2s linear infinite forwards;
+}
+@keyframes placeholderShimmer {
+	0% {
+		background-position: -468px 0;
+	}
+	100% {
+		background-position: 468px 0;
+	}
+}

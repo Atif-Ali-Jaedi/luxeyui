@@ -1,0 +1,177 @@
+.chip {
+	@apply relative max-w-fit inline-flex items-center justify-center whitespace-nowrap px-3 h-7 text-sm rounded-full bg-base-default text-base-foreground;
+	/* sizes */
+	&.size-sm {
+		@apply h-6 text-xs px-2;
+		& > span {
+			@apply px-1;
+		}
+	}
+	&.size-lg {
+		@apply px-4 h-8 text-base;
+	}
+	/* radiuses */
+	&.radius-sm {
+		@apply rounded-lg;
+	}
+	&.radius-md {
+		@apply rounded-xl;
+	}
+	&.radius-lg {
+		@apply rounded-[14px];
+	}
+	&.radius-full {
+		@apply rounded-full;
+	}
+	/* Colors */
+	&.foreground {
+		@apply bg-base-foreground text-white;
+	}
+	&.primary {
+		@apply bg-base-primary text-white;
+	}
+	&.secondary {
+		@apply bg-base-secondary text-white;
+	}
+	&.success {
+		@apply bg-base-success;
+	}
+	&.warning {
+		@apply bg-base-warning;
+	}
+	&.danger {
+		@apply bg-base-danger text-white;
+	}
+	/* Variants */
+	/* Faded */
+	&.faded {
+		@apply border-2 border-base-default;
+		&.faded {
+			@apply bg-default-100;
+		&.default {
+			@apply text-base-foreground;
+		}
+		}
+
+	}
+	/* Bordered */
+	&.bordered {
+		@apply border-2 border-current;
+		&.bordered {
+			@apply bg-transparent;
+		}
+	}
+	/* common */
+	&.bordered,
+	&.light,
+	&.flat,
+	&.faded {
+		&.foreground {
+			@apply text-base-foreground;
+		}
+		&.default {
+			@apply text-default-400;
+		}
+		&.primary {
+			@apply text-base-primary;
+		}
+		&.secondary {
+			@apply text-base-secondary;
+		}
+		&.success {
+			@apply text-base-success;
+		}
+		&.warning {
+			@apply text-base-warning;
+		}
+		&.danger {
+			@apply text-base-danger;
+		}
+	}
+	/* Light */
+	&.light.light {
+		@apply bg-transparent;
+	}
+
+	/* Flat */
+	&.flat {
+		&.foreground {
+			@apply bg-base-foreground/20;
+		}
+		&.default {
+			@apply bg-base-default/20;
+		}
+		&.primary {
+			@apply bg-base-primary/20;
+		}
+		&.secondary {
+			@apply bg-base-secondary/20;
+		}
+		&.success {
+			@apply bg-base-success/20;
+		}
+		&.warning {
+			@apply bg-base-warning/20;
+		}
+		&.danger {
+			@apply bg-base-danger/20;
+		}
+	}
+	/* Shadow */
+	&.shadow {
+		@apply shadow-lg;
+
+		&.foreground {
+			@apply shadow-base-foreground/40;
+		}
+		&.default {
+			@apply shadow-base-default/40;
+		}
+		&.primary {
+			@apply shadow-base-primary/40;
+		}
+		&.secondary {
+			@apply shadow-base-secondary/40;
+		}
+		&.success {
+			@apply shadow-base-success/40;
+		}
+		&.warning {
+			@apply shadow-base-warning/40;
+		}
+		&.danger {
+			@apply shadow-base-danger/40;
+		}
+	}
+	/* Dot */
+	&.dot {
+		@apply border-2 border-base-default;
+		&.dot {
+			@apply bg-transparent text-base-foreground pl-4;
+			&.primary::before {
+				@apply bg-base-primary;
+			}
+			&.secondary::before {
+				@apply bg-base-secondary;
+			}
+			&.success::before {
+				@apply bg-base-success;
+			}
+			&.warning::before {
+				@apply bg-base-warning;
+			}
+			&.danger::before {
+				@apply bg-base-danger;
+			}
+			&.foreground::before {
+				@apply bg-base-foreground;
+			}
+			&::before {
+				@apply content-[''] w-2 h-2 rounded-full absolute left-2 top-1/2 -translate-y-1/2 bg-base-default;
+			}
+		}
+	}
+	& > span {
+		@apply flex-1 text-inherit px-2;
+	}
+}
