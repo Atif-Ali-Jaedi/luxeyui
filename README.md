@@ -18,16 +18,10 @@ To kick off, use the CDN for now since the components aren't usable
 individually. Full functionality will be available after the 1st full release.
 Utilize the Tailwind CDN for better customization.
 
-```html
-<link
-	rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/luxeyui@0.2.0/dist/all.min.css"
-/>
+```html 
+<link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/luxeyui@0.2.0/dist/all.min.css" />
 <script src="https://cdn.tailwindcss.com"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/luxeyui@0.2.0/dist/all.min.js"
-	defer
-></script>
+<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.2.0/dist/all.min.js" defer></script>
 ```
 
 ## Documentation
