@@ -1,131 +1,194 @@
 .button-group {
-	@apply flex items-center [&>button.button:not(:first-child,:last-child)]:rounded-none [&>button.button:first-child]:rounded-r-none [&>button.button:last-child]:rounded-l-none;
+	@apply flex items-center;
+
+	& > button.button:not(:first-child, :last-child) {
+		@apply rounded-none;
+	}
+	& > button.button:first-child {
+		@apply rounded-r-none;
+	}
+	& > button.button:last-child {
+		@apply rounded-l-none;
+	}
 }
 
 button.button {
-	@apply relative inline-flex items-center justify-center select-none whitespace-nowrap overflow-hidden transition-all duration-300 outline-none bg-base-default rounded-xl px-4 py-2 active:scale-[0.97]
+	@apply relative inline-flex items-center justify-center select-none whitespace-nowrap overflow-hidden transition-all duration-300 outline-none bg-base-default rounded-xl px-4 py-2 active:scale-[0.97];
 	/* Disabled */
-  data-[disabled]:pointer-events-none data-[disabled]:opacity-50
-  /* Radius */
-  [&.radius-sm]:rounded-lg
-  [&.radius-md]:rounded-xl
-  [&.radius-lg]:rounded-[14px] 
-  [&.radius-full]:rounded-full
-  /* Sizes */
-  [&.size-sm]:text-sm [&.size-sm]:rounded-lg [&.size-sm]:px-3 [&.size-sm]:py-1.5
-  [&.size-lg]:text-lg [&.size-lg]:rounded-[14px] [&.size-lg]:px-6 [&.size-lg]:py-2.5
-  /* Colors */
-  [&.foreground]:bg-base-foreground
-  [&.foreground]:text-white
-  [&.primary]:bg-base-primary
-  [&.primary]:text-white
-  [&.secondary]:bg-base-secondary
-  [&.secondary]:text-white
-  [&.success]:bg-base-success
-  [&.warning]:bg-base-warning
-  [&.danger]:bg-base-danger
-  [&.danger]:text-white
-  /* Icon Only */
-  data-[icon-only]:grid
-  data-[icon-only]:place-items-center
-  data-[icon-only]:w-10
-  data-[icon-only]:h-10
-  /* Variants */
-  /* Faded */
-  [&.faded]:border-2
-  [&.faded]:border-base-default
-  [&.faded.faded]:bg-default-100
-  
-  [&.faded.foreground]:text-base-foreground
-  [&.faded.default]:text-base-foreground
-  [&.faded.primary]:text-base-primary
-  [&.faded.secondary]:text-base-secondary
-  [&.faded.success]:text-base-success
-  [&.faded.warning]:text-base-warning
-  [&.faded.danger]:text-base-danger
-  /* Bordered */
-  [&.bordered.bordered]:bg-transparent
-  [&.bordered]:border-2
-  [&.bordered]:border-current
-  
-  [&.bordered.foreground]:text-base-foreground
-  [&.bordered.default]:text-default-400
-  [&.bordered.primary]:text-base-primary
-  [&.bordered.secondary]:text-base-secondary
-  [&.bordered.success]:text-base-success
-  [&.bordered.warning]:text-base-warning
-  [&.bordered.danger]:text-base-danger
-  /* Light */
-  [&.light.light]:bg-transparent
-  
-  [&.light.foreground]:text-base-foreground
-  [&.light.default]:text-default-400
-  [&.light.primary]:text-base-primary
-  [&.light.secondary]:text-base-secondary
-  [&.light.success]:text-base-success
-  [&.light.warning]:text-base-warning
-  [&.light.danger]:text-base-danger
-  /* Flat */
-  [&.flat.foreground]:text-base-foreground
-  [&.flat.default]:text-default-400
-  [&.flat.primary]:text-base-primary
-  [&.flat.secondary]:text-base-secondary
-  [&.flat.success]:text-base-success
-  [&.flat.warning]:text-base-warning
-  [&.flat.danger]:text-base-danger
-  
-  [&.flat.foreground]:bg-base-foreground/20
-  [&.flat.default]:bg-base-default/20
-  [&.flat.primary]:bg-base-primary/20
-  [&.flat.secondary]:bg-base-secondary/20
-  [&.flat.success]:bg-base-success/20
-  [&.flat.warning]:bg-base-warning/20
-  [&.flat.danger]:bg-base-danger/20
-  /* Ghost */
-  [&.ghost.ghost]:bg-transparent
-  [&.ghost]:border-2
-  
-  [&.ghost.foreground]:text-base-foreground
-  [&.ghost.foreground]:border-base-foreground
-  [&.ghost.foreground]:hover:text-white
-  [&.ghost.foreground]:hover:bg-base-foreground
-  
-  [&.ghost.default]:text-base-foreground
-  [&.ghost.default]:border-base-default
-  [&.ghost.default]:hover:bg-base-default
-  
-  [&.ghost.primary]:text-base-primary
-  [&.ghost.primary]:border-base-primary
-  [&.ghost.primary]:hover:text-white
-  [&.ghost.primary]:hover:bg-base-primary
-  
-  [&.ghost.secondary]:text-base-secondary
-  [&.ghost.secondary]:border-base-secondary
-  [&.ghost.secondary]:hover:text-white
-  [&.ghost.secondary]:hover:bg-base-secondary
-  
-  [&.ghost.success]:text-base-success
-  [&.ghost.success]:border-base-success
-  [&.ghost.success]:hover:text-base-foreground
-  [&.ghost.success]:hover:bg-base-success
-  
-  [&.ghost.warning]:text-base-warning
-  [&.ghost.warning]:border-base-warning
-  [&.ghost.warning]:hover:text-base-foreground
-  [&.ghost.warning]:hover:bg-base-warning
-  
-  [&.ghost.danger]:text-base-danger
-  [&.ghost.danger]:border-base-danger
-  [&.ghost.danger]:hover:text-white
-  [&.ghost.danger]:hover:bg-base-danger
-  /* Shadow */
-  [&.shadow]:shadow-lg
-  
-  [&.shadow.foreground]:shadow-base-foreground/40
-  [&.shadow.default]:shadow-base-default/40
-  [&.shadow.primary]:shadow-base-primary/40
-  [&.shadow.secondary]:shadow-base-secondary/40
-  [&.shadow.success]:shadow-base-success/40
-  [&.shadow.warning]:shadow-base-warning/40
-  [&.shadow.danger]:shadow-base-danger/40;
+	&[data-disabled] {
+		@apply pointer-events-none opacity-50;
+	}
+	/* Radius */
+	&.radius-none {
+		@apply rounded-none;
+	}
+	&.radius-sm {
+		@apply rounded-lg;
+	}
+	&.radius-md {
+		@apply rounded-xl;
+	}
+	&.radius-lg {
+		@apply rounded-[14px];
+	}
+	&.radius-full {
+		@apply rounded-full;
+	}
+	/* Sizes */
+	&.size-sm {
+		@apply text-sm rounded-lg px-3 py-1.5;
+	}
+	&.size-lg {
+		@apply text-lg rounded-[14px] px-6 py-2.5;
+	}
+	/* Colors */
+	&.foreground {
+		@apply bg-base-foreground
+   text-white;
+	}
+	&.primary {
+		@apply bg-base-primary
+   text-white;
+	}
+	&.secondary {
+		@apply bg-base-secondary
+   text-white;
+	}
+	&.success {
+		@apply bg-base-success;
+	}
+	&.warning {
+		@apply bg-base-warning;
+	}
+	&.danger {
+		@apply bg-base-danger text-white;
+	}
+	/* Icon Only */
+	&[data-icon-only] {
+		@apply grid place-items-center w-10 h-10;
+	}
+	/* Variants */
+	&.faded,
+	&.bordered,
+	&.light,
+	&.flat,
+	&.ghost {
+		&.foreground {
+			@apply text-base-foreground;
+		}
+		&.default {
+			@apply text-base-foreground;
+		}
+		&.primary {
+			@apply text-base-primary;
+		}
+		&.secondary {
+			@apply text-base-secondary;
+		}
+		&.success {
+			@apply text-base-success;
+		}
+		&.warning {
+			@apply text-base-warning;
+		}
+		&.danger {
+			@apply text-base-danger;
+		}
+	}
+	/* Faded */
+	&.faded {
+		@apply border-2 border-base-default;
+		&.faded {
+			@apply bg-default-100;
+		}
+	}
+	/* Bordered */
+	&.bordered {
+		@apply border-2 border-current;
+		&.bordered {
+			@apply bg-transparent;
+		}
+	}
+	/* Light */
+	&.light.light {
+		@apply bg-transparent;
+	}
+
+	/* Flat */
+
+	&.flat.foreground {
+		@apply bg-base-foreground/20;
+	}
+	&.flat.default {
+		@apply bg-base-default/20;
+	}
+	&.flat.primary {
+		@apply bg-base-primary/20;
+	}
+	&.flat.secondary {
+		@apply bg-base-secondary/20;
+	}
+	&.flat.success {
+		@apply bg-base-success/20;
+	}
+	&.flat.warning {
+		@apply bg-base-warning/20;
+	}
+	&.flat.danger {
+		@apply bg-base-danger/20;
+	}
+	/* Ghost */
+	&.ghost {
+		@apply border-2;
+		&.ghost {
+			@apply bg-transparent;
+		}
+		&.foreground {
+			@apply border-base-foreground hover:text-white hover:bg-base-foreground;
+		}
+		&.default {
+			@apply border-base-default hover:bg-base-default;
+		}
+		&.primary {
+			@apply border-base-primary hover:text-white hover:bg-base-primary;
+		}
+		&.secondary {
+			@apply border-base-secondary hover:text-white hover:bg-base-secondary;
+		}
+		&.success {
+			@apply border-base-success hover:text-base-foreground hover:bg-base-success;
+		}
+		&.warning {
+			@apply border-base-warning hover:text-base-foreground hover:bg-base-warning;
+		}
+		&.danger {
+			@apply border-base-danger hover:text-white hover:bg-base-danger;
+		}
+	}
+	/* Shadow */
+	&.shadow {
+		@apply shadow-lg;
+
+		&.foreground {
+			@apply shadow-base-foreground/40;
+		}
+		&.default {
+			@apply shadow-base-default/40;
+		}
+		&.primary {
+			@apply shadow-base-primary/40;
+		}
+		&.secondary {
+			@apply shadow-base-secondary/40;
+		}
+		&.success {
+			@apply shadow-base-success/40;
+		}
+		&.warning {
+			@apply shadow-base-warning/40;
+		}
+		&.danger {
+			@apply shadow-base-danger/40;
+		}
+	}
 }

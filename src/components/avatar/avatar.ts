@@ -26,7 +26,7 @@ document.querySelectorAll<HTMLDivElement>(".avatar-group").forEach(ag => {
 		leftElement.className = countDisplayStyles
 			? countDisplayStyles
 			: `${avatars[0].className}`;
-		// Will be changes to eval(countChild)
+		// Will be changed to eval(countChild)
 		leftElement.innerHTML = countChild
 			? countChild
 			: `<div class="w-full h-full outline-2 outline outline-white rounded-[inherit] grid place-items-center">+${

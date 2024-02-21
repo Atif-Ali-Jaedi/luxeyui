@@ -10,7 +10,7 @@
 	/*
 	  Label of the group 
 	*/
-	& > .label {
+	& > .radio-group-label {
 		@apply text-base-foreground/70;
 	}
 	/* 
@@ -34,7 +34,7 @@
 					@apply bg-base-danger;
 				}
 			}
-			& > .radio > .label {
+			& > .radio > .radio-label {
 				@apply text-base-danger;
 			}
 		}
@@ -74,7 +74,7 @@ Don't know why I used ".radio" 2 times.
 	/* 
 	  Label 
 	*/
-	& > .label {
+	& > .radio-label {
 		@apply flex flex-col ml-2 text-base-foreground select-none transition-all duration-300;
 		& > .description {
 			@apply text-base-foreground/40 text-sm;

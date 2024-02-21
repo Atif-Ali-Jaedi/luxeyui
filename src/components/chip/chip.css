@@ -1,5 +1,9 @@
 .chip {
 	@apply relative max-w-fit inline-flex items-center justify-center whitespace-nowrap px-3 h-7 text-sm rounded-full bg-base-default text-base-foreground;
+	/* Disabled */
+	&[data-disabled] {
+		@apply pointer-events-none opacity-50;
+	}
 	/* sizes */
 	&.size-sm {
 		@apply h-6 text-xs px-2;
@@ -48,11 +52,10 @@
 		@apply border-2 border-base-default;
 		&.faded {
 			@apply bg-default-100;
-		&.default {
-			@apply text-base-foreground;
+			&.default {
+				@apply text-base-foreground;
+			}
 		}
-		}
-
 	}
 	/* Bordered */
 	&.bordered {
@@ -147,7 +150,7 @@
 	&.dot {
 		@apply border-2 border-base-default;
 		&.dot {
-			@apply bg-transparent text-base-foreground pl-4;
+			@apply bg-transparent text-base-foreground pl-6;
 			&.primary::before {
 				@apply bg-base-primary;
 			}

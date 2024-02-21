@@ -12,7 +12,8 @@
 			&::before {
 				@apply bg-base-danger;
 			}
-			& label {
+			& label,
+			& textarea {
 				@apply text-base-danger;
 			}
 		}

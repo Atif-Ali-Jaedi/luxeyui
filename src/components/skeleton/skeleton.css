@@ -7,7 +7,7 @@
 		#e4e4e7 40%,
 		#e4e4e7 100%
 	);
-	background-size: 800px 104px;
+	background-size: 800px 100%;
 
 	animation: placeholderShimmer 2s linear infinite forwards;
 }

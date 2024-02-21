@@ -4,6 +4,7 @@ input[type="checkbox"].switch {
   */
 	@apply appearance-none bg-default-200 mr-2 w-12 h-7 rounded-full transition-all duration-300 relative;
 	&:checked {
+		@apply bg-default-400;
 		&::before {
 			@apply translate-x-full origin-right;
 		}
@@ -41,7 +42,7 @@ input[type="checkbox"].switch {
 
 	/* Disabled */
 	&[data-disabled] {
-		@apply pointer-events-none opacity-0;
+		@apply pointer-events-none opacity-50;
 	}
 
 	/* 

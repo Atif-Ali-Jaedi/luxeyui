@@ -4,16 +4,16 @@ code.code {
 		@apply text-base-primary bg-base-primary/20;
 	}
 	&.secondary {
-		@apply text-base-secondary bg-base-primary/20;
+		@apply text-base-secondary bg-base-secondary/20;
 	}
 	&.success {
-		@apply text-success-600 bg-base-primary/20;
+		@apply text-success-600 bg-base-success/20;
 	}
 	&.warning {
-		@apply text-warning-600 bg-base-primary/20;
+		@apply text-warning-600 bg-base-warning/20;
 	}
 	&.danger {
-		@apply text-base-danger bg-base-primary/20;
+		@apply text-base-danger bg-base-danger/20;
 	}
 	/* Sizes */
 	&.size-md {
