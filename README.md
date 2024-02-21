@@ -19,7 +19,7 @@ individually. Full functionality will be available after the 1st full release.
 Utilize the Tailwind CDN for better customization.
 
 ```html 
-<link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/luxeyui@0.2.1/dist/all.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.2.1/dist/all.min.css" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/luxeyui@0.2.1/dist/all.min.js" defer></script>
 ```
