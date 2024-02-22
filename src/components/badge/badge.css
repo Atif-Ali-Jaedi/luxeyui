@@ -1,7 +1,7 @@
 .badge-container {
 	@apply relative inline-flex shrink-0;
 	& > .badge {
-		@apply flex z-10 flex-wrap absolute rounded-full select-none subpixel-antialiased text-sm px-0 transition-all duration-300 border-2 border-white bg-base-default text-base-foreground w-5 h-5 top-[5%] right-[5%] translate-x-1/2 -translate-y-1/2;
+		@apply flex z-10 flex-wrap absolute rounded-full select-none subpixel-antialiased text-sm px-0 transition-all duration-300 border-2 border-white bg-base-default text-base-foreground w-5 h-5 top-[5%] right-[5%] translate-x-1/2 -translate-y-1/2 items-center justify-center;
 
 		&.no-outline {
 			@apply border-none;
