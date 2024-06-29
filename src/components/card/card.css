@@ -1,12 +1,15 @@
 .card {
-	@apply relative rounded-lg shadow-[0_6px_8px_rgba(5,10,15,0.05)] p-6 border-2 border-default-200;
+	@apply relative flex flex-col overflow-hidden h-auto text-base-foreground box-border bg-content-1 shadow-lg shadow-black/5 rounded-14;
+	& * {
+		@apply z-[2];
+	}
 	& > .card-header {
-		@apply relative mb-4;
+		@apply p-3 w-full flex items-center justify-start gap-3 shrink-0 [overflow:inherit] [color:inherit] rounded-t-14;
 	}
 	& > .card-body {
-		@apply relative mb-4;
+		@apply relative p-3 flex w-full flex-auto flex-col [place-content:inherit] [align-items:inherit] h-auto break-words text-start overflow-y-auto;
 	}
 	& > .card-footer {
-		@apply relative;
+		@apply p-3 h-auto flex w-full items-center overflow-hidden [color:inherit] rounded-b-14;
 	}
 }

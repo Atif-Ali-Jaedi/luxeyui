@@ -3,7 +3,7 @@
 	font-family: "Inter", sans-serif;
 }
 :focus {
-	@apply outline-base-primary outline-2;
+	@apply outline outline-layout-focus outline-2;
 }
 
 .ripple {
@@ -12,6 +12,7 @@
 	transform: scale(0);
 	animation: rippleAnimation 750ms linear;
 	pointer-events: none;
+	z-index: 1;
 }
 
 @keyframes rippleAnimation {

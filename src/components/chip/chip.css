@@ -29,7 +29,7 @@
 	}
 	/* Colors */
 	&.foreground {
-		@apply bg-base-foreground text-white;
+		@apply bg-base-foreground text-content-1;
 	}
 	&.primary {
 		@apply bg-base-primary text-white;
@@ -99,10 +99,10 @@
 	/* Flat */
 	&.flat {
 		&.foreground {
-			@apply bg-base-foreground/20;
+			@apply bg-base-foreground/10 dark:bg-base-foreground/20;
 		}
 		&.default {
-			@apply bg-base-default/20;
+			@apply bg-base-default/50;
 		}
 		&.primary {
 			@apply bg-base-primary/20;
@@ -128,7 +128,7 @@
 			@apply shadow-base-foreground/40;
 		}
 		&.default {
-			@apply shadow-base-default/40;
+			@apply shadow-base-default/60;
 		}
 		&.primary {
 			@apply shadow-base-primary/40;

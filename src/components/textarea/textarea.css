@@ -1,8 +1,10 @@
 .textarea-outerbox {
 	@apply w-full;
+	/* Disabled */
 	&[data-disabled] {
-		@apply opacity-[0.6] pointer-events-none;
+		@apply opacity-50 pointer-events-none;
 	}
+	/* Invalid */
 	&[data-invalid] {
 		& label {
 			@apply text-base-danger;
@@ -18,24 +20,35 @@
 			}
 		}
 	}
+	/* Label */
 	& > label {
-		@apply text-base-foreground text-sm;
+		@apply text-default-700 text-sm;
 	}
+	/* Required */
+	&:has(.textarea-innerbox > textarea:required) {
+		& > label::after,
+		& .textarea-innerbox > label::after {
+			@apply content-['*'] text-base-danger ml-0.5;
+		}
+	}
+	/* Innerbox */
 	& .textarea-innerbox {
 		@apply bg-default-100 rounded-lg w-full px-3 py-2 mt-1;
 		&:has(label) {
 			@apply py-1;
 		}
 		& > label {
-			@apply text-base-foreground/50 text-xs;
+			@apply text-default-700 text-xs;
 		}
+		/* Textarea */
 		& > textarea {
-			@apply bg-transparent resize-none text-sm w-full max-h-[100px];
+			@apply bg-transparent resize-none text-sm w-full text-layout-foreground;
 			&:focus {
 				@apply outline-none;
 			}
 		}
 	}
+	/* Variants */
 	&.faded > .textarea-innerbox,
 	&.bordered > .textarea-innerbox {
 		@apply border-[2.5px] border-default-200;
@@ -49,11 +62,11 @@
 	&.underlined > .textarea-innerbox {
 		@apply relative border-b-[2.5px] border-default-200 bg-transparent rounded-none px-0;
 		&::before {
-			@apply content-[''] absolute -bottom-[2px] left-0 w-full h-0.5 bg-base-foreground scale-0 transition duration-300;
+			@apply content-[''] absolute -bottom-[2px] left-0 w-full h-0.5 bg-base-foreground scale-x-0 transition duration-300;
 		}
 		&:has(textarea:focus) {
 			&::before {
-				@apply scale-100;
+				@apply scale-x-100;
 			}
 		}
 	}

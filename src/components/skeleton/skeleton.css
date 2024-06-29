@@ -1,15 +1,23 @@
 .skeleton {
-	@apply bg-[#e4e4e7] bg-no-repeat inline-block relative;
+	@apply bg-default-200 dark:bg-content-2 bg-no-repeat inline-block relative overflow-hidden pointer-events-none;
 	background-image: linear-gradient(
 		to right,
-		#e4e4e7 0%,
-		#d4d4d8 20%,
-		#e4e4e7 40%,
-		#e4e4e7 100%
+		transparent 0%,
+		theme(colors.content.4) 20%,
+		transparent 40%,
+		transparent 100%
 	);
 	background-size: 800px 100%;
-
 	animation: placeholderShimmer 2s linear infinite forwards;
+	.dark & {
+		background-image: linear-gradient(
+			to right,
+			transparent 0%,
+			theme(colors.default.700 / 10%) 20%,
+			transparent 40%,
+			transparent 100%
+		);
+	}
 }
 @keyframes placeholderShimmer {
 	0% {

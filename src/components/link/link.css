@@ -1,6 +1,6 @@
 a.link {
 	/* Base */
-	@apply relative inline-flex items-center hover:opacity-80 transition-all duration-300 outline-none active:opacity-50 select-none underline-offset-2 gap-1;
+	@apply relative inline-flex items-center hover:opacity-80 transition-all text-layout-foreground duration-300 outline-none active:opacity-50 select-none underline-offset-2 gap-1;
 
 	/* Colors */
 	&.primary {

@@ -1,104 +1,108 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+	darkMode: "class",
 	content: ["./index.html", "./dist/all.min.js"],
 	theme: {
 		extend: {
 			colors: {
 				layout: {
-					background: "#FFFFFF",
-					foreground: "#11181C",
-					divider: "rgba(17, 17, 17, 0.15)",
-					focus: "#006FEE"
+					background: "hsla(var(--layout-background) / <alpha-value>)",
+					foreground: "hsla(var(--layout-foreground) / <alpha-value>)",
+					divider: "hslaa(var(--layout-divider))",
+					focus: "hsla(var(--layout-focus) / <alpha-value>)"
 				},
 				content: {
-					1: "#FFFFFF",
-					2: "#f4f4f5",
-					3: "#e4e4e7",
-					4: "#d4d4d8"
+					1: "hsla(var(--content-1) / <alpha-value>)",
+					2: "hsla(var(--content-2) / <alpha-value>)",
+					3: "hsla(var(--content-3) / <alpha-value>)",
+					4: "hsla(var(--content-4) / <alpha-value>)"
 				},
 				base: {
-					default: "#d4d4d8",
-					foreground: "#18181A",
-					foreground_light: "#2F2F31",
-					primary: "#006FEE",
-					secondary: "#7828c8",
-					success: "#17c964",
-					warning: "#f5a524",
-					danger: "#f31260"
+					default: "hsla(var(--base-default) / <alpha-value>)",
+					foreground: "hsla(var(--base-foreground) / <alpha-value>)",
+					foreground_light:
+						"hsla(var(--base-foreground-light) / <alpha-value>)",
+					primary: "hsla(var(--base-primary) / <alpha-value>)",
+					secondary: "hsla(var(--base-secondary) / <alpha-value>)",
+					success: "hsla(var(--base-success) / <alpha-value>)",
+					warning: "hsla(var(--base-warning) / <alpha-value>)",
+					danger: "hsla(var(--base-danger) / <alpha-value>)"
 				},
 				default: {
-					50: "#fafafa",
-					100: "#f4f4f5",
-					200: "#e4e4e7",
-					300: "#d4d4d8",
-					400: "#a1a1aa",
-					500: "#71717a",
-					600: "#52525b",
-					700: "#3f3f46",
-					800: "#27272a",
-					900: "#18181b"
+					50: "hsla(var(--default-50) / <alpha-value>)",
+					100: "hsla(var(--default-100) / <alpha-value>)",
+					200: "hsla(var(--default-200) / <alpha-value>)",
+					300: "hsla(var(--default-300) / <alpha-value>)",
+					400: "hsla(var(--default-400) / <alpha-value>)",
+					500: "hsla(var(--default-500) / <alpha-value>)",
+					600: "hsla(var(--default-600) / <alpha-value>)",
+					700: "hsla(var(--default-700) / <alpha-value>)",
+					800: "hsla(var(--default-800) / <alpha-value>)",
+					900: "hsla(var(--default-900) / <alpha-value>)"
 				},
 				primary: {
-					50: "#e6f1fe",
-					100: "#cce3fd",
-					200: "#99c7fb",
-					300: "#66aaf9",
-					400: "#338ef7",
-					500: "#006FEE",
-					600: "#005bc4",
-					700: "#004493",
-					800: "#002e62",
-					900: "#001731"
+					50: "hsla(var(--primary-50) / <alpha-value>)",
+					100: "hsla(var(--primary-100) / <alpha-value>)",
+					200: "hsla(var(--primary-200) / <alpha-value>)",
+					300: "hsla(var(--primary-300) / <alpha-value>)",
+					400: "hsla(var(--primary-400) / <alpha-value>)",
+					500: "hsla(var(--primary-500) / <alpha-value>)",
+					600: "hsla(var(--primary-600) / <alpha-value>)",
+					700: "hsla(var(--primary-700) / <alpha-value>)",
+					800: "hsla(var(--primary-800) / <alpha-value>)",
+					900: "hsla(var(--primary-900) / <alpha-value>)"
 				},
 				secondary: {
-					50: "#f2eafa",
-					100: "#e4d4f4",
-					200: "#c9a9e9",
-					300: "#ae7ede",
-					400: "#9353d3",
-					500: "#7828c8",
-					600: "#6020a0",
-					700: "#481878",
-					800: "#301050",
-					900: "#180828"
+					50: "hsla(var(--secondary-50) / <alpha-value>)",
+					100: "hsla(var(--secondary-100) / <alpha-value>)",
+					200: "hsla(var(--secondary-200) / <alpha-value>)",
+					300: "hsla(var(--secondary-300) / <alpha-value>)",
+					400: "hsla(var(--secondary-400) / <alpha-value>)",
+					500: "hsla(var(--secondary-500) / <alpha-value>)",
+					600: "hsla(var(--secondary-600) / <alpha-value>)",
+					700: "hsla(var(--secondary-700) / <alpha-value>)",
+					800: "hsla(var(--secondary-800) / <alpha-value>)",
+					900: "hsla(var(--secondary-900) / <alpha-value>)"
 				},
 				success: {
-					50: "#e8faf0",
-					100: "#d1f4e0",
-					200: "#a2e9c1",
-					300: "#74dfa2",
-					400: "#45d483",
-					500: "#17c964",
-					600: "#12a150",
-					700: "#0e793c",
-					800: "#095028",
-					900: "#052814"
+					50: "hsla(var(--success-50) / <alpha-value>)",
+					100: "hsla(var(--success-100) / <alpha-value>)",
+					200: "hsla(var(--success-200) / <alpha-value>)",
+					300: "hsla(var(--success-300) / <alpha-value>)",
+					400: "hsla(var(--success-400) / <alpha-value>)",
+					500: "hsla(var(--success-500) / <alpha-value>)",
+					600: "hsla(var(--success-600) / <alpha-value>)",
+					700: "hsla(var(--success-700) / <alpha-value>)",
+					800: "hsla(var(--success-800) / <alpha-value>)",
+					900: "hsla(var(--success-900) / <alpha-value>)"
 				},
 				warning: {
-					50: "#fefce8",
-					100: "#fdedd3",
-					200: "#fbdba7",
-					300: "#f9c97c",
-					400: "#f7b750",
-					500: "#f5a524",
-					600: "#c4841d",
-					700: "#936316",
-					800: "#62420e",
-					900: "#312107"
+					50: "hsla(var(--warning-50) / <alpha-value>)",
+					100: "hsla(var(--warning-100) / <alpha-value>)",
+					200: "hsla(var(--warning-200) / <alpha-value>)",
+					300: "hsla(var(--warning-300) / <alpha-value>)",
+					400: "hsla(var(--warning-400) / <alpha-value>)",
+					500: "hsla(var(--warning-500) / <alpha-value>)",
+					600: "hsla(var(--warning-600) / <alpha-value>)",
+					700: "hsla(var(--warning-700) / <alpha-value>)",
+					800: "hsla(var(--warning-800) / <alpha-value>)",
+					900: "hsla(var(--warning-900) / <alpha-value>)"
 				},
 				danger: {
-					50: "#fee7ef",
-					100: "#fdd0df",
-					200: "#faa0bf",
-					300: "#f871a0",
-					400: "#f54180",
-					500: "#f31260",
-					600: "#c20e4d",
-					700: "#920b3a",
-					800: "#610726",
-					900: "#310413"
+					50: "hsla(var(--danger-50) / <alpha-value>)",
+					100: "hsla(var(--danger-100) / <alpha-value>)",
+					200: "hsla(var(--danger-200) / <alpha-value>)",
+					300: "hsla(var(--danger-300) / <alpha-value>)",
+					400: "hsla(var(--danger-400) / <alpha-value>)",
+					500: "hsla(var(--danger-500) / <alpha-value>)",
+					600: "hsla(var(--danger-600) / <alpha-value>)",
+					700: "hsla(var(--danger-700) / <alpha-value>)",
+					800: "hsla(var(--danger-800) / <alpha-value>)",
+					900: "hsla(var(--danger-900) / <alpha-value>)"
 				}
-			}
+			},
+			scale: { "97": "0.97" },
+			borderRadius: {"14":"14px"}
 		}
 	},
 	plugins: []

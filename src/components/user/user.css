@@ -9,7 +9,7 @@
 	& .user-info {
 		@apply inline-flex flex-col items-start;
 		& > .name {
-			@apply text-sm;
+			@apply text-sm text-base-foreground;
 		}
 		& > .description {
 			@apply text-xs text-base-foreground/50;

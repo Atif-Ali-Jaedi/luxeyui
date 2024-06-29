@@ -1,9 +1,11 @@
 {
 	"name": "luxeyui",
-	"version": "0.2.1",
+	"version": "0.3.0",
+	"type": "module",
 	"description": "LuxeyUI is a tailwindCSS UI component library built on top of PostCSS and TypeScript for basic use. It features components inspired by shadcn-ui and @nextui-org, tailored for non-react use.",
 	"main": "index.js",
 	"scripts": {
+		"postinstall": "node index.js",
 		"build:js": "esbuild src/index.ts --bundle --outfile=dist/all.min.js --watch=forever --minify & tsc -noEmit --watch",
 		"build:css": "postcss src/all.css -o dist/all.min.css --watch"
 	},
@@ -12,11 +14,19 @@
 		"ui",
 		"ui library",
 		"tailwindcss",
-		"typetcript",
-		"css ui library"
+		"typescript",
+		"tailwindcss ui library"
 	],
-	"author": "Atif Ali Jaedi",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Atif-Ali-Jaedi/luxeyui.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Atif-Ali-Jaedi/luxeyui/issues"
+	},
+	"author": "Atif Ali Jaedi <atifalijaedi@gmail.com>",
 	"license": "MIT",
+	"homepage": "https://luxeyui.vercel.app",
 	"devDependencies": {
 		"autoprefixer": "^10.4.16",
 		"cssnano": "^6.0.2",
@@ -25,6 +35,12 @@
 		"postcss": "^8.4.32",
 		"postcss-cli": "^11.0.0",
 		"postcss-import": "^15.1.0",
+		"prettier": "^2.8.8",
+		"prettier-plugin-tailwind": "^2.2.12",
 		"tailwindcss": "^3.4.0"
+	},
+	"dependencies": {
+		"chalk": "^5.3.0",
+		"terminal-link": "^3.0.0"
 	}
 }

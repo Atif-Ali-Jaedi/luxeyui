@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,15 +23,23 @@
 				gap: 1em;
 				width: min(100% - 2.5em, 600px);
 			}
-			.baka {
-				width: 100%;
-				height: 200px;
-			}
 		</style>
 	</head>
-	<body>
+	<body class="bg-layout-background">
+		<input type="checkbox" class="switch primary" id="tdm" />
 		<div class="wrapper">
 			<!-- All the testings here -->
 		</div>
+		<script>
+			document
+				.querySelector("#tdm")
+				.addEventListener(
+					"click",
+					e =>
+						(document.documentElement.className = e.target.checked
+							? "dark"
+							: "")
+				);
+		</script>
 	</body>
 </html>

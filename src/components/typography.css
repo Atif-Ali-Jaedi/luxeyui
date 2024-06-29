@@ -1,40 +1,40 @@
 /* Typography  Styles */
 
 h1.h1 {
-	@apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+	@apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-base-foreground;
 }
 h2.h2 {
-	@apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+	@apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 text-base-foreground;
 }
 h3.h3 {
-	@apply scroll-m-20 text-2xl font-semibold tracking-tight;
+	@apply scroll-m-20 text-2xl font-semibold tracking-tight text-base-foreground;
 }
 h4.h4 {
-	@apply scroll-m-20 text-xl font-semibold tracking-tight;
+	@apply scroll-m-20 text-xl font-semibold tracking-tight text-base-foreground;
 }
 h5.h5 {
-	@apply scroll-m-20 text-lg font-semibold tracking-tight;
+	@apply scroll-m-20 text-lg font-semibold tracking-tight text-base-foreground;
 }
 h6.h6 {
-	@apply scroll-m-20 text-base font-semibold tracking-tight;
+	@apply scroll-m-20 text-base font-semibold tracking-tight text-base-foreground;
 }
 p.p {
-	@apply leading-7;
+	@apply leading-7 text-base-foreground;
 }
 p.lead {
 	@apply text-xl text-base-foreground/60;
 }
 blockquote.blockquote {
-	@apply mt-6 border-l-2 pl-6 italic;
+	@apply mt-6 border-l-2 pl-6 italic text-base-foreground;
 }
 ul.ul {
-	@apply my-6 ml-6 list-disc [&>li]:mt-2;
+	@apply my-6 ml-6 list-disc [&>li]:mt-2 text-base-foreground;
 }
 .large {
-	@apply text-lg font-semibold;
+	@apply text-lg font-semibold text-base-foreground;
 }
 small.small {
-	@apply text-sm font-medium leading-none;
+	@apply text-sm font-medium leading-none text-base-foreground;
 }
 .muted {
 	@apply text-sm text-base-foreground/60;

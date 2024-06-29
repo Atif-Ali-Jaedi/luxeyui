@@ -1,27 +1,49 @@
 .checkbox-wrapper {
 	@apply flex items-center gap-2;
+	/* Active State */
+	&:active .checkbox-icon {
+		@apply scale-97;
+	}
+	& > .checkbox-label {
+		@apply select-none text-layout-foreground transition-all duration-300;
+	}
+	/* Disabled */
 	&[data-disabled],
 	&:has(.checkbox-icon > input[type="checkbox"].checkbox:disabled) {
 		@apply opacity-50 pointer-events-none;
 	}
+	/* Line through */
+	&[data-line-through] > .checkbox-label {
+		@apply relative;
+		&::before {
+			@apply content-[''] absolute bg-default-500 w-full h-0.5 scale-x-0 transition-all duration-300 top-1/2 -translate-y-1/2;
+		}
+	}
+	/* Checked State */
 	&:has (.checkbox-icon > input[type="checkbox"].checkbox:checked) {
-		&.line-through-text > .checkbox-label {
-			@apply line-through text-default-500;
+		&[data-line-through] > .checkbox-label {
+			@apply text-default-500;
+			&::before {
+				@apply scale-x-100;
+			}
 		}
 		& > .checkbox-icon {
 			&::before {
 				@apply opacity-100 scale-100;
 			}
 			& > svg {
+				&[data-custom] {
+					@apply opacity-100;
+				}
 				& > polyline {
-					stroke-dashoffset: 44;
-					opacity: 1;
+					@apply opacity-100 [stroke-dashoffset:44];
 				}
 			}
 		}
 	}
+	/* Icon & Input */
 	& > .checkbox-icon {
-		@apply relative inline-flex items-center justify-center w-5 h-5 rounded-lg text-white;
+		@apply relative inline-flex items-center justify-center w-5 h-5 rounded-lg text-layout-background;
 		&::before {
 			@apply content-[''] absolute inset-0 bg-base-foreground rounded-[inherit] z-[2] opacity-0 transition-all duration-200 ease-linear scale-50;
 		}
@@ -30,8 +52,11 @@
 		}
 		& > svg {
 			@apply w-4 h-3 z-[3];
+			&[data-custom] {
+				@apply opacity-0 transition-all duration-300;
+			}
 			& > polyline {
-				opacity: 0;
+				@apply opacity-0;
 				transition:
 					stroke-dashoffset 250ms linear 0.2s,
 					opacity 75ms linear;
@@ -41,12 +66,9 @@
 			@apply invisible absolute;
 		}
 	}
-	/*
-	  Sizes
-	*/
+	/* Sizes	*/
 	&.size-sm {
 		@apply text-sm;
-
 		& > .checkbox-icon {
 			@apply w-4 h-4 rounded-md;
 			& > svg {
@@ -64,63 +86,53 @@
 		}
 	}
 	/* radiuses */
-	&.radius-full {
-		& > .checkbox-icon {
-			@apply rounded-full;
-		}
+	&.radius-full > .checkbox-icon {
+		@apply rounded-full;
 	}
-	&.radius-lg {
-		& > .checkbox-icon {
-			@apply rounded-[14px];
-		}
+	&.radius-lg > .checkbox-icon {
+		@apply rounded-[14px];
 	}
-	&.radius-sm {
-		& > .checkbox-icon {
-			@apply rounded-md;
-		}
+	&.radius-sm > .checkbox-icon {
+		@apply rounded-md;
 	}
-	&.radius-none {
-		& > .checkbox-icon {
-			@apply rounded-none;
-		}
+	&.radius-none > .checkbox-icon {
+		@apply rounded-none;
 	}
+
 	/* Colors */
-	&.default {
-		& > .checkbox-icon {
-			@apply text-base-foreground;
-			&::before {
-				@apply bg-base-default;
-			}
+	&.default > .checkbox-icon {
+		@apply text-base-foreground;
+		&::before {
+			@apply bg-base-default;
 		}
 	}
-	&.primary {
-		& > .checkbox-icon::before {
+	&.primary > .checkbox-icon {
+		@apply text-white;
+		&::before {
 			@apply bg-base-primary;
 		}
 	}
-	&.secondary {
-		& > .checkbox-icon::before {
+	&.secondary .checkbox-icon {
+		@apply text-white;
+		&::before {
 			@apply bg-base-secondary;
 		}
 	}
-	&.success {
-		& > .checkbox-icon {
-			@apply text-base-foreground;
-			&::before {
-				@apply bg-base-success;
-			}
+	&.success .checkbox-icon {
+		@apply text-black;
+		&::before {
+			@apply bg-base-success;
 		}
 	}
-	&.warning {
-		& > .checkbox-icon {
-			@apply text-base-foreground;
-			&::before {
-				@apply bg-base-warning;
-			}
+	&.warning .checkbox-icon {
+		@apply text-black;
+		&::before {
+			@apply bg-base-warning;
 		}
 	}
-	&.danger {
-		& > .checkbox-icon::before {
+	&.danger > .checkbox-icon {
+		@apply text-white;
+		&::before {
 			@apply bg-base-danger;
 		}
 	}

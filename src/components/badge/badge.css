@@ -1,27 +1,32 @@
 .badge-container {
 	@apply relative inline-flex shrink-0;
+	--_v: 5%;
+	&:has(> svg) > .badge {
+		--_v: 10%;
+	}
 	& > .badge {
-		@apply flex z-10 flex-wrap absolute rounded-full select-none subpixel-antialiased text-sm px-0 transition-all duration-300 border-2 border-white bg-base-default text-base-foreground w-5 h-5 top-[5%] right-[5%] translate-x-1/2 -translate-y-1/2 items-center justify-center;
-
+		@apply flex flex-wrap place-content-center origin-center items-center absolute rounded-full select-none subpixel-antialiased text-sm px-0 transition-all duration-300 border-2 border-layout-background bg-base-default text-base-foreground w-5 h-5 min-w-5 min-h-5 top-[--_v] right-[--_v] translate-x-1/2 -translate-y-1/2;
+		&:has(svg) {
+			--_v: 10%;
+		}
 		&.no-outline {
 			@apply border-none;
 		}
 		/* sizes */
 		&.size-sm {
-			@apply w-4 h-4 text-xs;
+			@apply w-4 h-4 min-w-4 min-h-4 text-xs;
 		}
 		&.size-lg {
-			@apply w-6 h-6 text-base;
+			@apply w-6 h-6 min-w-6 min-w-6 text-base;
 		}
 		/* Colors */
-		&.foreground,
 		&.primary,
 		&.secondary,
 		&.danger {
 			@apply text-white;
 		}
 		&.foreground {
-			@apply bg-base-foreground;
+			@apply bg-base-foreground text-layout-background;
 		}
 		&.primary {
 			@apply bg-base-primary;
@@ -30,10 +35,10 @@
 			@apply bg-base-secondary;
 		}
 		&.success {
-			@apply bg-base-success;
+			@apply bg-base-success text-black;
 		}
 		&.warning {
-			@apply bg-base-warning;
+			@apply bg-base-warning text-black;
 		}
 		&.danger {
 			@apply bg-base-danger;
@@ -120,13 +125,13 @@
 		}
 		/* Placements */
 		&.top-left {
-			@apply top-[5%] left-[5%] -translate-x-1/2 right-[unset] -translate-y-1/2;
+			@apply top-[--_v] left-[--_v] -translate-x-1/2 right-[unset] -translate-y-1/2;
 		}
 		&.bottom-left {
-			@apply bottom-[5%] left-[5%] -translate-x-1/2 translate-y-1/2 top-[unset];
+			@apply bottom-[--_v] left-[--_v] -translate-x-1/2 translate-y-1/2 top-[unset];
 		}
 		&.bottom-right {
-			@apply bottom-[5%] right-[5%] translate-x-1/2 translate-y-1/2 top-[unset];
+			@apply bottom-[--_v] right-[--_v] translate-x-1/2 translate-y-1/2 top-[unset];
 		}
 	}
 }

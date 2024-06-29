@@ -8,9 +8,10 @@ input[type="checkbox"].switch {
 		&::before {
 			@apply translate-x-full origin-right;
 		}
-		&::after {
-			@apply scale-x-110;
-		}
+	}
+	/* Active stretching */
+	&:active::before {
+		@apply scale-x-105;
 	}
 	/* Sizes */
 	&.size-sm {
@@ -22,7 +23,7 @@ input[type="checkbox"].switch {
 
 	/* Colors */
 	&.foreground:checked {
-		@apply bg-base-foreground;
+		@apply bg-base-foreground dark:bg-content-2;
 	}
 	&.primary:checked {
 		@apply bg-base-primary;
@@ -49,6 +50,6 @@ input[type="checkbox"].switch {
     Circle
   */
 	&::before {
-		@apply content-[''] absolute w-[calc((100%-0.45em)/2)] h-[calc(100%-0.45em)] rounded-full top-1/2 -translate-y-1/2 transition-all duration-300 left-[0.225em] bg-white shadow-sm origin-left;
+		@apply content-[''] absolute w-[calc((100%-0.5em)/2)] h-[calc(100%-0.5em)] rounded-full top-1/2 -translate-y-1/2 transition-all duration-300 left-[0.225em] bg-white shadow-sm origin-left;
 	}
 }

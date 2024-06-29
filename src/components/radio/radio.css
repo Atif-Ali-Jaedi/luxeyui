@@ -1,21 +1,12 @@
-/*
-  Radio Group styles
-*/
+/* Radio Group styles */
 
 .radio-group {
-	/*
-    Base
-  */
+	/* Base */
 	@apply flex flex-col gap-2;
-	/*
-	  Label of the group 
-	*/
 	& > .radio-group-label {
 		@apply text-base-foreground/70;
 	}
-	/* 
-	  Radio Inputs
-	*/
+	/* Radio Inputs */
 	& .radios {
 		@apply flex flex-col flex-wrap gap-2;
 		&[data-disabled] {
@@ -24,9 +15,7 @@
 		&[data-orientation="horizontal"] {
 			@apply flex-row;
 		}
-		/* 
-		  Checking if has any invalid input that is checked
-		*/
+		/* Checking if has any invalid input that is checked */
 		&:has(.radio[data-is-invalid] > input[type="radio"]:checked) {
 			& > .radio > input[type="radio"] {
 				@apply border-base-danger;
@@ -42,24 +31,20 @@
 }
 
 /* 
-Main radio styles 
-Don't know why I used ".radio" 2 times.
+  Main radio styles 
+  Don't know why I used ".radio" 2 times.
 */
 
 .radio,
 .radio {
-	/* 
-    Base styles
-  */
+	/* Base styles */
 	@apply max-w-fit inline-flex items-center justify-start cursor-pointer p-2 -m-2;
 	&[data-disabled] {
 		@apply opacity-50 pointer-events-none;
 	}
-	/* 
-	  Radio input
-	*/
+	/* Radio input */
 	& > input[type="radio"] {
-		@apply relative appearance-none w-5 h-5 rounded-full border-2 border-base-default transition-all duration-300;
+		@apply relative appearance-none w-5 h-5 rounded-full border-2 border-base-default transition-all duration-300 outline-none;
 		&:checked {
 			@apply border-base-foreground;
 			&::before {
@@ -71,20 +56,16 @@ Don't know why I used ".radio" 2 times.
 			@apply content-[''] absolute top-1/2 left-1/2 w-1/2 h-1/2 rounded-full scale-0 bg-base-foreground transition-all duration-300 -translate-x-1/2 -translate-y-1/2;
 		}
 	}
-	/* 
-	  Label 
-	*/
+	/* Label */
 	& > .radio-label {
 		@apply flex flex-col ml-2 text-base-foreground select-none transition-all duration-300;
 		& > .description {
 			@apply text-base-foreground/40 text-sm;
 		}
 	}
-	/* 
-	  Colors 
-	*/
+	/* Colors */
 	&.default > input[type="radio"]:checked {
-		@apply border-default-500;
+		@apply border-default-400;
 		&::before {
 			@apply bg-default-500;
 		}

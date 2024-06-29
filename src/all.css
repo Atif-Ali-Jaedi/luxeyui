@@ -1,7 +1,9 @@
 /* Base styles */
 @import "./components/base.css";
+@import "./components/theme.css";
 @import "./components/typography.css";
 /* Component styles */
+
 
 @import "./components/avatar/avatar.css";
 @import "./components/accordion/accordion.css";
@@ -12,9 +14,10 @@
 @import "./components/chip/chip.css";
 @import "./components/code/code.css";
 @import "./components/divider/divider.css";
+@import "./components/input/input.css";
 @import "./components/link/link.css";
-@import "./components/switch/switch.css";
 @import "./components/radio/radio.css";
+@import "./components/switch/switch.css";
 @import "./components/skeleton/skeleton.css";
 @import "./components/textarea/textarea.css";
 @import "./components/user/user.css";

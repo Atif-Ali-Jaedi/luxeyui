@@ -1,5 +1,5 @@
 code.code {
-	@apply px-2 py-1 h-fit font-mono font-normal inline-block whitespace-nowrap bg-base-default/40 text-sm rounded-lg; /* Colors */
+	@apply px-2 py-1 h-fit font-mono font-normal inline-block whitespace-nowrap bg-base-default/40 text-layout-foreground text-sm rounded-lg; /* Colors */
 	&.primary {
 		@apply text-base-primary bg-base-primary/20;
 	}

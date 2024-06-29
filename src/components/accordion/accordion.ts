@@ -10,9 +10,9 @@ document
 			if (
 				(selectionMode && selectionMode === "single") ||
 				body.classList.contains("active")
-			) {
-				body.style.setProperty("--_height", `${body.scrollHeight}px`);
-			}
+			)
+				body.style.setProperty("--_height", `${body.scrollHeight + 12}px`);
+		
 			header.addEventListener("click", () => {
 				if (selectionMode && selectionMode === "single") {
 					document
@@ -27,7 +27,9 @@ document
 				body.classList.toggle("active");
 				body.style.setProperty(
 					"--_height",
-					`${body.classList.contains("active") ? body.scrollHeight : "0"}px`
+					`${
+						body.classList.contains("active") ? body.scrollHeight + 12 : "0"
+					}px`
 				);
 			});
 		}

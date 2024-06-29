@@ -1,12 +1,19 @@
 .accordions > .accordion {
+	@apply text-base-foreground;
 	&:not(:last-child) {
-		@apply border-b-2;
+		@apply border-b border-base-default;
 	}
 	&[data-disabled] {
 		@apply pointer-events-none opacity-50;
 	}
+	&:has(.accordion-body.active) > .accordion-header > .indicator {
+		@apply -rotate-90;
+	}
 	& > .accordion-header {
-		@apply flex items-center justify-between py-3.5;
+		@apply flex items-center text-lg justify-between py-5;
+		& > .indicator {
+			@apply transition-all duration-300 text-base-default;
+		}
 	}
 	& > .accordion-body {
 		--_height: 0;
