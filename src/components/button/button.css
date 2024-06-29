@@ -13,7 +13,7 @@
 }
 
 button.button {
-	@apply relative inline-flex items-center justify-center select-none whitespace-nowrap overflow-hidden transition-all duration-300 outline-none bg-base-default rounded-xl px-4 py-2 active:scale-[0.97];
+	@apply relative inline-flex items-center justify-center select-none whitespace-nowrap overflow-hidden transition-all duration-300 outline-none bg-base-default rounded-xl px-4 py-2 text-layout-foreground active:scale-97;
 	/* Disabled */
 	&[data-disabled] {
 		@apply pointer-events-none opacity-50;
@@ -29,7 +29,7 @@ button.button {
 		@apply rounded-xl;
 	}
 	&.radius-lg {
-		@apply rounded-[14px];
+		@apply rounded-14;
 	}
 	&.radius-full {
 		@apply rounded-full;
@@ -43,22 +43,19 @@ button.button {
 	}
 	/* Colors */
 	&.foreground {
-		@apply bg-base-foreground
-   text-white;
+		@apply bg-base-foreground text-layout-background;
 	}
 	&.primary {
-		@apply bg-base-primary
-   text-white;
+		@apply bg-base-primary text-white;
 	}
 	&.secondary {
-		@apply bg-base-secondary
-   text-white;
+		@apply bg-base-secondary text-white;
 	}
 	&.success {
-		@apply bg-base-success;
+		@apply bg-base-success text-black;
 	}
 	&.warning {
-		@apply bg-base-warning;
+		@apply bg-base-warning text-black;
 	}
 	&.danger {
 		@apply bg-base-danger text-white;
@@ -66,6 +63,12 @@ button.button {
 	/* Icon Only */
 	&[data-icon-only] {
 		@apply grid place-items-center w-10 h-10;
+		&.size-sm {
+			@apply w-8 h-8;
+		}
+		&.size-lg {
+			@apply w-12 h-12;
+		}
 	}
 	/* Variants */
 	&.faded,
@@ -105,6 +108,9 @@ button.button {
 	/* Bordered */
 	&.bordered {
 		@apply border-2 border-current;
+		&.default {
+			@apply border-base-default;
+		}
 		&.bordered {
 			@apply bg-transparent;
 		}
@@ -120,7 +126,7 @@ button.button {
 		@apply bg-base-foreground/20;
 	}
 	&.flat.default {
-		@apply bg-base-default/20;
+		@apply bg-base-default/40;
 	}
 	&.flat.primary {
 		@apply bg-base-primary/20;
@@ -144,7 +150,7 @@ button.button {
 			@apply bg-transparent;
 		}
 		&.foreground {
-			@apply border-base-foreground hover:text-white hover:bg-base-foreground;
+			@apply border-base-foreground dark:hover:text-black hover:bg-base-foreground;
 		}
 		&.default {
 			@apply border-base-default hover:bg-base-default;

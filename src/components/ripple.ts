@@ -13,7 +13,7 @@ export const rippleEffect = (
 		height: `${size}px`,
 		left: `${x}px`,
 		top: `${y}px`,
-		background: originalColor.replace("rgb", "rgba").replace(")", ",0.175)")
+		background: originalColor.replace("rgb", "rgba").replace(")", ",0.25)")
 	});
 	ripple.className = `ripple`;
 	containerElement.appendChild(ripple);

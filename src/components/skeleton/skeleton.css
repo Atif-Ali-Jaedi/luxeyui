@@ -3,7 +3,7 @@
 	background-image: linear-gradient(
 		to right,
 		transparent 0%,
-		theme(colors.content.4) 20%,
+		hsl(var(--content-4)) 20%,
 		transparent 40%,
 		transparent 100%
 	);
@@ -13,7 +13,7 @@
 		background-image: linear-gradient(
 			to right,
 			transparent 0%,
-			theme(colors.default.700 / 10%) 20%,
+			hsla(var(--default-700) / 0.1) 20%,
 			transparent 40%,
 			transparent 100%
 		);
