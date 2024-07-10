@@ -21,7 +21,7 @@
 			@apply border-danger-200;
 		}
 		&:is(&.underlined, &.bordered) .input-wrapper {
-			@apply bg-layout-background;
+			@apply bg-transparent;
 		}
 		&.bordered.bordered .input-wrapper:has(input:focus) {
 			@apply border-base-danger;
@@ -221,7 +221,7 @@
 			@apply block text-xs max-w-full text-default-600 transition-all duration-200 ease-out pb-px;
 		}
 		& > .inner-wrapper {
-			@apply inline-flex w-full items-center h-full pb-0.5;
+			@apply inline-flex w-full items-center h-full pb-0.5 gap-1.5;
 			& > input {
 				@apply w-full text-sm text-base-foreground font-normal bg-transparent outline-none;
 				&::-webkit-input-placeholder,

@@ -34,7 +34,7 @@ npx tailwindcss init -p
 npm i luxeyui@latest
 ```
 
-## What's New in v0.3.2?
+## What's New in v0.3.2 & v0.3.3?
 
 **Input (Updated)**:
  - Adjusted the border width, `2.5px → 2px`
@@ -43,6 +43,8 @@ npm i luxeyui@latest
  - Added the `description` & `error-msg` for `helper-wrapper`
  - Added validation for the input to display error only when needed. 
  - Fixed and issue higher the colours of the borders doesn't appear on focus because of the specificity issue.
+ - Added transparent background instead of just solid background, `bg-layout-background → bg-transparent`.
+ - Added a gap between the content before / after the `input`, inside `inner-wrapper`, `gap-px → gap-1.5`.
 
 ## Documentation
 
