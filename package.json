@@ -1,6 +1,6 @@
 {
 	"name": "luxeyui",
-	"version": "0.3.0",
+	"version": "0.3.2",
 	"description": "LuxeyUI is a tailwindCSS UI component library built on top of PostCSS and TypeScript for basic use. It features components inspired by shadcn-ui and @nextui-org, tailored for non-react use.",
 	"main": "index.mjs",
 	"scripts": {
@@ -18,7 +18,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Atif-Ali-Jaedi/luxeyui.git"
+		"url": "git+https://github.com/Atif-Ali-Jaedi/luxeyui.git"
 	},
 	"bugs": {
 		"url": "https://github.com/Atif-Ali-Jaedi/luxeyui/issues"

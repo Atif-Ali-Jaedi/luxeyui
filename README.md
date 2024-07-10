@@ -1,4 +1,4 @@
-<img src="https://cdn.discordapp.com/attachments/1218908036614193213/1256598235364200542/logo.png?ex=668159cd&is=6680084d&hm=b2c47551fb582b35be7599f0c62c094af64c72194c30bd57db49f684b9e1eaf1&" alt="luxeyUI Logo" width="64"/>
+<img src="https://luxeyui.vercel.app/logo.png" alt="luxeyUI Logo" width="64"/>
 <br/>
 <img src="https://img.shields.io/npm/l/luxeyui?style=flat" alt="License"/>
 
@@ -21,9 +21,9 @@ Utilize TailwindCSS for better customization.
 ### CDN 
 
 ```html 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.3.0/dist/all.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.3.2/dist/all.min.css" />
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.3.0/dist/all.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.3.2/dist/all.min.js" defer></script>
 ```
 
 ### Vite
@@ -34,13 +34,15 @@ npx tailwindcss init -p
 npm i luxeyui@latest
 ```
 
-## What's New in v0.3.0?
+## What's New in v0.3.2?
 
-- **Dark Mode**: After a long time I finally added dark mode. 
-- **Theming**: The ability to customize the original theme colors within your css by using css variables. 
-- **Better** Customization: Now, it's a lot easier to customize the components. 
-- **Input**: Added the most requested component "input".
-- **Components**: Fixed the badge and the button component. Also remade entirely the card and the textarea component and Adjusted all the components for darkmode. 
+**Input (Updated)**:
+ - Adjusted the border width, `2.5px → 2px`
+ - Adjusted the radius for `sizes` & `radiuses` 
+ - Added the `helper-wrapper`
+ - Added the `description` & `error-msg` for `helper-wrapper`
+ - Added validation for the input to display error only when needed. 
+ - Fixed and issue higher the colours of the borders doesn't appear on focus because of the specificity issue.
 
 ## Documentation
 
