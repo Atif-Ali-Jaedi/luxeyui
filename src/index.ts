@@ -3,5 +3,8 @@ import "./components/accordion/accordion";
 import "./components/button/button";
 import "./components/card/card";
 import "./components/input/input";
+import "./components/kbd/kbd";
 import "./components/link/link";
+import "./components/progress/progress";
+import "./components/scroll-shadow/scrollShadow";
 import "./components/textarea/textarea";

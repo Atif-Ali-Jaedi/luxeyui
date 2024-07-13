@@ -1,3 +1,59 @@
+/* Checkbox group styles */
+.checkbox-group {
+	@apply relative flex flex-col gap-2;
+	/* Label */
+	& > .checkbox-group-label {
+		@apply text-default-500;
+	}
+	/* Description */
+	& > .description {
+		@apply text-sm text-default-400;
+	}
+	/* Error message */
+	& > .error-msg {
+		@apply text-sm text-base-danger;
+	}
+	/* Checkboxes */
+	& > .checkboxes {
+		@apply flex flex-col flex-wrap gap-2;
+	}
+
+	/* Invalid */
+	&[data-invalid="true"] {
+		& > .description {
+			@apply text-base-danger;
+		}
+		& > .checkboxes .checkbox-wrapper {
+			& > .checkbox-icon {
+				@apply text-white;
+				&::before {
+					@apply bg-base-danger;
+				}
+				&::after {
+					@apply border-base-danger;
+				}
+			}
+			& > .checkbox-label {
+				@apply text-base-danger;
+			}
+		}
+	}
+	/* Required */
+	&[data-required] > .checkbox-group-label::after,
+	&:has(input[type="checkbox"].checkbox:required) {
+		@apply content-['*'] text-base-danger ml-0.5;
+	}
+	/* Disabled */
+	&[data-disabled] > .checkboxes {
+		@apply opacity-50 pointer-events-none;
+	}
+	/* Horizontal */
+	&[data-orientation="horizontal"] > .checkboxes {
+		@apply flex-row;
+	}
+}
+
+/* Checkbox Styles */
 .checkbox-wrapper {
 	@apply flex items-center gap-2;
 	/* Active State */

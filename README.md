@@ -21,9 +21,9 @@ Utilize TailwindCSS for better customization.
 ### CDN 
 
 ```html 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.3.2/dist/all.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.4.0/dist/all.min.css" />
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.3.2/dist/all.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.4.0/dist/all.min.js" defer></script>
 ```
 
 ### Vite
@@ -34,17 +34,18 @@ npx tailwindcss init -p
 npm i luxeyui@latest
 ```
 
-## What's New in v0.3.2 & v0.3.3?
+## What's New in v0.4.0?
 
-**Input (Updated)**:
- - Adjusted the border width, `2.5px → 2px`
- - Adjusted the radius for `sizes` & `radiuses` 
- - Added the `helper-wrapper`
- - Added the `description` & `error-msg` for `helper-wrapper`
- - Added validation for the input to display error only when needed. 
- - Fixed and issue higher the colours of the borders doesn't appear on focus because of the specificity issue.
- - Added transparent background instead of just solid background, `bg-layout-background → bg-transparent`.
- - Added a gap between the content before / after the `input`, inside `inner-wrapper`, `gap-px → gap-1.5`.
+**New components**
+
+- **Progress**: Used to display the amount of progress.
+- **Scroll Shadow**: Used to display a shadow while scrolling. 
+- **KBD**: Used to display keyboard keys.
+- **Checkbox Group**: Used to display a list/group of checkboxes.
+
+**Fixed**
+
+- Changed `radio-group-label` color, `text-foreground/70 → text-default-700`.
 
 ## Documentation
 

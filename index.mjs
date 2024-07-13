@@ -13,9 +13,9 @@ const asciiLogo = `
 log(asciiLogo);
 log(
 	chalk.yellow(
-		"Thank you for installing LuxeyUi. For comprehensive documentation please visit"
+		"Thank you for installing LuxeyUI. For comprehensive documentation please visit"
 	),
 	chalk.blue.bold(
-		terminalLink("LuxeyUI documentaion", "https://luxeyui.vercel.app/docs")
+		terminalLink("LuxeyUI documentaion.", "https://luxeyui.vercel.app/docs")
 	)
 );

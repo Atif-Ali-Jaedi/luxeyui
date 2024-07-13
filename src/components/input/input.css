@@ -1,5 +1,5 @@
 .input-base {
-	@apply flex flex-col w-full;
+	@apply flex flex-col w-full max-w-xs;
 	/* Disabeld */
 	&:has(input:disabled) {
 		@apply opacity-50 pointer-events-none;

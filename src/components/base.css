@@ -3,7 +3,7 @@
 	font-family: "Inter", sans-serif;
 }
 :focus {
-	@apply outline outline-layout-focus outline-2;
+	@apply outline outline-layout-focus outline-[2.5px] outline-offset-[3px];
 }
 
 .ripple {

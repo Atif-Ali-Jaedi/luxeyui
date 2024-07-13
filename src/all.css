@@ -4,7 +4,6 @@
 @import "./components/typography.css";
 /* Component styles */
 
-
 @import "./components/avatar/avatar.css";
 @import "./components/accordion/accordion.css";
 @import "./components/badge/badge.css";
@@ -15,8 +14,11 @@
 @import "./components/code/code.css";
 @import "./components/divider/divider.css";
 @import "./components/input/input.css";
+@import "./components/kbd/kbd.css";
 @import "./components/link/link.css";
+@import "./components/progress/progress.css";
 @import "./components/radio/radio.css";
+@import "./components/scroll-shadow/scroll-shadow.css";
 @import "./components/switch/switch.css";
 @import "./components/skeleton/skeleton.css";
 @import "./components/textarea/textarea.css";

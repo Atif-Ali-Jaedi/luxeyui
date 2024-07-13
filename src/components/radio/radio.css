@@ -4,7 +4,7 @@
 	/* Base */
 	@apply flex flex-col gap-2;
 	& > .radio-group-label {
-		@apply text-base-foreground/70;
+		@apply text-default-500;
 	}
 	/* Radio Inputs */
 	& .radios {
