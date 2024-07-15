@@ -45,7 +45,7 @@
 	}
 
 	/* Indeterminate */
-	&[data-indeterminate] > .track > .indicator {
+	&[data-indeterminate] > .track .indicator {
 		@apply absolute w-full origin-left;
 		animation: indeterminate-bar 1.5s cubic-bezier(0.65, 0.815, 0.735, 0.395)
 			infinite normal none running;
@@ -57,7 +57,7 @@
 	}
 
 	/* Track */
-	&:not(&[data-indeterminate]) > .track {
+	& > .track {
 		@apply z-0 relative bg-default-300/50 overflow-hidden h-3 rounded-full;
 		& .indicator {
 			@apply h-full bg-base-foreground rounded-full;
@@ -105,7 +105,9 @@
 	}
 
 	/* Radius */
-	/* I tried using :is() here, but it didn't seem to work */
+	/* 
+	  # I tried using :is() here, but it didn't seem to work.
+	*/
 	&.radius-none > .track,
 	&.radius-none > .track .indicator {
 		@apply rounded-none;

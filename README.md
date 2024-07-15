@@ -34,7 +34,7 @@ npx tailwindcss init -p
 npm i luxeyui@latest
 ```
 
-## What's New in v0.4.0?
+## What's New in v0.4.0 and v0.4.1?
 
 **New components**
 
@@ -46,6 +46,7 @@ npm i luxeyui@latest
 **Fixed**
 
 - Changed `radio-group-label` color, `text-foreground/70 → text-default-700`.
+- Solved an specificity issue caused by the css `:not()` selector in the progress component, `&:not(&[data-indeterminate]) > .track → & > .track`.
 
 ## Documentation
 
