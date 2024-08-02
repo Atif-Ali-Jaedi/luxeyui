@@ -2,6 +2,8 @@ import "./components/avatar/avatar";
 import "./components/accordion/accordion";
 import "./components/button/button";
 import "./components/card/card";
+import "./components/circular-progress/circular-progress";
+import "./components/image/image";
 import "./components/input/input";
 import "./components/kbd/kbd";
 import "./components/link/link";

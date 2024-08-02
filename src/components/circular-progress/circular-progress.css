@@ -1,0 +1,87 @@
+.circular-progress {
+  @apply flex max-w-fit flex-col items-center justify-center gap-1;
+
+  /* Disabled */
+  &[data-disabled] {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  /* If not disabling animation */
+  &:not([data-disable-animation]) .svg-wrapper svg.progress .indicator {
+    @apply transition-all duration-500;
+  }
+
+  /* Indeterminate when not giving a value */
+  &:not(&[data-indeterminate="false"]) .svg-wrapper svg.progress {
+    @apply animate-[spinner-spin_ease_0.8s_infinite];
+  }
+
+  /* Wrapper Styles */
+  & .svg-wrapper {
+    @apply relative block;
+
+    /* SVG Styles */
+    & svg.progress {
+      @apply relative z-0 h-10 w-10 overflow-hidden text-base-foreground;
+
+      & .track {
+        @apply h-full stroke-default-300/50;
+      }
+
+      & .indicator {
+        @apply h-full stroke-current;
+      }
+    }
+    & .value {
+      @apply absolute inset-0 flex items-center justify-center text-[0.55rem] font-normal text-base-foreground;
+    }
+  }
+
+  /* Label of the progress */
+  & .progress-label {
+    @apply text-sm text-base-foreground;
+  }
+
+  /* Colors */
+  &.default .svg-wrapper svg.progress {
+    @apply text-default-400;
+  }
+  &.primary .svg-wrapper svg.progress {
+    @apply text-base-primary;
+  }
+  &.secondary .svg-wrapper svg.progress {
+    @apply text-base-secondary;
+  }
+  &.success .svg-wrapper svg.progress {
+    @apply text-base-success;
+  }
+  &.warning .svg-wrapper svg.progress {
+    @apply text-base-warning;
+  }
+  &.danger .svg-wrapper svg.progress {
+    @apply text-base-danger;
+  }
+
+  /* Sizes */
+  &.size-sm .svg-wrapper {
+    & svg.progress {
+      @apply h-8 w-8;
+    }
+    & .value {
+      @apply text-[0.5rem];
+    }
+  }
+  &.size-lg {
+    & .svg-wrapper {
+      & svg.progress {
+        @apply h-12 w-12;
+      }
+      & .value {
+        @apply text-[0.6rem];
+      }
+    }
+    & .progress-label {
+      @apply text-base;
+    }
+  }
+}

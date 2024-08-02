@@ -1,145 +1,146 @@
 .progress-base {
-	@apply flex flex-col gap-2 w-full max-w-sm;
+  @apply flex w-full max-w-sm flex-col gap-2;
 
-	/* Disabled state */
-	&[data-disabled] > .track {
-		@apply opacity-50 pointer-events-none;
-	}
+  /* Disabled state */
+  &[data-disabled] > .track {
+    @apply pointer-events-none opacity-50;
+  }
 
-	/* Striped */
-	&[data-striped] {
-		/* For foreground color */
-		&:not(&.default, &.primary, &.secondary, &.success, &.warning, &.danger)
-			> .track
-			.indicator {
-			background-image: linear-gradient(
-				45deg,
-				rgba(255, 255, 255, 0.15) 25%,
-				transparent 0px,
-				transparent 50%,
-				rgba(255, 255, 255, 0.15) 0px,
-				rgba(255, 255, 255, 0.15) 75%,
-				transparent 0px,
-				transparent
-			);
-			background-size: 1.25rem 1.25rem;
-			@apply dark:[background-image:linear-gradient(45deg,rgba(0,0,0,0.1)_25%,transparent_0px,transparent_50%,rgba(0,0,0,0.1)_0px,rgba(0,0,0,0.1)_75%,transparent_0px,transparent)];
-		}
-		/* For main colors */
-		& > .track .indicator {
-			background-image: linear-gradient(
-				45deg,
-				rgba(0, 0, 0, 0.1) 25%,
-				transparent 0px,
-				transparent 50%,
-				rgba(0, 0, 0, 0.1) 0px,
-				rgba(0, 0, 0, 0.1) 75%,
-				transparent 0px,
-				transparent
-			);
-			background-size: 1.25rem 1.25rem;
-		}
-		&.transparent > .track > .indicator {
-			@apply bg-transparent;
-		}
-	}
+  /* Striped */
+  &[data-striped] {
+    /* For foreground color */
+    &:not(
+        &.default,
+        &.primary,
+        &.secondary,
+        &.success,
+        &.warning,
+        &.danger,
+        &.transparent
+      )
+      > .track
+      .indicator {
+      background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 0px,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 0px,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 0px,
+        transparent
+      );
+      background-size: 1.25rem 1.25rem;
+      @apply dark:[background-image:linear-gradient(45deg,rgba(0,0,0,0.1)_25%,transparent_0px,transparent_50%,rgba(0,0,0,0.1)_0px,rgba(0,0,0,0.1)_75%,transparent_0px,transparent)];
+    }
+    /* For main colors */
+    & > .track .indicator {
+      background-image: linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.1) 25%,
+        transparent 0px,
+        transparent 50%,
+        rgba(0, 0, 0, 0.1) 0px,
+        rgba(0, 0, 0, 0.1) 75%,
+        transparent 0px,
+        transparent
+      );
+      background-size: 1.25rem 1.25rem;
+    }
+    /* For transparent ones */
+    &.transparent > .track .indicator {
+      @apply bg-transparent;
+      background-image: linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.175) 25%,
+        transparent 0px,
+        transparent 50%,
+        rgba(0, 0, 0, 0.175) 0px,
+        rgba(0, 0, 0, 0.175) 75%,
+        transparent 0px,
+        transparent
+      );
+    }
+  }
 
-	/* Indeterminate */
-	&[data-indeterminate] > .track .indicator {
-		@apply absolute w-full origin-left;
-		animation: indeterminate-bar 1.5s cubic-bezier(0.65, 0.815, 0.735, 0.395)
-			infinite normal none running;
-	}
+  /* Indeterminate */
+  &[data-indeterminate] > .track .indicator {
+    @apply absolute w-full origin-left;
+    animation: indeterminate-bar 1.5s cubic-bezier(0.65, 0.815, 0.735, 0.395)
+      infinite normal none running;
+  }
 
-	/* Label wrapper */
-	& > .label-wrapper {
-		@apply flex justify-between text-base-foreground;
-	}
+  /* Label wrapper */
+  & > .label-wrapper {
+    @apply flex justify-between text-base-foreground;
+  }
 
-	/* Track */
-	& > .track {
-		@apply z-0 relative bg-default-300/50 overflow-hidden h-3 rounded-full;
-		& .indicator {
-			@apply h-full bg-base-foreground rounded-full;
-			width: var(--_progress, 100%);
-			animation: progressing forwards 500ms cubic-bezier(0.4, 0, 0.2, 1);
-		}
-	}
+  /* Track */
+  & > .track {
+    @apply relative z-0 h-3 overflow-hidden rounded-full bg-default-300/50;
+    & .indicator {
+      @apply h-full rounded-full bg-base-foreground;
+      width: var(--_progress, 100%);
+      animation: progressing forwards 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
 
-	/* Colors */
-	&.default > .track .indicator {
-		@apply bg-default-400;
-	}
-	&.primary > .track .indicator {
-		@apply bg-base-primary;
-	}
-	&.secondary > .track .indicator {
-		@apply bg-base-secondary;
-	}
-	&.success > .track .indicator {
-		@apply bg-base-success;
-	}
-	&.warning > .track .indicator {
-		@apply bg-base-warning;
-	}
-	&.danger > .track .indicator {
-		@apply bg-base-danger;
-	}
+  /* Colors */
+  &.default > .track .indicator {
+    @apply bg-default-400;
+  }
+  &.primary > .track .indicator {
+    @apply bg-base-primary;
+  }
+  &.secondary > .track .indicator {
+    @apply bg-base-secondary;
+  }
+  &.success > .track .indicator {
+    @apply bg-base-success;
+  }
+  &.warning > .track .indicator {
+    @apply bg-base-warning;
+  }
+  &.danger > .track .indicator {
+    @apply bg-base-danger;
+  }
 
-	/* Sizes */
-	&.size-sm {
-		& > .label-wrapper > :is(.label, .value) {
-			@apply text-sm;
-		}
-		& > .track {
-			@apply h-1;
-		}
-	}
-	&.size-lg {
-		& > .label-wrapper > :is(.label, .value) {
-			@apply text-lg;
-		}
-		& > .track {
-			@apply h-5;
-		}
-	}
+  /* Sizes */
+  &.size-sm {
+    & > .label-wrapper > :is(.label, .value) {
+      @apply text-sm;
+    }
+    & > .track {
+      @apply h-1;
+    }
+  }
+  &.size-lg {
+    & > .label-wrapper > :is(.label, .value) {
+      @apply text-lg;
+    }
+    & > .track {
+      @apply h-5;
+    }
+  }
 
-	/* Radius */
-	/* 
+  /* Radius */
+  /* 
 	  # I tried using :is() here, but it didn't seem to work.
 	*/
-	&.radius-none > .track,
-	&.radius-none > .track .indicator {
-		@apply rounded-none;
-	}
-	&.radius-sm > .track,
-	&.radius-sm > .track .indicator {
-		@apply rounded-lg;
-	}
-	&.radius-md > .track,
-	&.radius-md > .track .indicator {
-		@apply rounded-xl;
-	}
-	&.radius-lg > .track,
-	&.radius-lg > .track .indicator {
-		@apply rounded-14;
-	}
-}
-
-@keyframes progressing {
-	from {
-		translate: -100% 0;
-	}
-	to {
-		translate: 0 0;
-	}
-}
-
-@keyframes indeterminate-bar {
-	0% {
-		transform: translateX(-50%) scaleX(0.2);
-	}
-	100% {
-		transform: translateX(100%) scaleX(1);
-	}
+  &.radius-none > .track,
+  &.radius-none > .track .indicator {
+    @apply rounded-none;
+  }
+  &.radius-sm > .track,
+  &.radius-sm > .track .indicator {
+    @apply rounded-lg;
+  }
+  &.radius-md > .track,
+  &.radius-md > .track .indicator {
+    @apply rounded-xl;
+  }
+  &.radius-lg > .track,
+  &.radius-lg > .track .indicator {
+    @apply rounded-14;
+  }
 }

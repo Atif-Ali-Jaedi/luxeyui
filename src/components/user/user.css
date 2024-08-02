@@ -1,18 +1,12 @@
 .user {
-	/*
-    Main
-  */
-	@apply inline-flex items-center justify-center gap-2;
-	/* 
-	  User Information
-	*/
-	& .user-info {
-		@apply inline-flex flex-col items-start;
-		& > .name {
-			@apply text-sm text-base-foreground;
-		}
-		& > .description {
-			@apply text-xs text-base-foreground/50;
-		}
-	}
+  @apply inline-flex items-center justify-center gap-2;
+  & .user-info {
+    @apply inline-flex flex-col items-start;
+    & > .name {
+      @apply text-sm text-base-foreground;
+    }
+    & > .description {
+      @apply text-xs text-base-foreground/50;
+    }
+  }
 }

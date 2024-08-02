@@ -1,9 +1,10 @@
 /* Base styles */
-@import "./components/base.css";
-@import "./components/theme.css";
-@import "./components/typography.css";
-/* Component styles */
+@import "./styles/base.css";
+@import "./styles/theme.css";
+@import "./styles/typography.css";
+@import "./styles/animations.css";
 
+/* Component styles */
 @import "./components/avatar/avatar.css";
 @import "./components/accordion/accordion.css";
 @import "./components/badge/badge.css";
@@ -11,16 +12,19 @@
 @import "./components/card/card.css";
 @import "./components/checkbox/checkbox.css";
 @import "./components/chip/chip.css";
+@import "./components/circular-progress/circular-progress.css";
 @import "./components/code/code.css";
 @import "./components/divider/divider.css";
+@import "./components/image/image.css";
 @import "./components/input/input.css";
 @import "./components/kbd/kbd.css";
 @import "./components/link/link.css";
 @import "./components/progress/progress.css";
 @import "./components/radio/radio.css";
 @import "./components/scroll-shadow/scroll-shadow.css";
-@import "./components/switch/switch.css";
 @import "./components/skeleton/skeleton.css";
+@import "./components/spinner/spinner.css";
+@import "./components/switch/switch.css";
 @import "./components/textarea/textarea.css";
 @import "./components/user/user.css";
 

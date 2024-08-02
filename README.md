@@ -1,29 +1,27 @@
-<img src="https://luxeyui.vercel.app/logo.png" alt="luxeyUI Logo" width="64"/>
-<br/>
-<img src="https://img.shields.io/npm/l/luxeyui?style=flat" alt="License"/>
+<p align="center">
+    <img src="https://luxeyui.vercel.app/logo.png" alt="luxeyUI Logo" width="64" />
+    <h1 align="center">LuxeyUI</h1>
+</p>
+<p align="center">
+    <img src="https://img.shields.io/npm/l/luxeyui?style=flat" alt="License" />
+    <img src="https://img.shields.io/npm/v/luxeyui?style=flat&logo=npm&label=version&color=lincolngreen" alt="NPM Version" />
+    <img src="https://img.shields.io/badge/downloads-1.8k+-malachite" alt="Downloads" />
+</p>
 
-# LuxeyUI
+A TailwindCSS UI component library built on top of PostCSS and TypeScript. It features components inspired by [shadcn-ui](https://ui-shadcn.com) and [@nextui-org](https://nextui.org), tailored for non-react use.
 
-LuxeyUI is a tailwindCSS UI component library built on top of PostCSS and
-TypeScript. It features components inspired by
-[shadcn-ui](https://ui-shadcn.com) and [@nextui-org](https://nextui.org),
-tailored for non-react use.
-
-> **Note:** This project is currently under development and is early access. Expect more components
-> to be added in the future. Stay tuned! 😀
+> **Note:** This project is early access. Expect some bugs to occur and more components to be added in the future.
 
 ## Getting Started
 
-To kick off, use the CDN for now since the components aren't usable
-individually. You can also use this library with VITE. Full functionality will be available after the 1st full release.
-Utilize TailwindCSS for better customization.
+To kick off, use the CDN for now since the components aren't usable individually. Utilize TailwindCSS for better customization. For full installation process, please visit [https://luxeyui.vercel.app/docs/installation](https://luxeyui.vercel.app/docs/installation).
 
 ### CDN 
 
 ```html 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.4.0/dist/all.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.5.0/dist/all.min.css" />
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.4.0/dist/all.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.5.0/dist/all.min.js" defer></script>
 ```
 
 ### Vite
@@ -34,24 +32,24 @@ npx tailwindcss init -p
 npm i luxeyui@latest
 ```
 
-## What's New in v0.4.0 and v0.4.1?
+## What's New in v0.5.0?
 
-**New components**
+### Bug fixed
 
-- **Progress**: Used to display the amount of progress.
-- **Scroll Shadow**: Used to display a shadow while scrolling. 
-- **KBD**: Used to display keyboard keys.
-- **Checkbox Group**: Used to display a list/group of checkboxes.
+- **Skeleton**: Now it has the full functionality with the attribute `data-loaded="true"`.
 
-**Fixed**
+### New components
 
-- Changed `radio-group-label` color, `text-foreground/70 → text-default-700`.
-- Solved an specificity issue caused by the css `:not()` selector in the progress component, `&:not(&[data-indeterminate]) > .track → & > .track`.
+- **Spinner**: Spinner express an unspecified wait time or display the length of a process.
+- **Circular Progress**: Circular progress indicators are utilized to indicate an undetermined wait period or visually represent the duration of a process.
+- **Image**: The Image component is used to display images with support for fallback.
+
+> **Note**: For the full list of changes, visit [https://luxeyui.vercel.app/docs/changelog](https://luxeyui.vercel.app/docs/changelog).
 
 ## Documentation
 
 For comprehensive documentation, visit
-[https://luxeyui.vercel.app](https://luxeyui.vercel.app).
+[https://luxeyui.vercel.app/introduction](https://luxeyui.vercel.app).
 
 ## License
 

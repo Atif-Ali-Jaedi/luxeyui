@@ -1,0 +1,86 @@
+.spinner {
+  /* Base Styles */
+  @apply relative inline-flex flex-col items-center justify-center gap-2;
+
+  /* Circle Wrapper Styles */
+  & .circle-wrapper {
+    @apply relative flex h-8 w-8;
+
+    /* Circle Styles */
+    & :is(.circle1, .circle2) {
+      @apply absolute h-full w-full rounded-full border-[3px] border-b-current border-l-transparent border-r-transparent border-t-transparent;
+    }
+    & .circle1 {
+      @apply animate-[spinner-spin_0.8s_ease_infinite] border-solid;
+    }
+    & .circle2 {
+      @apply animate-[spinner-spin_0.8s_linear_infinite] border-dotted opacity-75;
+    }
+  }
+
+  /* Label Styles */
+  & .spinner-label {
+    @apply font-normal text-base-foreground;
+
+    /* Label Colors */
+    &.primary {
+      @apply text-base-primary;
+    }
+    &.secondary {
+      @apply text-base-secondary;
+    }
+    &.success {
+      @apply text-base-success;
+    }
+    &.warning {
+      @apply text-base-warning;
+    }
+    &.danger {
+      @apply text-base-danger;
+    }
+  }
+
+  /* Sizes */
+  &.size-sm {
+    & .circle-wrapper {
+      @apply h-5 w-5;
+      & :is(.circle1, .circle2) {
+        @apply border-2;
+      }
+    }
+    & .spinner-label {
+      @apply text-sm;
+    }
+  }
+  &.size-lg {
+    & .circle-wrapper {
+      @apply h-10 w-10;
+    }
+    & .spinner-label {
+      @apply text-lg;
+    }
+  }
+
+  /* Colors */
+  &.white .circle-wrapper :is(.circle1, .circle2) {
+    @apply border-b-white;
+  }
+  &.default .circle-wrapper :is(.circle1, .circle2) {
+    @apply border-b-base-default;
+  }
+  &.primary .circle-wrapper :is(.circle1, .circle2) {
+    @apply border-b-base-primary;
+  }
+  &.secondary .circle-wrapper :is(.circle1, .circle2) {
+    @apply border-b-base-secondary;
+  }
+  &.success .circle-wrapper :is(.circle1, .circle2) {
+    @apply border-b-base-success;
+  }
+  &.warning .circle-wrapper :is(.circle1, .circle2) {
+    @apply border-b-base-warning;
+  }
+  &.danger .circle-wrapper :is(.circle1, .circle2) {
+    @apply border-b-base-danger;
+  }
+}

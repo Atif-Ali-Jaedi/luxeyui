@@ -1,29 +1,44 @@
 .skeleton {
-	@apply bg-default-200 dark:bg-content-2 bg-no-repeat inline-block relative overflow-hidden pointer-events-none;
-	background-image: linear-gradient(
-		to right,
-		transparent 0%,
-		hsl(var(--content-4)) 20%,
-		transparent 40%,
-		transparent 100%
-	);
-	background-size: 800px 100%;
-	animation: placeholderShimmer 2s linear infinite forwards;
-	.dark & {
-		background-image: linear-gradient(
-			to right,
-			transparent 0%,
-			hsla(var(--default-700) / 0.1) 20%,
-			transparent 40%,
-			transparent 100%
-		);
-	}
+  @apply pointer-events-none relative overflow-hidden bg-content-3 transition-[background] duration-300 dark:bg-content-2;
+
+  /* Loaded State */
+  &[data-loaded="true"] {
+    @apply pointer-events-auto overflow-visible !bg-transparent;
+    &::before {
+      @apply animate-none opacity-0;
+    }
+    &::after {
+      @apply opacity-0;
+    }
+    & > .content {
+      @apply opacity-100;
+    }
+  }
+
+  & > .content {
+    @apply opacity-0 transition-opacity duration-300;
+  }
+
+  &[data-disable-animation] {
+    &::before {
+      @apply animate-none;
+    }
+    &::before,
+    &::after,
+    & > .content {
+      @apply transition-none;
+    }
+  }
 }
-@keyframes placeholderShimmer {
-	0% {
-		background-position: -468px 0;
-	}
-	100% {
-		background-position: 468px 0;
-	}
+
+/* For image and this component */
+.skeleton,
+/* If not using data-disable-skeleton or img-wrapper has img with data-loaded="true" */ 
+.img-wrapper:not([data-disable-skeleton], :has(img[data-loaded="true"])) {
+  &::before {
+    @apply absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] border-t border-content-4/30 bg-gradient-to-r from-transparent via-content-4 to-transparent opacity-100 transition-opacity duration-300 content-[''] dark:via-[theme(colors.default.700_/_10%)];
+  }
+  &::after {
+    @apply absolute inset-0 -z-10 bg-content-3 opacity-100 content-[''] dark:bg-content-2;
+  }
 }
