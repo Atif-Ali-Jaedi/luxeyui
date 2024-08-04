@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/downloads-1.8k+-malachite" alt="Downloads" />
 </p>
 
-A TailwindCSS UI component library built on top of PostCSS and TypeScript. It features components inspired by [shadcn-ui](https://ui-shadcn.com) and [@nextui-org](https://nextui.org), tailored for non-react use.
+A TailwindCSS UI component library built on top of PostCSS and TypeScript. It features components inspired by [shadcn/ui](https://ui.shadcn.com) and [@nextui-org](https://nextui.org), tailored for non-react use.
 
 > **Note:** This project is early access. Expect some bugs to occur and more components to be added in the future.
 
@@ -19,9 +19,9 @@ To kick off, use the CDN for now since the components aren't usable individually
 ### CDN 
 
 ```html 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.5.0/dist/all.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.5.1/dist/all.min.css" />
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.5.0/dist/all.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.5.1/dist/all.min.js" defer></script>
 ```
 
 ### Vite
@@ -32,11 +32,11 @@ npx tailwindcss init -p
 npm i luxeyui@latest
 ```
 
-## What's New in v0.5.0?
+## What's New in v0.5.0 & v0.5.1?
 
 ### Bug fixed
 
-- **Skeleton**: Now it has the full functionality with the attribute `data-loaded="true"`.
+- **Skeleton**: Now it has the full functionality with the attribute `data-loaded="true"`. Solved the specificity issue where `data-loaded="true"` didn't work on the `::before` and `::after`. 
 
 ### New components
 

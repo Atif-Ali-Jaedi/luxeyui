@@ -1,4 +1,4 @@
-.skeleton {
+.skeleton.skeleton {
   @apply pointer-events-none relative overflow-hidden bg-content-3 transition-[background] duration-300 dark:bg-content-2;
 
   /* Loaded State */
