@@ -1,25 +1,129 @@
-.accordions > .accordion {
-	@apply text-base-foreground;
-	&:not(:last-child) {
-		@apply border-b border-base-default;
-	}
-	&[data-disabled] {
-		@apply pointer-events-none opacity-50;
-	}
-	&:has(.accordion-body.active) > .accordion-header > .indicator {
-		@apply -rotate-90;
-	}
-	& > .accordion-header {
-		@apply flex items-center text-lg justify-between py-5;
-		& > .indicator {
-			@apply transition-all duration-300 text-base-default;
-		}
-	}
-	& > .accordion-body {
-		--_height: 0;
-		@apply relative overflow-y-hidden h-0 opacity-0 pointer-events-none transition-all duration-300;
-		&.active {
-			@apply pointer-events-auto opacity-100 h-[--_height];
-		}
-	}
+.accordion {
+    @apply w-full px-2;
+
+    /* Disabled */
+    &[data-disabled] {
+        @apply pointer-events-none opacity-50;
+    }
+
+    /* Hide All Indicators */
+    &[data-hide-indicator] .trigger .indicator {
+        @apply hidden;
+    }
+
+    /* Compact Mode */
+    &[data-compact] .accordion-item {
+        & .trigger {
+            @apply py-2;
+        }
+        & .title-wrapper .title,
+        & .indicator {
+            @apply text-base;
+        }
+        & section .content::before,
+        & section .content::after {
+            @apply h-1;
+        }
+    }
+
+    /* If not Disabling Animation */
+    &:not(&[data-disable-animation]) .accordion-item {
+        & .trigger {
+            @apply transition-opacity;
+            & .indicator {
+                @apply transition-transform;
+            }
+        }
+    }
+
+    /* If Disabling Animation */
+    &[data-disable-animation] .accordion-item {
+        & section {
+            @apply hidden;
+        }
+        &[data-open="true"] section {
+            @apply block;
+        }
+    }
+
+    /* If disabling indicator animation */
+    &[disable-indicator-animation] .accordion-item .trigger .indicator {
+        @apply transition-none;
+    }
+
+    /* Variants */
+    &.shadow {
+        @apply rounded-xl bg-content-1 px-4 shadow-md;
+    }
+    &.bordered {
+        @apply rounded-xl border-2 border-layout-divider px-4;
+    }
+    &.splitted {
+        @apply flex flex-col gap-2;
+        & .accordion-item {
+            @apply rounded-xl bg-content-1 px-4 shadow-md;
+        }
+    }
+
+    & .accordion-item {
+        /* Disabled */
+        &[data-disabled] {
+            @apply pointer-events-none opacity-50;
+        }
+
+        /* Hide Indicator */
+        &[data-hide-indicator] .trigger .indicator {
+            @apply hidden;
+        }
+
+        /* Opened */
+        &[data-open="true"] {
+            & .trigger .indicator {
+                @apply -rotate-90;
+            }
+            & section {
+                @apply opacity-100;
+                grid-template-rows: 1fr;
+            }
+        }
+
+        & .trigger {
+            @apply flex h-full w-full items-center gap-3 py-4 outline-none [-webkit-tap-highlight-color:transparent];
+
+            & .start-content {
+                @apply flex-shrink-0;
+            }
+
+            & .indicator {
+                @apply rotate-0 text-default-400 rtl:-rotate-180;
+            }
+
+            & .title-wrapper {
+                @apply flex flex-1 flex-col text-start;
+
+                & .title {
+                    @apply text-lg text-base-foreground;
+                }
+
+                & .subtitle {
+                    @apply text-sm font-normal text-default-500;
+                }
+            }
+        }
+        & section {
+            @apply grid opacity-0;
+            grid-template-rows: 0fr;
+            transition:
+                grid-template-rows 350ms,
+                opacity 300ms;
+
+            & .content {
+                @apply overflow-y-hidden;
+                &::before,
+                &::after {
+                    @apply block h-2 content-[''];
+                }
+            }
+        }
+    }
 }

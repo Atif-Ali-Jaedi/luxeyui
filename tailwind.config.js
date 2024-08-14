@@ -8,7 +8,7 @@ module.exports = {
 				layout: {
 					background: "hsla(var(--layout-background) / <alpha-value>)",
 					foreground: "hsla(var(--layout-foreground) / <alpha-value>)",
-					divider: "hslaa(var(--layout-divider))",
+					divider: "hsla(var(--layout-divider))",
 					focus: "hsla(var(--layout-focus) / <alpha-value>)"
 				},
 				content: {

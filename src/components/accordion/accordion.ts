@@ -1,36 +1,32 @@
 document
-	.querySelectorAll<HTMLDivElement>(".accordions > .accordion")
-	.forEach(a => {
-		const header = a.querySelector<HTMLDivElement>(".accordion-header");
-		const body = a.querySelector<HTMLDivElement>(".accordion-body");
-		if (body && header) {
-			const selectionMode = a.parentElement?.getAttribute(
-				"data-selection-mode"
-			);
-			if (
-				(selectionMode && selectionMode === "single") ||
-				body.classList.contains("active")
-			)
-				body.style.setProperty("--_height", `${body.scrollHeight + 12}px`);
-		
-			header.addEventListener("click", () => {
-				if (selectionMode && selectionMode === "single") {
-					document
-						.querySelectorAll<HTMLDivElement>(".accordion > .accordion-body")
-						.forEach(t => {
-							if (t !== body) {
-								t.classList.remove("active");
-								t.style.setProperty("--_height", "0");
-							}
-						});
-				}
-				body.classList.toggle("active");
-				body.style.setProperty(
-					"--_height",
-					`${
-						body.classList.contains("active") ? body.scrollHeight + 12 : "0"
-					}px`
-				);
-			});
-		}
-	});
+    .querySelectorAll<HTMLDivElement>(".accordion > .accordion-item")
+    .forEach((item, index, items) => {
+        item
+            .querySelector<HTMLButtonElement>(".trigger")
+            ?.addEventListener("click", () => {
+                let toggled = item.getAttribute("data-open") === "true";
+                toggled = !toggled;
+                // For single selection
+                item.parentElement?.getAttribute("data-selection-mode") ===
+                    "single" &&
+                    document
+                        .querySelectorAll<HTMLDivElement>(
+                            ".accordion > .accordion-item",
+                        )
+                        .forEach((otherItem) =>
+                            otherItem.setAttribute("data-open", "false"),
+                        );
+
+                item.setAttribute("data-open", toggled ? "true" : "false");
+            });
+        // Add <hr> after each item except the last one
+        if (
+            !item.parentElement?.classList.contains("splitted") &&
+            index < items.length - 1
+        ) {
+            const divider = document.createElement("hr");
+            divider.className = "divider";
+            divider.style.marginBlock = "0";
+            item.insertAdjacentElement("afterend", divider);
+        }
+    });

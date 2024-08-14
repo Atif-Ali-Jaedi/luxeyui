@@ -1,6 +1,6 @@
 .divider {
-	@apply shrink-0 bg-base-default border-none w-full h-px my-4;
-	&[data-orientation="vertical"] {
-		@apply mx-4 my-0 h-full w-px;
-	}
+    @apply my-4 h-px w-full shrink-0 border-none bg-layout-divider;
+    &[data-orientation="vertical"] {
+        @apply mx-4 my-0 h-full w-px;
+    }
 }
