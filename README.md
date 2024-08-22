@@ -5,7 +5,7 @@
 <p align="center">
     <img src="https://img.shields.io/npm/l/luxeyui?style=flat" alt="License" />
     <img src="https://img.shields.io/npm/v/luxeyui?style=flat&logo=npm&label=version&color=lincolngreen" alt="NPM Version" />
-    <img src="https://img.shields.io/badge/downloads-2.3k+-malachite" alt="Downloads" />
+    <img src="https://img.shields.io/badge/downloads-2.5k+-malachite" alt="Downloads" />
 </p>
 
 A TailwindCSS UI component library built on top of PostCSS and TypeScript. It features components inspired by [shadcn/ui](https://ui.shadcn.com) and [@nextui-org](https://nextui.org), tailored for non-react use.
@@ -16,33 +16,28 @@ A TailwindCSS UI component library built on top of PostCSS and TypeScript. It fe
 
 To kick off, use the CDN for now since the components aren't usable individually. Utilize TailwindCSS for better customization. For full installation process, please visit [https://luxeyui.vercel.app/docs/installation](https://luxeyui.vercel.app/docs/installation).
 
-### CDN 
+### CDN
 
-```html 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.5.2/dist/all.min.css" />
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.5.3/dist/all.min.css"
+/>
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.5.2/dist/all.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.5.3/dist/all.min.js" defer></script>
 ```
 
 ### Vite
 
 ```bash
 npm i -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p 
+npx tailwindcss init -p
 npm i luxeyui@latest
 ```
 
-## What's New in v0.5.2?
+## What's New in v0.5.3?
 
-### Bug fixes
-
-- Removed an typo in `tailwind.config.js` where because of that the divider color does not work. 
-```diff
-+ divider: "hsla(var(--layout-divider))",
-- divider: "hslaa(var(--layout-divider))",
-```
-- Changed the divider color, `bg-base-default` to `bg-layout-divider`.
-- **Accordion**: Completely reworked and added features such as variants, disability, toggling, etc.
+-   **Accordion**: Reworked on the variants.
+-   **Avatar**: Completely reworked and now it has full functionality with all the necessary features.
+-   Added `cursor-pointer` in the Switch component.
 
 > **Note**: For the full list of changes, visit [https://luxeyui.vercel.app/docs/changelog](https://luxeyui.vercel.app/docs/changelog).
 

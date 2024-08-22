@@ -10,26 +10,42 @@
         <script src="./dist/all.min.js" defer></script>
         <style>
             body {
-                display: grid;
-                place-items: center;
                 min-height: 100vh;
+                padding: 2em;
             }
+            .main-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 1em;
+
+                label {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5em;
+                }
+            }
+
             .wrapper {
                 padding: 2.5em;
                 border-radius: 1em;
-                border: solid #aaa 1px;
+                border: solid #919191 1px;
                 display: flex;
                 flex-wrap: wrap;
                 gap: 1em;
-                width: min(100% - 2.5em, 600px);
             }
         </style>
     </head>
     <body class="bg-layout-background">
-        <input type="checkbox" class="switch primary" id="tdm" />
+        <header class="main-header">
+            <h3 class="h3">Testings</h3>
+            <label for="tdm" class="label">
+                Dark Mode
+                <input type="checkbox" class="switch primary" id="tdm" />
+            </label>
+        </header>
         <div class="wrapper">
             <!-- All the testings here -->
-           
         </div>
         <script>
             document

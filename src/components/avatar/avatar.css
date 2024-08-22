@@ -1,149 +1,99 @@
+/* Avatar group styles */
 .avatar-group {
-	@apply flex items-center;
+    @apply flex h-auto w-max items-center justify-center;
 
-	&[data-disabled] > .avatar {
-		@apply opacity-50 pointer-events-none;
-	}
-	&[data-grid] {
-		@apply justify-center h-auto w-max inline-grid grid-cols-4 gap-3;
-		& .avatar {
-			@apply ml-0;
-		}
-	}
-	&.outlined {
-		&.foreground > .avatar {
-			@apply ring-base-foreground;
-		}
-		&.primary > .avatar {
-			@apply ring-base-primary;
-		}
-		&.secondary > .avatar {
-			@apply ring-base-secondary;
-		}
-		&.success > .avatar {
-			@apply ring-base-success;
-		}
-		&.warning > .avatar {
-			@apply ring-base-warning;
-		}
-		&.danger > .avatar {
-			@apply ring-base-danger;
-		}
-		& .avatar {
-			@apply ring-2 ring-base-default ring-offset-2 ring-offset-layout-background;
-		}
-	}
-	/* Radius */
-	&.radius-sm .avatar {
-		@apply rounded-lg;
-	}
-	&.radius-md .avatar {
-		@apply rounded-xl;
-	}
-	&.radius-lg .avatar {
-		@apply rounded-[14px];
-	}
-	/* Sizes */
-	&.size-sm .avatar {
-		@apply w-8 h-8;
-	}
-	&.size-lg .avatar {
-		@apply w-14 h-14;
-	}
-	/* Colors */
-	&.foreground .avatar {
-		@apply bg-base-foreground text-layout-background;
-	}
-	&.primary .avatar {
-		@apply bg-base-primary text-white;
-	}
-	&.secondary .avatar {
-		@apply bg-base-secondary text-white;
-	}
-	&.success .avatar {
-		@apply bg-base-success text-black;
-	}
-	&.warning .avatar {
-		@apply bg-base-warning text-black;
-	}
-	&.danger .avatar {
-		@apply bg-base-danger text-white;
-	}
+    & .avatar {
+        @apply -ms-2 transition-transform duration-300 hover:-translate-x-3 focus-visible:-translate-x-3;
+    }
 
-	& .avatar {
-		@apply -ml-2;
-	}
+    &[data-grid] {
+        @apply inline-grid grid-cols-4 gap-3;
+
+        & .avatar {
+            @apply m-0 hover:translate-x-0 focus-visible:translate-x-0;
+        }
+    }
 }
 
+/* Avatar Styles */
 .avatar {
-	@apply w-10 h-10 rounded-full bg-base-default grid place-items-center text-base-foreground text-xs;
+    @apply relative z-0 box-border flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-base-default align-middle text-xs text-base-foreground;
 
-	/* Sizes */
-	&.size-sm {
-		@apply w-8 h-8;
-	}
-	&.size-lg {
-		@apply w-14 h-14;
-	}
+    /* Disabled */
+    &[data-disabled] {
+        @apply opacity-50;
+    }
 
-	/* Radius */
-	&.radius-sm {
-		@apply rounded-lg;
-	}
-	&.radius-md {
-		@apply rounded-xl;
-	}
-	&.radius-lg {
-		@apply rounded-[14px];
-	}
+    /* Disabling Animation */
+    &[data-disable-animation],
+    &[data-disable-animation] img {
+        @apply transition-none;
+    }
 
-	/* Disabled */
-	&[data-disabled] {
-		@apply opacity-50 pointer-events-none;
-	}
+    /* Bordered */
+    &[data-bordered] {
+        @apply ring-2 ring-base-default ring-offset-2 ring-offset-layout-background;
+    }
 
-	/* Colors */
-	&.foreground {
-		@apply bg-base-foreground text-layout-background;
-	}
-	&.primary {
-		@apply bg-base-primary text-white;
-	}
-	&.secondary {
-		@apply bg-base-secondary text-white;
-	}
-	&.success {
-		@apply bg-base-success text-black;
-	}
-	&.warning {
-		@apply bg-base-warning text-black;
-	}
-	&.danger {
-		@apply bg-base-danger text-white;
-	}
-	& > img {
-		@apply rounded-[inherit] w-full h-full object-cover;
-		aspect-ratio: 1 / 1;
-	}
-	&.outlined {
-		@apply ring-2 ring-base-default ring-offset-2 ring-offset-layout-background;
-		&.foreground {
-			@apply ring-base-foreground;
-		}
-		&.primary {
-			@apply ring-base-primary;
-		}
-		&.secondary {
-			@apply ring-base-secondary;
-		}
-		&.success {
-			@apply ring-base-success;
-		}
-		&.warning {
-			@apply ring-base-warning;
-		}
-		&.danger {
-			@apply ring-base-danger;
-		}
-	}
+    /* Avatar Image */
+    & img {
+        @apply z-[2] flex h-full w-full object-cover opacity-0 transition-opacity !duration-500 data-[loaded=true]:opacity-100;
+    }
+
+    /* Avtar name */
+    & .name {
+        @apply absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center;
+    }
+
+    /* Icon */
+    & .icon {
+        @apply absolute left-1/2 top-1/2 flex h-full w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center text-inherit;
+    }
+
+    /* Fallback */
+    & .fallback {
+        @apply absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center;
+    }
+
+    /* Sizes */
+    &.size-sm {
+        @apply h-8 w-8;
+    }
+    &.size-sm {
+        @apply h-14 w-14 text-sm;
+    }
+
+    /* Radius */
+    &.radius-none {
+        @apply rounded-none;
+    }
+    &.radius-sm {
+        @apply rounded-lg;
+    }
+    &.radius-md {
+        @apply rounded-xl;
+    }
+    &.radius-lg {
+        @apply rounded-14;
+    }
+
+    /* Colors */
+    &.foreground {
+        @apply bg-base-foreground text-layout-background ring-base-foreground;
+    }
+    &.primary {
+        @apply bg-base-primary text-white ring-base-primary;
+    }
+    &.secondary {
+        @apply bg-base-secondary text-white ring-base-secondary;
+    }
+    &.success {
+        @apply bg-base-success text-black ring-base-success;
+    }
+    &.warning {
+        @apply bg-base-warning text-black ring-base-warning;
+    }
+    &.danger {
+        @apply bg-base-danger text-white ring-base-danger;
+    }
 }

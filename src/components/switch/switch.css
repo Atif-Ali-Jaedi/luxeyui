@@ -1,55 +1,55 @@
 input[type="checkbox"].switch {
-	/*
+    /*
     Basic styles 
   */
-	@apply appearance-none bg-default-200 mr-2 w-12 h-7 rounded-full transition-all duration-300 relative;
-	&:checked {
-		@apply bg-default-400;
-		&::before {
-			@apply translate-x-full origin-right;
-		}
-	}
-	/* Active stretching */
-	&:active::before {
-		@apply scale-x-105;
-	}
-	/* Sizes */
-	&.size-sm {
-		@apply w-10 h-6;
-	}
-	&.size-lg {
-		@apply w-14 h-8;
-	}
+    @apply relative mr-2 h-7 w-12 cursor-pointer appearance-none rounded-full bg-default-200 transition-all duration-300;
+    &:checked {
+        @apply bg-default-400;
+        &::before {
+            @apply origin-right translate-x-full;
+        }
+    }
+    /* Active stretching */
+    &:active::before {
+        @apply scale-x-105;
+    }
+    /* Sizes */
+    &.size-sm {
+        @apply h-6 w-10;
+    }
+    &.size-lg {
+        @apply h-8 w-14;
+    }
 
-	/* Colors */
-	&.foreground:checked {
-		@apply bg-base-foreground dark:bg-content-2;
-	}
-	&.primary:checked {
-		@apply bg-base-primary;
-	}
-	&.secondary:checked {
-		@apply bg-base-secondary;
-	}
-	&.success:checked {
-		@apply bg-base-success;
-	}
-	&.warning:checked {
-		@apply bg-base-warning;
-	}
-	&.danger:checked {
-		@apply bg-base-danger;
-	}
+    /* Colors */
+    &.foreground:checked {
+        @apply bg-base-foreground dark:bg-content-2;
+    }
+    &.primary:checked {
+        @apply bg-base-primary;
+    }
+    &.secondary:checked {
+        @apply bg-base-secondary;
+    }
+    &.success:checked {
+        @apply bg-base-success;
+    }
+    &.warning:checked {
+        @apply bg-base-warning;
+    }
+    &.danger:checked {
+        @apply bg-base-danger;
+    }
 
-	/* Disabled */
-	&[data-disabled] {
-		@apply pointer-events-none opacity-50;
-	}
+    /* Disabled */
+    &[data-disabled] {
+        @apply pointer-events-none opacity-50;
+    }
 
-	/* 
+    /* 
     Circle
   */
-	&::before {
-		@apply content-[''] absolute w-[calc((100%-0.5em)/2)] h-[calc(100%-0.5em)] rounded-full top-1/2 -translate-y-1/2 transition-all duration-300 left-[0.225em] bg-white shadow-sm origin-left;
-	}
+    &::before {
+        @apply absolute left-[0.225em] top-1/2 h-[calc(100%-0.5em)] w-[calc((100%-0.5em)/2)] origin-left -translate-y-1/2 rounded-full bg-white shadow-sm transition-all duration-300 content-[''];
+    }
 }
