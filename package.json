@@ -1,71 +1,71 @@
 {
-  "name": "luxeyui",
-  "version": "0.5.2",
-  "description": "LuxeyUI is a tailwindCSS UI component library built on top of PostCSS and TypeScript for basic use. It features components inspired by shadcn-ui and @nextui-org, tailored for non-react use.",
-  "main": "index.mjs",
-  "scripts": {
-    "postinstall": "node index.mjs",
-    "build:js": "esbuild src/index.ts --bundle --outfile=dist/all.min.js --watch=forever --minify & tsc -noEmit --watch",
-    "build:css": "postcss src/index.css -o dist/all.min.css --watch",
-    "prepare": "husky install",
-    "lint": "eslint 'src/components/**/*.{ts,tsx}'",
-    "format": "prettier --write 'src/**/*.{ts,tsx,css}'",
-    "test": "jest --passWithNoTests",
-    "prepublish": "node move-index.js"
-  },
-  "keywords": [
-    "css",
-    "ui",
-    "ui library",
-    "tailwindcss",
-    "typescript",
-    "tailwindcss ui library"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Atif-Ali-Jaedi/luxeyui.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Atif-Ali-Jaedi/luxeyui/issues"
-  },
-  "author": "Atif Ali Jaedi <atifalijaedi@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://luxeyui.vercel.app",
-  "devDependencies": {
-    "@commitlint/cli": "^19.3.0",
-    "@commitlint/config-conventional": "^19.2.2",
-    "@types/jest": "^29.5.12",
-    "@types/node": "^22.0.0",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "autoprefixer": "^10.4.19",
-    "commitizen": "^4.3.0",
-    "cssnano": "^7.0.4",
-    "cz-conventional-changelog": "^3.3.0",
-    "esbuild": "^0.23.0",
-    "esbuild-plugin-tsc": "^0.4.0",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.1",
-    "husky": "^8.0.0",
-    "jest": "^29.7.0",
-    "lint-staged": "^15.2.7",
-    "postcss": "^8.4.40",
-    "postcss-cli": "^11.0.0",
-    "postcss-import": "^16.1.0",
-    "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.5",
-    "tailwindcss": "^3.4.7",
-    "ts-jest": "^29.2.3",
-    "typescript": "^5.5.4"
-  },
-  "dependencies": {
-    "chalk": "^5.3.0",
-    "terminal-link": "^3.0.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+    "name": "luxeyui",
+    "version": "0.5.4",
+    "description": "LuxeyUI is a tailwindCSS UI component library built on top of PostCSS and TypeScript for basic use. It features components inspired by shadcn-ui and @nextui-org, tailored for non-react use.",
+    "main": "index.mjs",
+    "scripts": {
+        "postinstall": "node index.mjs",
+        "build:js": "esbuild src/index.ts --bundle --outfile=dist/all.min.js --watch=forever --minify & tsc -noEmit --watch",
+        "build:css": "postcss src/index.css -o dist/all.min.css --watch",
+        "prepare": "husky install",
+        "lint": "eslint 'src/components/**/*.{ts,tsx}'",
+        "format": "prettier --write 'src/**/*.{ts,tsx,css}'",
+        "test": "jest --passWithNoTests",
+        "prepublish": "node move-index.js"
+    },
+    "keywords": [
+        "css",
+        "ui",
+        "ui library",
+        "tailwindcss",
+        "typescript",
+        "tailwindcss ui library"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Atif-Ali-Jaedi/luxeyui.git"
+    },
+    "bugs": {
+        "url": "https://github.com/Atif-Ali-Jaedi/luxeyui/issues"
+    },
+    "author": "Atif Ali Jaedi <atifalijaedi@gmail.com>",
+    "license": "MIT",
+    "homepage": "https://luxeyui.vercel.app",
+    "devDependencies": {
+        "@commitlint/cli": "^19.3.0",
+        "@commitlint/config-conventional": "^19.2.2",
+        "@types/jest": "^29.5.12",
+        "@types/node": "^22.0.0",
+        "@typescript-eslint/eslint-plugin": "^7.18.0",
+        "autoprefixer": "^10.4.19",
+        "commitizen": "^4.3.0",
+        "cssnano": "^7.0.4",
+        "cz-conventional-changelog": "^3.3.0",
+        "esbuild": "^0.23.0",
+        "esbuild-plugin-tsc": "^0.4.0",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-import-resolver-typescript": "^3.6.1",
+        "eslint-plugin-import": "^2.29.1",
+        "husky": "^8.0.0",
+        "jest": "^29.7.0",
+        "lint-staged": "^15.2.7",
+        "postcss": "^8.4.40",
+        "postcss-cli": "^11.0.0",
+        "postcss-import": "^16.1.0",
+        "prettier": "^3.3.3",
+        "prettier-plugin-tailwindcss": "^0.6.5",
+        "tailwindcss": "^3.4.7",
+        "ts-jest": "^29.2.3",
+        "typescript": "^5.5.4"
+    },
+    "dependencies": {
+        "chalk": "^5.3.0",
+        "terminal-link": "^3.0.0"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     }
-  }
 }

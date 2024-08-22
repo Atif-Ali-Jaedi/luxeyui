@@ -2,6 +2,11 @@
 .avatar-group {
     @apply flex h-auto w-max items-center justify-center;
 
+    /* Disabled */
+    &[data-disabled] .avatar {
+        @apply opacity-50 hover:translate-x-0 focus-visible:translate-x-0;
+    }
+
     & .avatar {
         @apply -ms-2 transition-transform duration-300 hover:-translate-x-3 focus-visible:-translate-x-3;
     }
@@ -59,7 +64,7 @@
     &.size-sm {
         @apply h-8 w-8;
     }
-    &.size-sm {
+    &.size-lg {
         @apply h-14 w-14 text-sm;
     }
 

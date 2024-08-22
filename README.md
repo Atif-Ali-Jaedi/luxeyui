@@ -19,10 +19,10 @@ To kick off, use the CDN for now since the components aren't usable individually
 ### CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.5.3/dist/all.min.css"
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.5.4/dist/all.min.css"
 />
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.5.3/dist/all.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.5.4/dist/all.min.js" defer></script>
 ```
 
 ### Vite
@@ -33,10 +33,11 @@ npx tailwindcss init -p
 npm i luxeyui@latest
 ```
 
-## What's New in v0.5.3?
+## What's New in v0.5.3 & v0.5.4?
 
 -   **Accordion**: Reworked on the variants.
 -   **Avatar**: Completely reworked and now it has full functionality with all the necessary features.
+-   Added the disability option to the `avatar-group` and fixed the sizes of the `avatar`.
 -   Added `cursor-pointer` in the Switch component.
 
 > **Note**: For the full list of changes, visit [https://luxeyui.vercel.app/docs/changelog](https://luxeyui.vercel.app/docs/changelog).
