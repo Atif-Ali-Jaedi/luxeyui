@@ -1,44 +1,18 @@
-input[type="checkbox"].switch {
-    /*
-    Basic styles 
-  */
-    @apply relative mr-2 h-7 w-12 cursor-pointer appearance-none rounded-full bg-default-200 transition-all duration-300;
-    &:checked {
-        @apply bg-default-400;
-        &::before {
-            @apply origin-right translate-x-full;
-        }
-    }
-    /* Active stretching */
-    &:active::before {
-        @apply scale-x-105;
-    }
-    /* Sizes */
-    &.size-sm {
-        @apply h-6 w-10;
-    }
-    &.size-lg {
-        @apply h-8 w-14;
-    }
+.switch {
+    @apply relative inline-flex max-w-fit cursor-pointer touch-none select-none items-center justify-start [-webkit-tap-highlight-color:transparent];
 
-    /* Colors */
-    &.foreground:checked {
-        @apply bg-base-foreground dark:bg-content-2;
-    }
-    &.primary:checked {
-        @apply bg-base-primary;
-    }
-    &.secondary:checked {
-        @apply bg-base-secondary;
-    }
-    &.success:checked {
-        @apply bg-base-success;
-    }
-    &.warning:checked {
-        @apply bg-base-warning;
-    }
-    &.danger:checked {
-        @apply bg-base-danger;
+    /* Hidden Input */
+    & > span:has(input) {
+        border: 0px;
+        clip: rect(0px, 0px, 0px, 0px);
+        clip-path: inset(50%);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0px;
+        position: absolute;
+        width: 1px;
+        white-space: nowrap;
     }
 
     /* Disabled */
@@ -46,10 +20,151 @@ input[type="checkbox"].switch {
         @apply pointer-events-none opacity-50;
     }
 
-    /* 
-    Circle
-  */
-    &::before {
-        @apply absolute left-[0.225em] top-1/2 h-[calc(100%-0.5em)] w-[calc((100%-0.5em)/2)] origin-left -translate-y-1/2 rounded-full bg-white shadow-sm transition-all duration-300 content-[''];
+    /* If disabling animation */
+    &[data-disable-animation] :is(.main-wrapper, .main-wrapper .thumb) {
+        @apply transition-none;
+    }
+
+    /* If not disabling animation */
+    &:not([data-disable-animation]) {
+        &:active {
+            & .main-wrapper .thumb {
+                @apply w-6;
+            }
+            &:has(input[type="checkbox"]:checked) .main-wrapper .thumb {
+                @apply ml-4;
+            }
+        }
+
+        &.size-sm:active {
+            & .main-wrapper .thumb {
+                @apply w-5;
+            }
+            &:has(input[type="checkbox"]:checked) .main-wrapper .thumb {
+                @apply ml-3;
+            }
+        }
+
+        &.size-lg:active {
+            & .main-wrapper .thumb {
+                @apply w-7;
+            }
+            &:has(input[type="checkbox"]:checked) .main-wrapper .thumb {
+                @apply ml-5;
+            }
+        }
+
+        & .main-wrapper {
+            @apply transition-colors duration-300;
+
+            & .thumb {
+                @apply transition-all duration-300;
+            }
+
+            & .start-content {
+                @apply scale-50 opacity-0 transition-[transform,opacity] duration-300;
+            }
+
+            & .end-content {
+                @apply opacity-100 transition-[transform,opacity] duration-300;
+            }
+        }
+    }
+
+    /* Checked State */
+    &:has(input[type="checkbox"]:checked) .main-wrapper {
+        @apply bg-base-foreground text-white dark:bg-content-2;
+
+        & .thumb {
+            @apply ml-5;
+        }
+
+        & .start-content {
+            @apply scale-100 opacity-100;
+        }
+        & .end-content {
+            @apply translate-x-3 opacity-0;
+        }
+    }
+
+    & .main-wrapper {
+        @apply relative mr-2 inline-flex h-7 w-12 flex-shrink-0 items-center justify-start overflow-hidden rounded-full bg-default-200 px-1;
+
+        & .thumb {
+            @apply z-10 flex h-5 w-5 origin-right items-center justify-center rounded-full bg-white text-sm shadow-sm;
+            & .thumb-icon {
+                @apply text-black;
+            }
+        }
+
+        & .start-content {
+            @apply absolute left-1.5 z-0 text-sm text-current;
+        }
+
+        & .end-content {
+            @apply absolute right-1.5 z-0 text-sm text-default-600;
+        }
+    }
+
+    & .switch-label {
+        @apply relative select-none text-base text-base-foreground;
+    }
+
+    /* Sizes */
+    &.size-sm {
+        &:has(input[type="checkbox"]:checked) .main-wrapper .thumb {
+            @apply ml-4;
+        }
+        & .main-wrapper {
+            @apply mr-2 h-6 w-10;
+
+            & .thumb {
+                @apply h-4 w-4;
+            }
+            & :is(.thumb, .start-content, .end-content) {
+                @apply text-xs;
+            }
+        }
+        & .switch-label {
+            @apply text-sm;
+        }
+    }
+    &.size-lg {
+        &:has(input[type="checkbox"]:checked) .main-wrapper .thumb {
+            @apply ml-6;
+        }
+        & .main-wrapper {
+            @apply mr-2 h-8 w-14;
+
+            & .thumb {
+                @apply h-6 w-6;
+            }
+            & :is(.thumb, .start-content, .end-content) {
+                @apply text-base;
+            }
+        }
+        & .switch-label {
+            @apply text-lg;
+        }
+    }
+
+    /* Colors */
+    &.default:has(input[type="checkbox"]:checked) .main-wrapper {
+        @apply bg-default-400 text-layout-foreground;
+    }
+    &.primary:has(input[type="checkbox"]:checked) .main-wrapper {
+        @apply bg-base-primary text-white;
+    }
+    &.secondary:has(input[type="checkbox"]:checked) .main-wrapper {
+        @apply bg-base-secondary text-white;
+    }
+    &.success:has(input[type="checkbox"]:checked) .main-wrapper {
+        @apply bg-base-success text-black;
+    }
+    &.warning:has(input[type="checkbox"]:checked) .main-wrapper {
+        @apply bg-base-warning text-black;
+    }
+    &.danger:has(input[type="checkbox"]:checked) .main-wrapper {
+        @apply bg-base-danger text-white;
     }
 }
