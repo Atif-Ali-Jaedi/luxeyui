@@ -5,12 +5,12 @@
 <p align="center">
     <img src="https://img.shields.io/npm/l/luxeyui?style=flat" alt="License" />
     <img src="https://img.shields.io/npm/v/luxeyui?style=flat&logo=npm&label=version&color=lincolngreen" alt="NPM Version" />
-    <img src="https://img.shields.io/badge/downloads-2.5k+-malachite" alt="Downloads" />
+    <img src="https://img.shields.io/badge/downloads-2.8k+-malachite" alt="Downloads" />
 </p>
 
 A TailwindCSS UI component library built on top of PostCSS and TypeScript. It features components inspired by [shadcn/ui](https://ui.shadcn.com) and [@nextui-org](https://nextui.org), tailored for non-react use.
 
-> **Note:** This project is early access. Expect some bugs to occur and more components to be added in the future.
+> **Note:** This library is early access. Expect some bugs to occur and more components to be added in the future.
 
 ## Getting Started
 
@@ -19,10 +19,10 @@ To kick off, use the CDN for now since the components aren't usable individually
 ### CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.5.4/dist/all.min.css"
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.5.5/dist/all.min.css"
 />
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.5.4/dist/all.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.5.5/dist/all.min.js" defer></script>
 ```
 
 ### Vite
@@ -33,12 +33,13 @@ npx tailwindcss init -p
 npm i luxeyui@latest
 ```
 
-## What's New in v0.5.3 & v0.5.4?
+## What's New in v0.5.3 - v0.5.5?
 
 -   **Accordion**: Reworked on the variants.
 -   **Avatar**: Completely reworked and now it has full functionality with all the necessary features.
 -   Added the disability option to the `avatar-group` and fixed the sizes of the `avatar`.
--   Added `cursor-pointer` in the Switch component.
+-   Added `cursor-pointer` in the Switch component and the Link component.
+-   **Switch**: Completely remade with every features possible.
 
 > **Note**: For the full list of changes, visit [https://luxeyui.vercel.app/docs/changelog](https://luxeyui.vercel.app/docs/changelog).
 
