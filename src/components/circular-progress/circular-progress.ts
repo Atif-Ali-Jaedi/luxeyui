@@ -1,6 +1,4 @@
-document
-  .querySelectorAll<HTMLDivElement>(".circular-progress")
-  .forEach((cProgress) => {
+const updateCircularProgress = (cProgress: HTMLDivElement) => {
     const minValue = 0;
     const maxValue = 100;
 
@@ -12,13 +10,32 @@ document
     const valueLabel = cProgress?.querySelector<HTMLSpanElement>("span.value");
 
     if (isNaN(value) && indicator)
-      return (indicator.style.strokeDashoffset = "61.26105674500097");
+        return (indicator.style.strokeDashoffset = "61.26105674500097");
 
     if (indicator) {
-      cProgress?.setAttribute("data-indeterminate", "false");
-      const progress = 81.68140899333463 - 81.68140899333463 * (value / 100);
-      indicator.style.strokeDashoffset = progress.toString();
+        cProgress?.setAttribute("data-indeterminate", "false");
+        const progress = 81.68140899333463 - 81.68140899333463 * (value / 100);
+        indicator.style.strokeDashoffset = progress.toString();
 
-      if (valueLabel) valueLabel.innerText = `${value}%`;
+        if (valueLabel) valueLabel.innerText = `${value}%`;
     }
-  });
+};
+
+const observeCircularProgress = (cProgress: HTMLDivElement) => {
+    updateCircularProgress(cProgress);
+
+    const observer = new MutationObserver(() =>
+        updateCircularProgress(cProgress),
+    );
+
+    observer.observe(cProgress, {
+        attributes: true,
+        attributeFilter: ["data-value"],
+    });
+};
+
+document
+    .querySelectorAll<HTMLDivElement>(".circular-progress")
+    .forEach((cProgress) => {
+        observeCircularProgress(cProgress);
+    });

@@ -3,6 +3,7 @@ index.html
 package-lock.json
 postcss.config.js
 .prettierrc
+.vscode/
 .npmignore
 src/
 tsconfig.json
