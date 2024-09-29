@@ -1,137 +1,177 @@
 .badge-container {
-	@apply relative inline-flex shrink-0;
-	--_v: 5%;
-	&:has(> svg) > .badge {
-		--_v: 10%;
-	}
-	& > .badge {
-		@apply flex flex-wrap place-content-center origin-center items-center absolute rounded-full select-none subpixel-antialiased text-sm px-0 transition-all duration-300 border-2 border-layout-background bg-base-default text-base-foreground w-5 h-5 min-w-5 min-h-5 top-[--_v] right-[--_v] translate-x-1/2 -translate-y-1/2;
-		&:has(svg) {
-			--_v: 10%;
-		}
-		&.no-outline {
-			@apply border-none;
-		}
-		/* sizes */
-		&.size-sm {
-			@apply w-4 h-4 min-w-4 min-h-4 text-xs;
-		}
-		&.size-lg {
-			@apply w-6 h-6 min-w-6 min-w-6 text-base;
-		}
-		/* Colors */
-		&.primary,
-		&.secondary,
-		&.danger {
-			@apply text-white;
-		}
-		&.foreground {
-			@apply bg-base-foreground text-layout-background;
-		}
-		&.primary {
-			@apply bg-base-primary;
-		}
-		&.secondary {
-			@apply bg-base-secondary;
-		}
-		&.success {
-			@apply bg-base-success text-black;
-		}
-		&.warning {
-			@apply bg-base-warning text-black;
-		}
-		&.danger {
-			@apply bg-base-danger;
-		}
-		/* Vaiants */
-		/* Faded */
-		&.faded {
-			@apply border-base-default;
-			&.faded {
-				@apply bg-default-100;
-			}
+    --_percentage: 5%;
+    @apply relative inline-flex shrink-0;
 
-			&.foreground {
-				@apply text-base-foreground;
-			}
-			&.default {
-				@apply text-base-foreground;
-			}
-			&.primary {
-				@apply text-base-primary;
-			}
-			&.secondary {
-				@apply text-base-secondary;
-			}
-			&.success {
-				@apply text-base-success;
-			}
-			&.warning {
-				@apply text-base-warning;
-			}
-			&.danger {
-				@apply text-base-danger;
-			}
-		}
-		/* Flat */
-		&.flat {
-			&.foreground {
-				@apply text-base-foreground bg-base-foreground/30;
-			}
-			&.default {
-				@apply text-default-400 bg-base-default/20;
-			}
-			&.primary {
-				@apply text-base-primary bg-base-primary/20;
-			}
-			&.secondary {
-				@apply text-base-secondary bg-base-secondary/20;
-			}
-			&.success {
-				@apply text-base-success bg-base-success/20;
-			}
-			&.warning {
-				@apply text-base-warning bg-base-warning/20;
-			}
-			&.danger {
-				@apply text-base-danger bg-base-danger/20;
-			}
-		}
-		/* Shadow */
-		&.shadow {
-			@apply shadow-lg;
+    /* Disable Animation */
+    &[data-disable-animation] .badge {
+        @apply transition-none;
+    }
 
-			&.foreground {
-				@apply shadow-base-foreground/40;
-			}
-			&.default {
-				@apply shadow-base-default;
-			}
-			&.primary {
-				@apply shadow-base-primary/40;
-			}
-			&.secondary {
-				@apply shadow-base-secondary/40;
-			}
-			&.success {
-				@apply shadow-base-success/40;
-			}
-			&.warning {
-				@apply shadow-base-warning/40;
-			}
-			&.danger {
-				@apply shadow-base-danger/40;
-			}
-		}
-		/* Placements */
-		&.top-left {
-			@apply top-[--_v] left-[--_v] -translate-x-1/2 right-[unset] -translate-y-1/2;
-		}
-		&.bottom-left {
-			@apply bottom-[--_v] left-[--_v] -translate-x-1/2 translate-y-1/2 top-[unset];
-		}
-		&.bottom-right {
-			@apply bottom-[--_v] right-[--_v] translate-x-1/2 translate-y-1/2 top-[unset];
-		}
-	}
+    & .badge {
+        @apply absolute right-[--_percentage] top-[--_percentage] z-10 box-border flex origin-center -translate-y-1/2 translate-x-1/2 scale-100 select-none flex-wrap place-content-center items-center whitespace-nowrap rounded-full border-2 border-layout-background bg-base-default px-1 text-sm font-normal text-inherit text-layout-foreground subpixel-antialiased opacity-100 transition-[transform,opacity] duration-300;
+        transition-timing-function: cubic-bezier(068 -0.55, 0.27, 1.55);
+
+        /* Invisibility */
+        &[data-invisible="true"] {
+            @apply scale-0 opacity-0;
+        }
+
+        /* Dot when the badge is empty */
+        &:empty {
+            @apply h-3.5 min-h-3.5 w-3.5 min-w-3.5;
+        }
+    }
+
+    /* When there is only one character inside the badge */
+    &[data-one-char] {
+        & .badge {
+            @apply h-5 min-h-5 w-5 min-w-5;
+        }
+        &.size-sm {
+            @apply h-4 min-h-4 w-4 min-w-4;
+        }
+        &.size-lg {
+            @apply h-6 min-h-6 w-6 min-w-6;
+        }
+    }
+
+    /* Hiding outline */
+    &[data-show-outline="false"] .badge {
+        @apply border-0 border-transparent;
+    }
+
+    /* Circular */
+    &.circle {
+        --_percentage: 10%;
+    }
+
+    /* Sizes */
+    &.size-sm .badge {
+        @apply text-xs;
+        &:empty {
+            @apply h-3 min-h-3 w-3 min-w-3;
+        }
+    }
+    &.size-lg .badge:empty {
+        @apply h-4 min-h-4 w-4 min-w-4;
+    }
+
+    /* Placements */
+    &.top-left .badge {
+        @apply left-[--_percentage] right-[unset] -translate-x-1/2 -translate-y-1/2;
+    }
+    &.bottom-right .badge {
+        @apply bottom-[--_percentage] top-[unset] translate-x-1/2 translate-y-1/2;
+    }
+    &.bottom-left .badge {
+        @apply bottom-[--_percentage] left-[--_percentage] right-[unset] top-[unset] -translate-x-1/2 translate-y-1/2;
+    }
+
+    /* Colors with variants */
+    &:not(
+            &.primary,
+            &.secondary,
+            &.success,
+            &.warning,
+            &.danger,
+            &.foreground
+        ) {
+        &.shadow {
+            @apply shadow-none;
+            & .badge {
+                @apply shadow-lg shadow-base-default/50;
+            }
+        }
+        &.flat .badge {
+            @apply bg-base-default/40 text-default-700;
+        }
+    }
+    &.foreground {
+        & .badge {
+            @apply bg-base-foreground text-layout-background;
+        }
+        &.shadow .badge {
+            @apply shadow-lg shadow-base-foreground/40;
+        }
+        &.flat .badge {
+            @apply bg-base-foreground/10 text-layout-foreground;
+        }
+        &.faded .badge {
+            @apply text-base-foreground;
+        }
+    }
+    &.primary {
+        & .badge {
+            @apply bg-base-primary text-white;
+        }
+        &.shadow .badge {
+            @apply shadow-lg shadow-base-primary/40;
+        }
+        &.flat .badge {
+            @apply bg-base-primary/20 text-primary-700;
+        }
+        &.faded .badge {
+            @apply text-base-primary;
+        }
+    }
+    &.secondary {
+        & .badge {
+            @apply bg-base-secondary text-white;
+        }
+        &.shadow .badge {
+            @apply shadow-lg shadow-base-secondary/40;
+        }
+        &.flat .badge {
+            @apply bg-base-secondary/20 text-secondary-700;
+        }
+        &.faded .badge {
+            @apply text-base-secondary;
+        }
+    }
+    &.success {
+        & .badge {
+            @apply bg-base-success text-black;
+        }
+        &.shadow .badge {
+            @apply shadow-lg shadow-base-success/40;
+        }
+        &.flat .badge {
+            @apply bg-base-success/20 text-success-800 dark:text-base-success;
+        }
+        &.faded .badge {
+            @apply text-base-success;
+        }
+    }
+    &.warning {
+        & .badge {
+            @apply bg-base-warning text-black;
+        }
+        &.shadow .badge {
+            @apply shadow-lg shadow-base-warning/40;
+        }
+        &.flat .badge {
+            @apply bg-base-warning/20 text-warning-800 dark:text-base-warning;
+        }
+        &.faded .badge {
+            @apply text-base-warning;
+        }
+    }
+    &.danger {
+        & .badge {
+            @apply bg-base-danger text-white;
+        }
+        &.shadow .badge {
+            @apply shadow-lg shadow-base-danger/40;
+        }
+        &.flat .badge {
+            @apply bg-base-danger/20 text-danger-800 dark:text-danger-500;
+        }
+        &.faded .badge {
+            @apply text-base-danger;
+        }
+    }
+
+    &.faded .badge {
+        @apply border-base-default bg-default-100;
+    }
 }

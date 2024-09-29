@@ -16,7 +16,7 @@
 }
 
 button.button {
-    @apply /* Default Size */ relative box-border inline-flex h-10 min-w-20 min-w-max select-none appearance-none items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-xl bg-base-default px-4 text-sm text-layout-foreground subpixel-antialiased outline-none transition-[transform,color,background-color,border-color,text-decoration-color,fill,stroke,opacity] duration-200 hover:opacity-90;
+    @apply /* Default Size */ relative box-border inline-flex h-10 min-w-20 select-none appearance-none items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-xl bg-base-default px-4 text-sm text-layout-foreground subpixel-antialiased outline-none transition-[transform,color,background-color,border-color,text-decoration-color,fill,stroke,opacity] duration-200 hover:opacity-90;
     &:not(&[data-disable-animation]):active {
         @apply scale-97;
     }
