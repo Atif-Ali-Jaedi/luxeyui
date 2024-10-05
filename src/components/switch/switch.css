@@ -17,7 +17,7 @@
 
     /* Disabled */
     &[data-disabled] {
-        @apply pointer-events-none opacity-50;
+        @apply pointer-events-none opacity-disabled;
     }
 
     /* If disabling animation */
@@ -73,7 +73,7 @@
 
     /* Checked State */
     &:has(input[type="checkbox"]:checked) .main-wrapper {
-        @apply bg-base-foreground text-white dark:bg-content-2;
+        @apply bg-foreground text-white dark:bg-content-2;
 
         & .thumb {
             @apply ml-5;
@@ -107,7 +107,7 @@
     }
 
     & .switch-label {
-        @apply relative select-none text-base text-base-foreground;
+        @apply relative select-none text-base text-foreground;
     }
 
     /* Sizes */
@@ -150,21 +150,21 @@
 
     /* Colors */
     &.default:has(input[type="checkbox"]:checked) .main-wrapper {
-        @apply bg-default-400 text-layout-foreground;
+        @apply bg-default-400 text-foreground;
     }
     &.primary:has(input[type="checkbox"]:checked) .main-wrapper {
-        @apply bg-base-primary text-white;
+        @apply bg-primary text-white;
     }
     &.secondary:has(input[type="checkbox"]:checked) .main-wrapper {
-        @apply bg-base-secondary text-white;
+        @apply bg-secondary text-white;
     }
     &.success:has(input[type="checkbox"]:checked) .main-wrapper {
-        @apply bg-base-success text-black;
+        @apply bg-success text-black;
     }
     &.warning:has(input[type="checkbox"]:checked) .main-wrapper {
-        @apply bg-base-warning text-black;
+        @apply bg-warning text-black;
     }
     &.danger:has(input[type="checkbox"]:checked) .main-wrapper {
-        @apply bg-base-danger text-white;
+        @apply bg-danger text-white;
     }
 }

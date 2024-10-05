@@ -8,7 +8,7 @@
     }
 
     & .badge {
-        @apply absolute right-[--_percentage] top-[--_percentage] z-10 box-border flex origin-center -translate-y-1/2 translate-x-1/2 scale-100 select-none flex-wrap place-content-center items-center whitespace-nowrap rounded-full border-2 border-layout-background bg-base-default px-1 text-sm font-normal text-inherit text-layout-foreground subpixel-antialiased opacity-100 transition-[transform,opacity] duration-300;
+        @apply absolute right-[--_percentage] top-[--_percentage] z-10 box-border flex origin-center -translate-y-1/2 translate-x-1/2 scale-100 select-none flex-wrap place-content-center items-center whitespace-nowrap rounded-full border-2 border-background bg-default px-1 text-sm font-normal text-foreground text-inherit subpixel-antialiased opacity-100 transition-[transform,opacity] duration-300;
         transition-timing-function: cubic-bezier(068 -0.55, 0.27, 1.55);
 
         /* Invisibility */
@@ -79,99 +79,99 @@
         &.shadow {
             @apply shadow-none;
             & .badge {
-                @apply shadow-lg shadow-base-default/50;
+                @apply shadow-lg shadow-default/50;
             }
         }
         &.flat .badge {
-            @apply bg-base-default/40 text-default-700;
+            @apply bg-default/40 text-default-700;
         }
     }
     &.foreground {
         & .badge {
-            @apply bg-base-foreground text-layout-background;
+            @apply bg-foreground text-background;
         }
         &.shadow .badge {
-            @apply shadow-lg shadow-base-foreground/40;
+            @apply shadow-lg shadow-foreground/40;
         }
         &.flat .badge {
-            @apply bg-base-foreground/10 text-layout-foreground;
+            @apply bg-foreground/10 text-foreground;
         }
         &.faded .badge {
-            @apply text-base-foreground;
+            @apply text-foreground;
         }
     }
     &.primary {
         & .badge {
-            @apply bg-base-primary text-white;
+            @apply bg-primary text-white;
         }
         &.shadow .badge {
-            @apply shadow-lg shadow-base-primary/40;
+            @apply shadow-lg shadow-primary/40;
         }
         &.flat .badge {
-            @apply bg-base-primary/20 text-primary-700;
+            @apply bg-primary/20 text-primary-700;
         }
         &.faded .badge {
-            @apply text-base-primary;
+            @apply text-primary;
         }
     }
     &.secondary {
         & .badge {
-            @apply bg-base-secondary text-white;
+            @apply bg-secondary text-white;
         }
         &.shadow .badge {
-            @apply shadow-lg shadow-base-secondary/40;
+            @apply shadow-lg shadow-secondary/40;
         }
         &.flat .badge {
-            @apply bg-base-secondary/20 text-secondary-700;
+            @apply bg-secondary/20 text-secondary-700;
         }
         &.faded .badge {
-            @apply text-base-secondary;
+            @apply text-secondary;
         }
     }
     &.success {
         & .badge {
-            @apply bg-base-success text-black;
+            @apply bg-success text-black;
         }
         &.shadow .badge {
-            @apply shadow-lg shadow-base-success/40;
+            @apply shadow-lg shadow-success/40;
         }
         &.flat .badge {
-            @apply bg-base-success/20 text-success-800 dark:text-base-success;
+            @apply bg-success/20 text-success-800 dark:text-success;
         }
         &.faded .badge {
-            @apply text-base-success;
+            @apply text-success;
         }
     }
     &.warning {
         & .badge {
-            @apply bg-base-warning text-black;
+            @apply bg-warning text-black;
         }
         &.shadow .badge {
-            @apply shadow-lg shadow-base-warning/40;
+            @apply shadow-lg shadow-warning/40;
         }
         &.flat .badge {
-            @apply bg-base-warning/20 text-warning-800 dark:text-base-warning;
+            @apply bg-warning/20 text-warning-800 dark:text-warning;
         }
         &.faded .badge {
-            @apply text-base-warning;
+            @apply text-warning;
         }
     }
     &.danger {
         & .badge {
-            @apply bg-base-danger text-white;
+            @apply bg-danger text-white;
         }
         &.shadow .badge {
-            @apply shadow-lg shadow-base-danger/40;
+            @apply shadow-lg shadow-danger/40;
         }
         &.flat .badge {
-            @apply bg-base-danger/20 text-danger-800 dark:text-danger-500;
+            @apply bg-danger/20 text-danger-800 dark:text-danger-500;
         }
         &.faded .badge {
-            @apply text-base-danger;
+            @apply text-danger;
         }
     }
 
     &.faded .badge {
-        @apply border-base-default bg-default-100;
+        @apply border-default bg-default-100;
     }
 }

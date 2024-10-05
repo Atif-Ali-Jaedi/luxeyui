@@ -1,61 +1,61 @@
 .img-wrapper {
-  @apply relative rounded-14 shadow-none shadow-black/5;
+    @apply relative rounded-large shadow-none shadow-black/5;
 
-  /* When Image is nested within zoomed-wrapper */
-  &:has(> .zoomed-wrapper) .zoomed-wrapper {
-    @apply relative overflow-hidden rounded-[inherit];
-    &:hover img {
-      @apply scale-125;
+    /* When Image is nested within zoomed-wrapper */
+    &:has(> .zoomed-wrapper) .zoomed-wrapper {
+        @apply relative overflow-hidden rounded-[inherit];
+        &:hover img {
+            @apply scale-125;
+        }
     }
-  }
 
-  /* Blurred Image Styles */
-  & > img.blurred-img {
-    @apply absolute inset-0 z-0 h-full w-full translate-y-1 scale-105 object-cover opacity-30 blur-lg saturate-150 filter;
-  }
-
-  /* If not disabling the skeleton */
-  &:not([data-disable-skeleton]) {
-    @apply relative overflow-hidden bg-content-3 dark:bg-content-2;
-    &:has(img[data-loaded="true"]) {
-      @apply overflow-visible;
+    /* Blurred Image Styles */
+    & > img.blurred-img {
+        @apply absolute inset-0 z-0 h-full w-full translate-y-1 scale-105 object-cover opacity-30 blur-lg saturate-150 filter;
     }
-  }
 
-  /* Image Styles */
-  & img {
-    @apply relative z-10 rounded-[inherit] opacity-0 shadow-black/5 data-[loaded=true]:opacity-100;
-    /* If not disabling animation */
-    &:not([data-disable-animation]) {
-      @apply transition-[transform,opacity] duration-300;
+    /* If not disabling the skeleton */
+    &:not([data-disable-skeleton]) {
+        @apply relative overflow-hidden bg-content-3 dark:bg-content-2;
+        &:has(img[data-loaded="true"]) {
+            @apply overflow-visible;
+        }
     }
-  }
 
-  /* Shadows */
-  &.shadow-small,
-  &.shadow-small img {
-    @apply shadow-sm;
-  }
-  &.shadow-medium,
-  &.shadow-medium img {
-    @apply shadow-md;
-  }
-  &.shadow-large,
-  &.shadow-large img {
-    @apply shadow-lg;
-  }
+    /* Image Styles */
+    & img {
+        @apply relative z-10 rounded-[inherit] opacity-0 shadow-black/5 data-[loaded=true]:opacity-100;
+        /* If not disabling animation */
+        &:not([data-disable-animation]) {
+            @apply transition-[transform,opacity] duration-300;
+        }
+    }
 
-  /* Radiuses */
-  &.radius-none {
-    @apply rounded-none;
-  }
-  &.radius-sm {
-    @apply rounded-lg;
-  }
-  &.radius-md {
-    @apply rounded-xl;
-  }
-  &.radius-full {
-    @apply rounded-full;
-  }
+    /* Shadows */
+    &.shadow-small,
+    &.shadow-small img {
+        @apply shadow-sm;
+    }
+    &.shadow-medium,
+    &.shadow-medium img {
+        @apply shadow-md;
+    }
+    &.shadow-large,
+    &.shadow-large img {
+        @apply shadow-lg;
+    }
+
+    /* Radiuses */
+    &.radius-none {
+        @apply rounded-none;
+    }
+    &.radius-sm {
+        @apply rounded-small;
+    }
+    &.radius-md {
+        @apply rounded-medium;
+    }
+    &.radius-full {
+        @apply rounded-full;
+    }
 }

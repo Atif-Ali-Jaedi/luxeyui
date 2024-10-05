@@ -1,245 +1,246 @@
 .input-base {
-	@apply flex flex-col w-full max-w-xs;
-	/* Disabeld */
-	&:has(input:disabled) {
-		@apply opacity-50 pointer-events-none;
-	}
-	/* Required */
-	&:has(input:required) label::after {
-		@apply content-['*'] text-base-danger ml-0.5;
-	}
-	/* Validation */
-	/* Using data-validate attribute so that, not all inputs have to validate */
-	&:where([data-validate]):has(input:invalid),
+    @apply flex w-full max-w-xs flex-col;
+    /* Disabeld */
+    &:has(input:disabled) {
+        @apply pointer-events-none opacity-disabled;
+    }
+    /* Required */
+    &:has(input:required) label::after {
+        @apply ml-0.5 text-danger content-['*'];
+    }
+    /* Validation */
+    /* Using data-validate attribute so that, not all inputs have to validate */
+    &:where([data-validate]):has(input:invalid),
 	/* Strictly specifying not to cause any problems using data attributes for invalid state */
 	&:where([data-validate]):has(input[data-invalid="true"]) {
-		& .helper-wrapper > .error-msg {
-			@apply block;
-		}
+        & .helper-wrapper > .error-msg {
+            @apply block;
+        }
 
-		&:is(&.faded, &.bordered, &.underlined) .input-wrapper {
-			@apply border-danger-200;
-		}
-		&:is(&.underlined, &.bordered) .input-wrapper {
-			@apply bg-transparent;
-		}
-		&.bordered.bordered .input-wrapper:has(input:focus) {
-			@apply border-base-danger;
-		}
-		&.underlined.underlined .input-wrapper::before {
-			@apply bg-base-danger;
-		}
-		.input-wrapper {
-			@apply bg-danger-50;
-			& .input-label,
-			& > .inner-wrapper > input,
-			& > .inner-wrapper > input::-webkit-input-placeholder,
-			& > .inner-wrapper > input::placeholder {
-				@apply text-base-danger;
-			}
-		}
-	}
-	/* Sizes */
-	&.size-sm .input-wrapper {
-		@apply py-1.5 h-12 min-h-8 rounded-lg;
-	}
-	&.size-lg .input-wrapper {
-		@apply py-2.5 h-16 min-h-12 rounded-14;
-		& > .input-label {
-			@apply text-sm;
-		}
-		& > .inner-wrapper > input {
-			@apply text-base;
-		}
-	}
-	/* Colors */
-	&.primary {
-		&:is(&.faded, &.bordered, &.underlined) .input-wrapper {
-			@apply border-primary-200;
-		}
-		&.bordered.bordered .input-wrapper:has(input:focus) {
-			@apply border-base-primary;
-		}
-		&.underlined.underlined .input-wrapper::before {
-			@apply bg-base-primary;
-		}
-		& .input-wrapper {
-			@apply bg-primary-50;
-			/* 
+        &:is(&.faded, &.bordered, &.underlined) .input-wrapper {
+            @apply border-danger-200;
+        }
+        &:is(&.underlined, &.bordered) .input-wrapper {
+            @apply bg-transparent;
+        }
+        &.bordered.bordered .input-wrapper:has(input:focus) {
+            @apply border-danger;
+        }
+        &.underlined.underlined .input-wrapper::before {
+            @apply bg-danger;
+        }
+        .input-wrapper {
+            @apply bg-danger-50;
+            & .input-label,
+            & > .inner-wrapper > input,
+            & > .inner-wrapper > input::-webkit-input-placeholder,
+            & > .inner-wrapper > input::placeholder {
+                @apply text-danger;
+            }
+        }
+    }
+    /* Sizes */
+    &.size-sm .input-wrapper {
+        @apply h-12 min-h-8 rounded-small py-1.5;
+    }
+    &.size-lg .input-wrapper {
+        @apply h-16 min-h-12 rounded-large py-2.5;
+        & > .input-label {
+            @apply text-sm;
+        }
+        & > .inner-wrapper > input {
+            @apply text-base;
+        }
+    }
+    /* Colors */
+    &.primary {
+        &:is(&.faded, &.bordered, &.underlined) .input-wrapper {
+            @apply border-primary-200;
+        }
+        &.bordered.bordered .input-wrapper:has(input:focus) {
+            @apply border-primary;
+        }
+        &.underlined.underlined .input-wrapper::before {
+            @apply bg-primary;
+        }
+        & .input-wrapper {
+            @apply bg-primary-50;
+            /* 
 			  Here, I tried using :is() and :where(), but it didn't seem to work, so I had to do like this. 
 			  Also, I had to use both ::-webkit-input-placeholder in order to get it to work properly.
 			*/
-			& .input-label,
-			& > .inner-wrapper > input,
-			& > .inner-wrapper > input::-webkit-input-placeholder,
-			& > .inner-wrapper > input::placeholder {
-				@apply text-base-primary;
-			}
-		}
-	}
-	&.secondary {
-		&:is(&.faded, &.bordered, &.underlined) .input-wrapper {
-			@apply border-secondary-200;
-		}
-		&.bordered.bordered .input-wrapper:has(input:focus) {
-			@apply border-base-secondary;
-		}
-		&.underlined.underlined .input-wrapper::before {
-			@apply bg-base-secondary;
-		}
-		.input-wrapper {
-			@apply bg-secondary-50;
-			& .input-label,
-			& > .inner-wrapper > input,
-			& > .inner-wrapper > input::-webkit-input-placeholder,
-			& > .inner-wrapper > input::placeholder {
-				@apply text-base-secondary;
-			}
-		}
-	}
-	&.success {
-		&:is(&.faded, &.bordered, &.underlined) .input-wrapper {
-			@apply border-success-200;
-		}
-		&.bordered.bordered .input-wrapper:has(input:focus) {
-			@apply border-base-success;
-		}
-		&.underlined.underlined .input-wrapper::before {
-			@apply bg-base-success;
-		}
-		.input-wrapper {
-			@apply bg-success-50;
-			& .input-label,
-			& > .inner-wrapper > input,
-			& > .inner-wrapper > input::-webkit-input-placeholder,
-			& > .inner-wrapper > input::placeholder {
-				@apply text-base-success;
-			}
-		}
-	}
-	&.warning {
-		&:is(&.faded, &.bordered, &.underlined) .input-wrapper {
-			@apply border-warning-200;
-		}
-		&.bordered.bordered .input-wrapper:has(input:focus) {
-			@apply border-base-warning;
-		}
-		&.underlined.underlined .input-wrapper::before {
-			@apply bg-base-warning;
-		}
-		.input-wrapper {
-			@apply bg-warning-50;
-			& .input-label,
-			& > .inner-wrapper > input,
-			& > .inner-wrapper > input::-webkit-input-placeholder,
-			& > .inner-wrapper > input::placeholder {
-				@apply text-base-warning;
-			}
-		}
-	}
-	&.danger {
-		&:is(&.faded, &.bordered, &.underlined) .input-wrapper {
-			@apply border-danger-200;
-		}
-		&.bordered.bordered .input-wrapper:has(input:focus) {
-			@apply border-base-danger;
-		}
-		&.underlined.underlined .input-wrapper::before {
-			@apply bg-base-danger;
-		}
-		.input-wrapper {
-			@apply bg-danger-50;
-			& .input-label,
-			& > .inner-wrapper > input,
-			& > .inner-wrapper > input::-webkit-input-placeholder,
-			& > .inner-wrapper > input::placeholder {
-				@apply text-base-danger;
-			}
-		}
-	}
-	/* Radius */
-	&.radius-none .input-wrapper {
-		@apply rounded-none;
-	}
-	&.radius-sm .input-wrapper {
-		@apply rounded-lg;
-	}
-	&.radius-md .input-wrapper {
-		@apply rounded-xl;
-	}
-	&.radius-lg .input-wrapper {
-		@apply rounded-14;
-	}
-	&.radius-full .input-wrapper {
-		@apply rounded-full;
-	}
-	/* Variants */
-	&.faded .input-wrapper,
-	&.bordered .input-wrapper,
-	&.underlined .input-wrapper {
-		@apply border-[2px] border-default-200;
-	}
-	&.bordered .input-wrapper {
-		@apply bg-transparent transition-all duration-300;
-		&:has(input:focus) {
-			@apply border-base-foreground;
-		}
-	}
-	&.underlined .input-wrapper {
-		@apply relative bg-transparent border-x-0 border-t-0 rounded-none [box-shadow:0_1px_2px_-2px_rgba(0,0,0,0.05)] px-0;
-		&::before {
-			@apply content-[''] absolute -bottom-[1.5px] left-0 w-full h-[1.5px] bg-base-foreground scale-x-0 transition-all duration-300;
-		}
-		&:has(input:focus) {
-			&::before {
-				@apply scale-x-100;
-			}
-		}
-	}
+            & .input-label,
+            & > .inner-wrapper > input,
+            & > .inner-wrapper > input::-webkit-input-placeholder,
+            & > .inner-wrapper > input::placeholder {
+                @apply text-primary;
+            }
+        }
+    }
+    &.secondary {
+        &:is(&.faded, &.bordered, &.underlined) .input-wrapper {
+            @apply border-secondary-200;
+        }
+        &.bordered.bordered .input-wrapper:has(input:focus) {
+            @apply border-secondary;
+        }
+        &.underlined.underlined .input-wrapper::before {
+            @apply bg-secondary;
+        }
+        .input-wrapper {
+            @apply bg-secondary-50;
+            & .input-label,
+            & > .inner-wrapper > input,
+            & > .inner-wrapper > input::-webkit-input-placeholder,
+            & > .inner-wrapper > input::placeholder {
+                @apply text-secondary;
+            }
+        }
+    }
+    &.success {
+        &:is(&.faded, &.bordered, &.underlined) .input-wrapper {
+            @apply border-success-200;
+        }
+        &.bordered.bordered .input-wrapper:has(input:focus) {
+            @apply border-success;
+        }
+        &.underlined.underlined .input-wrapper::before {
+            @apply bg-success;
+        }
+        .input-wrapper {
+            @apply bg-success-50;
+            & .input-label,
+            & > .inner-wrapper > input,
+            & > .inner-wrapper > input::-webkit-input-placeholder,
+            & > .inner-wrapper > input::placeholder {
+                @apply text-success;
+            }
+        }
+    }
+    &.warning {
+        &:is(&.faded, &.bordered, &.underlined) .input-wrapper {
+            @apply border-warning-200;
+        }
+        &.bordered.bordered .input-wrapper:has(input:focus) {
+            @apply border-warning;
+        }
+        &.underlined.underlined .input-wrapper::before {
+            @apply bg-warning;
+        }
+        .input-wrapper {
+            @apply bg-warning-50;
+            & .input-label,
+            & > .inner-wrapper > input,
+            & > .inner-wrapper > input::-webkit-input-placeholder,
+            & > .inner-wrapper > input::placeholder {
+                @apply text-warning;
+            }
+        }
+    }
+    &.danger {
+        &:is(&.faded, &.bordered, &.underlined) .input-wrapper {
+            @apply border-danger-200;
+        }
+        &.bordered.bordered .input-wrapper:has(input:focus) {
+            @apply border-danger;
+        }
+        &.underlined.underlined .input-wrapper::before {
+            @apply bg-danger;
+        }
+        .input-wrapper {
+            @apply bg-danger-50;
+            & .input-label,
+            & > .inner-wrapper > input,
+            & > .inner-wrapper > input::-webkit-input-placeholder,
+            & > .inner-wrapper > input::placeholder {
+                @apply text-danger;
+            }
+        }
+    }
+    /* Radius */
+    &.radius-none .input-wrapper {
+        @apply rounded-none;
+    }
+    &.radius-sm .input-wrapper {
+        @apply rounded-small;
+    }
+    &.radius-md .input-wrapper {
+        @apply rounded-medium;
+    }
+    &.radius-lg .input-wrapper {
+        @apply rounded-large;
+    }
+    &.radius-full .input-wrapper {
+        @apply rounded-full;
+    }
+    /* Variants */
+    &.faded .input-wrapper,
+    &.bordered .input-wrapper,
+    &.underlined .input-wrapper {
+        @apply border-[2px] border-default-200;
+    }
+    &.bordered .input-wrapper {
+        @apply bg-transparent transition-all duration-300;
+        &:has(input:focus) {
+            @apply border-foreground;
+        }
+    }
+    &.underlined .input-wrapper {
+        @apply relative rounded-none border-x-0 border-t-0 bg-transparent px-0 [box-shadow:0_1px_2px_-2px_rgba(0,0,0,0.05)];
+        &::before {
+            @apply absolute -bottom-[1.5px] left-0 h-[1.5px] w-full scale-x-0 bg-foreground transition-all duration-300 content-[''];
+        }
+        &:has(input:focus) {
+            &::before {
+                @apply scale-x-100;
+            }
+        }
+    }
 
-	&:has(.input-main-wrapper) {
-		&:has(.input-main-wrapper .input-label.outside-left) .input-main-wrapper {
-			@apply flex items-center;
-			& .input-label {
-				@apply pb-0 pe-2;
-			}
-		}
+    &:has(.input-main-wrapper) {
+        &:has(.input-main-wrapper .input-label.outside-left)
+            .input-main-wrapper {
+            @apply flex items-center;
+            & .input-label {
+                @apply pb-0 pe-2;
+            }
+        }
 
-		& .input-label {
-			@apply block text-sm max-w-max text-default-600 transition-all duration-200 ease-out pb-2;
-		}
-		& .input-wrapper {
-			@apply h-10 py-0;
-		}
-	}
+        & .input-label {
+            @apply block max-w-max pb-2 text-sm text-default-600 transition-all duration-200 ease-out;
+        }
+        & .input-wrapper {
+            @apply h-10 py-0;
+        }
+    }
 
-	/* Input wrapper */
+    /* Input wrapper */
 
-	& .input-wrapper {
-		@apply relative w-full inline-flex shadow-sm px-3 py-2 bg-default-100 min-h-10 rounded-xl flex-col items-start justify-center gap-0 transition-colors duration-[150ms] outline-none h-14;
-		& .input-label {
-			@apply block text-xs max-w-full text-default-600 transition-all duration-200 ease-out pb-px;
-		}
-		& > .inner-wrapper {
-			@apply inline-flex w-full items-center h-full pb-0.5 gap-1.5;
-			& > input {
-				@apply w-full text-sm text-base-foreground font-normal bg-transparent outline-none;
-				&::-webkit-input-placeholder,
-				&::placeholder {
-					@apply text-default-500;
-				}
-			}
-		}
-	}
+    & .input-wrapper {
+        @apply relative inline-flex h-14 min-h-10 w-full flex-col items-start justify-center gap-0 rounded-medium bg-default-100 px-3 py-2 shadow-sm outline-none transition-colors duration-[150ms];
+        & .input-label {
+            @apply block max-w-full pb-px text-xs text-default-600 transition-all duration-200 ease-out;
+        }
+        & > .inner-wrapper {
+            @apply inline-flex h-full w-full items-center gap-1.5 pb-0.5;
+            & > input {
+                @apply w-full bg-transparent text-sm font-normal text-foreground outline-none;
+                &::-webkit-input-placeholder,
+                &::placeholder {
+                    @apply text-default-500;
+                }
+            }
+        }
+    }
 
-	/* Helper wrapper */
-	& .helper-wrapper {
-		@apply flex p-1 relative flex-col gap-1.5;
-		& > .description {
-			@apply text-xs text-default-400;
-		}
-		& > .error-msg {
-			@apply text-xs text-base-danger hidden;
-		}
-	}
+    /* Helper wrapper */
+    & .helper-wrapper {
+        @apply relative flex flex-col gap-1.5 p-1;
+        & > .description {
+            @apply text-xs text-default-400;
+        }
+        & > .error-msg {
+            @apply hidden text-xs text-danger;
+        }
+    }
 }

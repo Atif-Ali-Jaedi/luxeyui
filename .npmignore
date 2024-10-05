@@ -1,9 +1,11 @@
 __test__/
 index.html
 package-lock.json
-postcss.config.js
+.postcssrc.json
 .prettierrc
 .vscode/
+./colors
+.parcel-cache
 .npmignore
 src/
 tsconfig.json

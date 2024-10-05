@@ -1,6 +1,6 @@
 .kbd {
-	@apply px-1.5 py-0.5 inline-flex space-x-0.5 rtl:space-x-reverse items-center font-sans font-normal text-center text-sm bg-default-100 text-default-600 rounded-lg shadow-[0_0_5px_0_rgba(0,0,0,0.02),0_2px_10px_0_rgba(0,0,0,0.06),0_0_1px_0_rgba(0,0,0,0.3)] dark:shadow-[0_0_5px_0_rgba(0,0,0,0.05),0_2px_10px_0_rgba(0.2),inset_0_0_1px_0_rgba(255,255,255,0.15)];
-	& > abbr {
-		@apply no-underline;
-	}
+    @apply inline-flex items-center space-x-0.5 rounded-small bg-default-100 px-1.5 py-0.5 text-center font-sans text-sm font-normal text-default-600 shadow-[0_0_5px_0_rgba(0,0,0,0.02),0_2px_10px_0_rgba(0,0,0,0.06),0_0_1px_0_rgba(0,0,0,0.3)] dark:shadow-[0_0_5px_0_rgba(0,0,0,0.05),0_2px_10px_0_rgba(0.2),inset_0_0_1px_0_rgba(255,255,255,0.15)] rtl:space-x-reverse;
+    & > abbr {
+        @apply no-underline;
+    }
 }

@@ -1,5 +1,5 @@
 .divider {
-    @apply my-4 h-px w-full shrink-0 border-none bg-layout-divider;
+    @apply my-4 h-px w-full shrink-0 border-none bg-divider;
     &[data-orientation="vertical"] {
         @apply mx-4 my-0 h-full w-px;
     }

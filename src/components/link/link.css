@@ -1,27 +1,27 @@
 a.link {
     /* Base */
-    @apply relative inline-flex cursor-pointer select-none items-center gap-1 text-layout-foreground underline-offset-2 outline-none transition-all duration-300 hover:opacity-80 active:opacity-50;
+    @apply relative inline-flex cursor-pointer select-none items-center gap-1 text-foreground underline-offset-2 outline-none transition-all duration-300 hover:opacity-80 active:opacity-disabled;
 
     /* Colors */
     &.primary {
-        @apply text-base-primary;
+        @apply text-primary;
     }
     &.secondary {
-        @apply text-base-secondary;
+        @apply text-secondary;
     }
     &.success {
-        @apply text-base-success;
+        @apply text-success;
     }
     &.warning {
-        @apply text-base-warning;
+        @apply text-warning;
     }
     &.danger {
-        @apply text-base-danger;
+        @apply text-danger;
     }
 
     /* Disabled */
     &[data-disabled] {
-        @apply pointer-events-none opacity-50;
+        @apply pointer-events-none opacity-disabled;
     }
 
     /* Sizes */
@@ -46,22 +46,22 @@ a.link {
 
     /* Block */
     &[data-block] {
-        @apply rounded-xl px-2 py-1 no-underline hover:bg-base-foreground/10 hover:opacity-100 active:opacity-100;
+        @apply rounded-medium px-2 py-1 no-underline hover:bg-foreground/10 hover:opacity-100 active:opacity-100;
 
         &.primary {
-            @apply hover:bg-base-primary/20;
+            @apply hover:bg-primary/20;
         }
         &.secondary {
-            @apply hover:bg-base-secondary/20;
+            @apply hover:bg-secondary/20;
         }
         &.success {
-            @apply hover:bg-base-success/20;
+            @apply hover:bg-success/20;
         }
         &.warning {
-            @apply hover:bg-base-warning/20;
+            @apply hover:bg-warning/20;
         }
         &.danger {
-            @apply hover:bg-base-danger/20;
+            @apply hover:bg-danger/20;
         }
     }
 }

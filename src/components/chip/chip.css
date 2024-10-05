@@ -1,180 +1,274 @@
 .chip {
-	@apply relative max-w-fit inline-flex items-center justify-center whitespace-nowrap px-3 h-7 text-sm rounded-full bg-base-default text-base-foreground;
-	/* Disabled */
-	&[data-disabled] {
-		@apply pointer-events-none opacity-50;
-	}
-	/* sizes */
-	&.size-sm {
-		@apply h-6 text-xs px-2;
-		& > span {
-			@apply px-1;
-		}
-	}
-	&.size-lg {
-		@apply px-4 h-8 text-base;
-	}
-	/* radiuses */
-	&.radius-sm {
-		@apply rounded-lg;
-	}
-	&.radius-md {
-		@apply rounded-xl;
-	}
-	&.radius-lg {
-		@apply rounded-[14px];
-	}
-	&.radius-full {
-		@apply rounded-full;
-	}
-	/* Colors */
-	&.foreground {
-		@apply bg-base-foreground text-content-1;
-	}
-	&.primary {
-		@apply bg-base-primary text-white;
-	}
-	&.secondary {
-		@apply bg-base-secondary text-white;
-	}
-	&.success {
-		@apply bg-base-success;
-	}
-	&.warning {
-		@apply bg-base-warning;
-	}
-	&.danger {
-		@apply bg-base-danger text-white;
-	}
-	/* Variants */
-	/* Faded */
-	&.faded {
-		@apply border-2 border-base-default;
-		&.faded {
-			@apply bg-default-100;
-			&.default {
-				@apply text-base-foreground;
-			}
-		}
-	}
-	/* Bordered */
-	&.bordered {
-		@apply border-2 border-current;
-		&.bordered {
-			@apply bg-transparent;
-		}
-	}
-	/* common */
-	&.bordered,
-	&.light,
-	&.flat,
-	&.faded {
-		&.foreground {
-			@apply text-base-foreground;
-		}
-		&.default {
-			@apply text-default-400;
-		}
-		&.primary {
-			@apply text-base-primary;
-		}
-		&.secondary {
-			@apply text-base-secondary;
-		}
-		&.success {
-			@apply text-base-success;
-		}
-		&.warning {
-			@apply text-base-warning;
-		}
-		&.danger {
-			@apply text-base-danger;
-		}
-	}
-	/* Light */
-	&.light.light {
-		@apply bg-transparent;
-	}
+    @apply relative inline-flex h-7 min-w-min max-w-fit items-center justify-between whitespace-nowrap rounded-full bg-default px-1 text-small text-foreground;
 
-	/* Flat */
-	&.flat {
-		&.foreground {
-			@apply bg-base-foreground/10 dark:bg-base-foreground/20;
-		}
-		&.default {
-			@apply bg-base-default/50;
-		}
-		&.primary {
-			@apply bg-base-primary/20;
-		}
-		&.secondary {
-			@apply bg-base-secondary/20;
-		}
-		&.success {
-			@apply bg-base-success/20;
-		}
-		&.warning {
-			@apply bg-base-warning/20;
-		}
-		&.danger {
-			@apply bg-base-danger/20;
-		}
-	}
-	/* Shadow */
-	&.shadow {
-		@apply shadow-lg;
+    &[data-disabled] {
+        @apply pointer-events-none opacity-disabled;
+    }
 
-		&.foreground {
-			@apply shadow-base-foreground/40;
-		}
-		&.default {
-			@apply shadow-base-default/60;
-		}
-		&.primary {
-			@apply shadow-base-primary/40;
-		}
-		&.secondary {
-			@apply shadow-base-secondary/40;
-		}
-		&.success {
-			@apply shadow-base-success/40;
-		}
-		&.warning {
-			@apply shadow-base-warning/40;
-		}
-		&.danger {
-			@apply shadow-base-danger/40;
-		}
-	}
-	/* Dot */
-	&.dot {
-		@apply border-2 border-base-default;
-		&.dot {
-			@apply bg-transparent text-base-foreground pl-6;
-			&.primary::before {
-				@apply bg-base-primary;
-			}
-			&.secondary::before {
-				@apply bg-base-secondary;
-			}
-			&.success::before {
-				@apply bg-base-success;
-			}
-			&.warning::before {
-				@apply bg-base-warning;
-			}
-			&.danger::before {
-				@apply bg-base-danger;
-			}
-			&.foreground::before {
-				@apply bg-base-foreground;
-			}
-			&::before {
-				@apply content-[''] w-2 h-2 rounded-full absolute left-2 top-1/2 -translate-y-1/2 bg-base-default;
-			}
-		}
-	}
-	& > span {
-		@apply flex-1 text-inherit px-2;
-	}
+    & .content {
+        @apply flex-1 px-2 font-normal text-inherit;
+    }
+
+    & .dot {
+        @apply ml-1 size-2 rounded-full;
+    }
+
+    & .avatar {
+        @apply h-5 w-5 flex-shrink-0;
+    }
+
+    & .close-button {
+        @apply z-10 cursor-pointer select-none appearance-none text-large opacity-70 outline-none transition-opacity [-webkit-tap-highlight-color:transparent] hover:opacity-100 active:opacity-disabled;
+    }
+
+    &:has(> .start-content) .content {
+        @apply pl-1;
+    }
+    &:has(> .end-content) .content {
+        @apply pr-1;
+    }
+    &[data-one-char]:not(:has(.start-content, .end-content)) {
+        @apply size-6 min-h-6 min-w-6;
+        &:has(.close-button) {
+            @apply w-auto;
+        }
+        &:not(:has(.close-button)) {
+            @apply justify-center px-0;
+            & .content {
+                @apply flex-none px-0;
+            }
+        }
+    }
+
+    /* Sizes */
+    &.size-sm {
+        @apply h-6 text-tiny;
+        & .content {
+            @apply px-1;
+        }
+        & .close-button {
+            @apply text-medium;
+        }
+        & .avatar {
+            @apply h-4 w-4;
+        }
+
+        &:has(> .start-content) .content {
+            @apply pl-0.5;
+        }
+        &:has(> .end-content) .content {
+            @apply pr-0.5;
+        }
+        &[data-one-char]:not(:has(.start-content, .end-content)) {
+            @apply size-5 min-h-5 min-w-5;
+        }
+    }
+    &.size-lg {
+        @apply h-8 px-2 text-medium;
+        & .close-button {
+            @apply text-xl;
+        }
+        & .avatar {
+            @apply h-6 w-6;
+        }
+        &[data-one-char]:not(:has(.start-content, .end-content)) {
+            @apply size-7 min-h-7 min-w-7;
+        }
+    }
+
+    /* Radius */
+    &.radius-none {
+        @apply rounded-none;
+    }
+    &.radius-sm {
+        @apply rounded-small;
+    }
+    &.radius-md {
+        @apply rounded-medium;
+    }
+    &.radius-lg {
+        @apply rounded-large;
+    }
+
+    /* Colors with variants */
+
+    &.bordered.bordered {
+        @apply border-2 bg-transparent;
+    }
+    &.light.light {
+        @apply bg-transparent;
+    }
+    &.faded.faded {
+        @apply border-2 border-default bg-default-100;
+    }
+    &.shadow {
+        @apply shadow-lg;
+    }
+
+    &.dot.dot {
+        @apply border-2 border-default bg-transparent text-foreground;
+        & .dot {
+            @apply bg-default-400;
+        }
+        &.primary .dot {
+            @apply bg-primary;
+        }
+        &.secondary .dot {
+            @apply bg-secondary;
+        }
+        &.success .dot {
+            @apply bg-success;
+        }
+        &.warning .dot {
+            @apply bg-warning;
+        }
+        &.danger .dot {
+            @apply bg-danger;
+        }
+        &.foreground .dot {
+            @apply bg-foreground;
+        }
+
+        &[data-one-char] {
+            @apply h-7 w-auto items-center px-1;
+            & .content {
+                @apply px-2;
+            }
+        }
+    }
+
+    &:not(
+            &.primary,
+            &.secondary,
+            &.success,
+            &.warning,
+            &.danger,
+            &.foreground
+        ) {
+        &.bordered {
+            @apply border-default;
+        }
+        &.flat {
+            @apply bg-default/40 text-default-700;
+        }
+        &.shadow {
+            @apply shadow-default/50;
+        }
+    }
+
+    &.primary {
+        @apply bg-primary text-white;
+
+        &.bordered {
+            @apply border-primary text-primary;
+        }
+        &.light {
+            @apply text-primary;
+        }
+        &.flat {
+            @apply bg-primary/20 text-primary-700;
+        }
+        &.faded {
+            @apply text-primary;
+        }
+        &.shadow {
+            @apply shadow-primary/40;
+        }
+    }
+
+    &.secondary {
+        @apply bg-secondary text-white;
+
+        &.bordered {
+            @apply border-secondary text-secondary;
+        }
+        &.light {
+            @apply text-secondary;
+        }
+        &.flat {
+            @apply bg-secondary/20 text-secondary-700;
+        }
+        &.faded {
+            @apply text-secondary;
+        }
+        &.shadow {
+            @apply shadow-secondary/40;
+        }
+    }
+    &.success {
+        @apply bg-success text-black;
+
+        &.bordered {
+            @apply border-success text-success;
+        }
+        &.light {
+            @apply text-success;
+        }
+        &.flat {
+            @apply bg-success/20 text-success-800 dark:text-success;
+        }
+        &.faded {
+            @apply text-success;
+        }
+        &.shadow {
+            @apply shadow-success/40;
+        }
+    }
+    &.warning {
+        @apply bg-warning text-black;
+
+        &.bordered {
+            @apply border-warning text-warning;
+        }
+        &.light {
+            @apply text-warning;
+        }
+        &.flat {
+            @apply bg-warning/20 text-warning-800 dark:text-warning;
+        }
+        &.faded {
+            @apply text-warning;
+        }
+        &.shadow {
+            @apply shadow-warning/40;
+        }
+    }
+    &.danger {
+        @apply bg-danger text-white;
+
+        &.bordered {
+            @apply border-danger text-danger;
+        }
+        &.light {
+            @apply text-danger;
+        }
+        &.flat {
+            @apply bg-danger/20 text-danger-800 dark:text-danger-500;
+        }
+        &.faded {
+            @apply text-danger;
+        }
+        &.shadow {
+            @apply shadow-danger/40;
+        }
+    }
+    &.foreground {
+        @apply bg-foreground text-background;
+
+        &.bordered {
+            @apply border-foreground;
+        }
+        &.light,
+        &.bordered,
+        &.faded,
+        &.flat {
+            @apply text-foreground;
+        }
+        &.flat {
+            @apply bg-foreground/10;
+        }
+        &.shadow {
+            @apply shadow-foreground/40;
+        }
+    }
 }

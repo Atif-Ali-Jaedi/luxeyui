@@ -1,32 +1,32 @@
 code.code {
-	@apply px-2 py-1 h-fit font-mono font-normal inline-block whitespace-nowrap bg-base-default/40 text-layout-foreground text-sm rounded-lg; /* Colors */
-	&.primary {
-		@apply text-base-primary bg-base-primary/20;
-	}
-	&.secondary {
-		@apply text-base-secondary bg-base-secondary/20;
-	}
-	&.success {
-		@apply text-success-600 bg-base-success/20;
-	}
-	&.warning {
-		@apply text-warning-600 bg-base-warning/20;
-	}
-	&.danger {
-		@apply text-base-danger bg-base-danger/20;
-	}
-	/* Sizes */
-	&.size-md {
-		@apply text-base;
-	}
-	&.size-lg {
-		@apply text-lg;
-	}
-	/* Radius */
-	&.radius-md {
-		@apply rounded-xl;
-	}
-	&.radius-lg {
-		@apply rounded-[14px];
-	}
+    @apply inline-block h-fit whitespace-nowrap rounded-small bg-default/40 px-2 py-1 font-mono text-sm font-normal text-foreground; /* Colors */
+    &.primary {
+        @apply bg-primary/20 text-primary;
+    }
+    &.secondary {
+        @apply bg-secondary/20 text-secondary;
+    }
+    &.success {
+        @apply bg-success/20 text-success-600;
+    }
+    &.warning {
+        @apply bg-warning/20 text-warning-600;
+    }
+    &.danger {
+        @apply bg-danger/20 text-danger;
+    }
+    /* Sizes */
+    &.size-md {
+        @apply text-base;
+    }
+    &.size-lg {
+        @apply text-lg;
+    }
+    /* Radius */
+    &.radius-md {
+        @apply rounded-medium;
+    }
+    &.radius-lg {
+        @apply rounded-[14px];
+    }
 }

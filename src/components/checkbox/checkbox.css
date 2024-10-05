@@ -1,195 +1,228 @@
-/* Checkbox group styles */
 .checkbox-group {
-	@apply relative flex flex-col gap-2;
-	/* Label */
-	& > .checkbox-group-label {
-		@apply text-default-500;
-	}
-	/* Description */
-	& > .description {
-		@apply text-sm text-default-400;
-	}
-	/* Error message */
-	& > .error-msg {
-		@apply text-sm text-base-danger;
-	}
-	/* Checkboxes */
-	& > .checkboxes {
-		@apply flex flex-col flex-wrap gap-2;
-	}
+    @apply relative flex flex-col gap-2;
 
-	/* Invalid */
-	&[data-invalid="true"] {
-		& > .description {
-			@apply text-base-danger;
-		}
-		& > .checkboxes .checkbox-wrapper {
-			& > .checkbox-icon {
-				@apply text-white;
-				&::before {
-					@apply bg-base-danger;
-				}
-				&::after {
-					@apply border-base-danger;
-				}
-			}
-			& > .checkbox-label {
-				@apply text-base-danger;
-			}
-		}
-	}
-	/* Required */
-	&[data-required] > .checkbox-group-label::after,
-	&:has(input[type="checkbox"].checkbox:required) {
-		@apply content-['*'] text-base-danger ml-0.5;
-	}
-	/* Disabled */
-	&[data-disabled] > .checkboxes {
-		@apply opacity-50 pointer-events-none;
-	}
-	/* Horizontal */
-	&[data-orientation="horizontal"] > .checkboxes {
-		@apply flex-row;
-	}
+    &[data-orientation="horizontal"] .checkbox-wrapper {
+        @apply flex-row;
+    }
+
+    &[data-required]::after {
+        @apply ml-0.5 text-danger content-['*'];
+    }
+
+    &:has(
+            .checkbox-wrapper
+                .checkbox[data-invalid="true"]
+                input[type="checkbox"]:checked
+        )
+        .description {
+        @apply text-danger;
+    }
+
+    &:not(&[data-disable-animation]) .description {
+        @apply transition-colors duration-150 motion-reduce:transition-none;
+    }
+
+    & .group-label {
+        @apply relative text-medium text-default-500;
+    }
+    & .checkbox-wrapper {
+        @apply flex flex-col flex-wrap gap-2;
+    }
+    & .description {
+        @apply text-small text-default-400;
+    }
+    & .error-msg {
+        @apply text-small text-danger;
+    }
 }
 
-/* Checkbox Styles */
-.checkbox-wrapper {
-	@apply flex items-center gap-2;
-	/* Active State */
-	&:active .checkbox-icon {
-		@apply scale-97;
-	}
-	& > .checkbox-label {
-		@apply select-none text-layout-foreground transition-all duration-300;
-	}
-	/* Disabled */
-	&[data-disabled],
-	&:has(.checkbox-icon > input[type="checkbox"].checkbox:disabled) {
-		@apply opacity-50 pointer-events-none;
-	}
-	/* Line through */
-	&[data-line-through] > .checkbox-label {
-		@apply relative;
-		&::before {
-			@apply content-[''] absolute bg-default-500 w-full h-0.5 scale-x-0 transition-all duration-300 top-1/2 -translate-y-1/2;
-		}
-	}
-	/* Checked State */
-	&:has (.checkbox-icon > input[type="checkbox"].checkbox:checked) {
-		&[data-line-through] > .checkbox-label {
-			@apply text-default-500;
-			&::before {
-				@apply scale-x-100;
-			}
-		}
-		& > .checkbox-icon {
-			&::before {
-				@apply opacity-100 scale-100;
-			}
-			& > svg {
-				&[data-custom] {
-					@apply opacity-100;
-				}
-				& > polyline {
-					@apply opacity-100 [stroke-dashoffset:44];
-				}
-			}
-		}
-	}
-	/* Icon & Input */
-	& > .checkbox-icon {
-		@apply relative inline-flex items-center justify-center w-5 h-5 rounded-lg text-layout-background;
-		&::before {
-			@apply content-[''] absolute inset-0 bg-base-foreground rounded-[inherit] z-[2] opacity-0 transition-all duration-200 ease-linear scale-50;
-		}
-		&::after {
-			@apply content-[''] absolute inset-0 border-2 border-base-default rounded-[inherit];
-		}
-		& > svg {
-			@apply w-4 h-3 z-[3];
-			&[data-custom] {
-				@apply opacity-0 transition-all duration-300;
-			}
-			& > polyline {
-				@apply opacity-0;
-				transition:
-					stroke-dashoffset 250ms linear 0.2s,
-					opacity 75ms linear;
-			}
-		}
-		& > input[type="checkbox"].checkbox {
-			@apply invisible absolute;
-		}
-	}
-	/* Sizes	*/
-	&.size-sm {
-		@apply text-sm;
-		& > .checkbox-icon {
-			@apply w-4 h-4 rounded-md;
-			& > svg {
-				@apply w-3 h-2;
-			}
-		}
-	}
-	&.size-lg {
-		@apply text-lg;
-		& > .checkbox-icon {
-			@apply w-6 h-6;
-			& > svg {
-				@apply w-5 h-4;
-			}
-		}
-	}
-	/* radiuses */
-	&.radius-full > .checkbox-icon {
-		@apply rounded-full;
-	}
-	&.radius-lg > .checkbox-icon {
-		@apply rounded-[14px];
-	}
-	&.radius-sm > .checkbox-icon {
-		@apply rounded-md;
-	}
-	&.radius-none > .checkbox-icon {
-		@apply rounded-none;
-	}
+.checkbox {
+    @apply relative -m-2 inline-flex max-w-fit cursor-pointer select-none items-center justify-start p-2 [-webkittap-highlight-color:transparent] [&:hover_.icon-wrapper::before]:bg-default-100;
+    /* Hidden Input */
+    & > span:has(input) {
+        border: 0px;
+        clip: rect(0px, 0px, 0px, 0px);
+        clip-path: inset(50%);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0px;
+        position: absolute;
+        width: 1px;
+        white-space: nowrap;
+    }
 
-	/* Colors */
-	&.default > .checkbox-icon {
-		@apply text-base-foreground;
-		&::before {
-			@apply bg-base-default;
-		}
-	}
-	&.primary > .checkbox-icon {
-		@apply text-white;
-		&::before {
-			@apply bg-base-primary;
-		}
-	}
-	&.secondary .checkbox-icon {
-		@apply text-white;
-		&::before {
-			@apply bg-base-secondary;
-		}
-	}
-	&.success .checkbox-icon {
-		@apply text-black;
-		&::before {
-			@apply bg-base-success;
-		}
-	}
-	&.warning .checkbox-icon {
-		@apply text-black;
-		&::before {
-			@apply bg-base-warning;
-		}
-	}
-	&.danger > .checkbox-icon {
-		@apply text-white;
-		&::before {
-			@apply bg-base-danger;
-		}
-	}
+    /* Checked State */
+    &:has(input[type="checkbox"]:checked) {
+        & .icon-wrapper {
+            @apply after:scale-100 after:opacity-100;
+            & svg {
+                @apply opacity-100;
+                &:not(&.icon) polyline {
+                    stroke-dashoffset: 44;
+                }
+            }
+        }
+    }
+
+    /* Disabled */
+    &[data-disabled] {
+        @apply pointer-events-none opacity-disabled;
+    }
+
+    /* Invalid */
+    &[data-invalid="true"]:has(input[type="checkbox"]:checked) {
+        & .icon-wrapper::before {
+            @apply border-danger;
+        }
+        & .checkbox-label {
+            @apply text-danger;
+        }
+    }
+
+    &:not(&[data-disable-animation]) {
+        & .icon-wrapper {
+            @apply transition-transform duration-[250ms] active:scale-95;
+            &::before {
+                @apply transition-colors duration-[250ms];
+            }
+            &::after {
+                @apply transition-all duration-200 ease-linear motion-reduce:transition-none;
+            }
+            & > svg {
+                @apply transition-all duration-[250ms] motion-reduce:transition-none;
+            }
+        }
+        & .checkbox-label {
+            @apply transition-all duration-[250ms] before:transition-[width] before:duration-[250ms] motion-reduce:transition-none;
+        }
+    }
+
+    /* Required */
+    &[data-required] {
+        &.icon-wrapper::before {
+            @apply border-2 border-solid border-danger;
+        }
+    }
+
+    /* Inverted */
+    &[data-inverted] {
+        @apply border-2 border-solid border-white;
+    }
+
+    /* Wrapper */
+    & .icon-wrapper {
+        @apply relative mr-2 inline-flex size-5 flex-shrink-0 items-center justify-center overflow-hidden rounded-[calc(theme(borderRadius.medium)*0.6)] text-foreground;
+
+        &::before {
+            @apply absolute inset-0 rounded-[calc(theme(borderRadius.medium)*0.6)] border-2 border-solid border-default content-[''];
+        }
+        &::after {
+            @apply absolute inset-0 origin-center scale-50 rounded-[calc(theme(borderRadius.medium)*0.6)] bg-default text-foreground opacity-0 content-[''];
+        }
+
+        /* Icon */
+        & > svg {
+            @apply z-10 h-3 w-4 fill-current text-inherit opacity-0;
+        }
+    }
+
+    & .checkbox-label {
+        @apply relative select-none text-medium text-foreground;
+    }
+
+    /* Line through */
+    &[data-line-through] {
+        & .checkbox-label {
+            @apply inline-flex items-center justify-center;
+            &::before {
+                @apply absolute h-0.5 w-0 bg-foreground content-[''];
+            }
+        }
+        &:has(input[type="checkbox"]:checked) .checkbox-label {
+            @apply opacity-60 before:w-full;
+        }
+    }
+
+    /* Sizes */
+    &.size-sm {
+        & .icon-wrapper {
+            @apply size-4 rounded-[calc(theme(borderRadius.medium)*0.5)];
+            &::before,
+            &::after {
+                @apply rounded-[calc(theme(borderRadius.medium)*0.5)];
+            }
+            & > svg {
+                @apply h-2 w-3;
+            }
+        }
+        & .checkbox-label {
+            @apply text-small;
+        }
+    }
+    &.size-lg {
+        &.icon-wrapper {
+            @apply size-6 rounded-[calc(theme(borderRadius.medium)*0.7)];
+            &::before,
+            &::after {
+                @apply rounded-[calc(theme(borderRadius.medium)*0.7)];
+            }
+            & > svg {
+                @apply h-4 w-5;
+            }
+        }
+        &.checkbox-label {
+            @apply text-large;
+        }
+    }
+
+    /* Radius */
+    &.radius-none.radius-none .icon-wrapper {
+        @apply rounded-none;
+        &::before,
+        &::after {
+            @apply rounded-none;
+        }
+    }
+    &.radius-sm.radius-sm .icon-wrapper {
+        @apply rounded-[calc(theme(borderRadius.medium)*0.5)];
+        &::before,
+        &::after {
+            @apply rounded-[calc(theme(borderRadius.medium)*0.5)];
+        }
+    }
+    &.radius-lg.radius-lg .icon-wrapper {
+        @apply rounded-[calc(theme(borderRadius.medium)*0.7)];
+        &::before,
+        &::after {
+            @apply rounded-[calc(theme(borderRadius.medium)*0.7)];
+        }
+    }
+    &.radius-full.radius-full .icon-wrapper {
+        @apply rounded-full;
+        &::before,
+        &::after {
+            @apply rounded-full;
+        }
+    }
+
+    /* Colors */
+    &.primary .icon-wrapper {
+        @apply text-white after:bg-primary after:text-white;
+    }
+    &.secondary .icon-wrapper {
+        @apply text-white after:bg-secondary after:text-white;
+    }
+    &.success .icon-wrapper {
+        @apply text-black after:bg-success after:text-black;
+    }
+    &.warning .icon-wrapper {
+        @apply text-black after:bg-warning after:text-black;
+    }
+    &.danger .icon-wrapper {
+        @apply text-white after:bg-danger after:text-white;
+    }
+    &.foreground .icon-wrapper {
+        @apply text-background after:bg-foreground after:text-background;
+    }
 }

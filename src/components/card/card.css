@@ -1,15 +1,87 @@
 .card {
-	@apply relative flex flex-col overflow-hidden h-auto text-base-foreground box-border bg-content-1 shadow-lg shadow-black/5 rounded-14;
-	& * {
-		@apply z-[2];
-	}
-	& > .card-header {
-		@apply p-3 w-full flex items-center justify-start gap-3 shrink-0 [overflow:inherit] [color:inherit] rounded-t-14;
-	}
-	& > .card-body {
-		@apply relative p-3 flex w-full flex-auto flex-col [place-content:inherit] [align-items:inherit] h-auto break-words text-start overflow-y-auto;
-	}
-	& > .card-footer {
-		@apply p-3 h-auto flex w-full items-center overflow-hidden [color:inherit] rounded-b-14;
-	}
+    @apply relative flex h-auto flex-col overflow-hidden rounded-medium bg-content-1 text-foreground outline-none [box-shadow:var(--box-shadow-medium)];
+
+    & .card-header {
+        @apply z-10 flex w-full shrink-0 items-center justify-start rounded-t-medium bg-inherit p-3 text-inherit subpixel-antialiased [overflow:inherit];
+    }
+    & .card-body {
+        @apply relative flex h-auto w-full flex-auto flex-col overflow-y-auto break-words p-3 text-left subpixel-antialiased [align-items:inherit] [place-content:inherit];
+    }
+
+    & .card-footer {
+        @apply flex h-auto w-full items-center overflow-hidden rounded-b-medium bg-inherit p-3 text-inherit subpixel-antialiased;
+    }
+
+    /* Full width */
+    &[data-full-width] {
+        @apply w-full;
+    }
+
+    /* Hoverable */
+    &[data-hoverable]:hover {
+        @apply bg-content-2;
+    }
+
+    /* Pressable */
+    &[data-pressable="true"] {
+        @apply cursor-pointer [-webkit-tap-highlight-color:transparent] active:scale-97;
+    }
+
+    /* Blurred */
+    &[data-blurred] {
+        @apply bg-background/80 backdrop-blur-md backdrop-saturate-150 dark:bg-background/20;
+    }
+
+    /* Blurred Footer */
+    &[data-blurred-footer] .card-footer {
+        @apply bg-background/10 backdrop-blur backdrop-saturate-150;
+    }
+
+    /* Disabled */
+    &[data-disabled] {
+        @apply cursor-not-allowed opacity-disabled;
+    }
+
+    /* Not disabling animation */
+    &:not([data-disable-animation]) {
+        @apply transition-all duration-300 motion-reduce:transition-none;
+    }
+
+    /* Shadows */
+    &.no-shadow {
+        @apply shadow-none;
+    }
+    &.shadow-small {
+        @apply [box-shadow:var(--box-shadow-small)];
+    }
+    &.shadow-large {
+        @apply [box-shadow:var(--box-shadow-large)];
+    }
+
+    /* Radius */
+    &.radius-none {
+        @apply rounded-none;
+        &.card-header,
+        &.card-footer {
+            @apply rounded-none;
+        }
+    }
+    &.radius-sm {
+        @apply rounded-small;
+        &.card-header {
+            @apply rounded-t-small;
+        }
+        &.card-footer {
+            @apply rounded-b-small;
+        }
+    }
+    &.radius-lg {
+        @apply rounded-large;
+        &.card-header {
+            @apply rounded-t-large;
+        }
+        &.card-footer {
+            @apply rounded-b-large;
+        }
+    }
 }

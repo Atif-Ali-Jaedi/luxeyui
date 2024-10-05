@@ -5,17 +5,20 @@ const log = console.log;
 const asciiLogo = `
  _                       _ _  _ 
 | |   _ _ __   ___  _ _ | | || |
-| |_ | | |\ \// ._>| | || ' || |
-|___|\`___|/\_\\___.\`_. |\`___'|_|
+| |_ | | | // ._>| | || ' || |
+|___|\`___|/_\\___.\`_. |\`___'|_|
                    <___'        
 `;
 
 log(asciiLogo);
 log(
-	chalk.yellow(
-		"Thank you for installing LuxeyUI. For comprehensive documentation please visit"
-	),
-	chalk.blue.bold(
-		terminalLink("LuxeyUI documentaion.", "https://luxeyui.vercel.app/docs")
-	)
+    chalk.yellow(
+        "Thank you for installing LuxeyUI. For comprehensive documentation please visit",
+    ),
+    chalk.blue.bold(
+        terminalLink(
+            "LuxeyUI documentaion.",
+            "https://luxeyui.vercel.app/docs",
+        ),
+    ),
 );

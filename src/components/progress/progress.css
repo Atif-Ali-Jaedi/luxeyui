@@ -3,7 +3,7 @@
 
     /* Disabled state */
     &[data-disabled] > .track {
-        @apply pointer-events-none opacity-50;
+        @apply pointer-events-none opacity-disabled;
     }
 
     /* Striped */
@@ -79,14 +79,14 @@
 
     /* Label wrapper */
     & > .label-wrapper {
-        @apply flex justify-between text-base-foreground;
+        @apply flex justify-between text-foreground;
     }
 
     /* Track */
     & > .track {
         @apply relative z-0 h-3 overflow-hidden rounded-full bg-default-300/50;
         & .indicator {
-            @apply h-full rounded-full bg-base-foreground;
+            @apply h-full rounded-full bg-foreground transition-[width] duration-300;
             width: var(--_progress, 100%);
             animation: progressing forwards 500ms cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -97,19 +97,19 @@
         @apply bg-default-400;
     }
     &.primary > .track .indicator {
-        @apply bg-base-primary;
+        @apply bg-primary;
     }
     &.secondary > .track .indicator {
-        @apply bg-base-secondary;
+        @apply bg-secondary;
     }
     &.success > .track .indicator {
-        @apply bg-base-success;
+        @apply bg-success;
     }
     &.warning > .track .indicator {
-        @apply bg-base-warning;
+        @apply bg-warning;
     }
     &.danger > .track .indicator {
-        @apply bg-base-danger;
+        @apply bg-danger;
     }
 
     /* Sizes */
@@ -140,14 +140,14 @@
     }
     &.radius-sm > .track,
     &.radius-sm > .track .indicator {
-        @apply rounded-lg;
+        @apply rounded-small;
     }
     &.radius-md > .track,
     &.radius-md > .track .indicator {
-        @apply rounded-xl;
+        @apply rounded-medium;
     }
     &.radius-lg > .track,
     &.radius-lg > .track .indicator {
-        @apply rounded-14;
+        @apply rounded-large;
     }
 }

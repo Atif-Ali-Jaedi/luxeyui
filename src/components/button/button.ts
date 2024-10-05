@@ -1,9 +1,8 @@
-import { rippleEffect } from "../../utils/ripple";
-
+import { Ripple } from "../../utils/ripple";
 document
-  .querySelectorAll<HTMLButtonElement>("button.button")
-  .forEach(
-    (btn) =>
-      btn.getAttribute("data-disable-ripple") === "true" ||
-      btn.addEventListener("click", (e) => rippleEffect(btn, e)),
-  );
+    .querySelectorAll<HTMLButtonElement>("button.button")
+    .forEach((button) => {
+        if (button && button.dataset.disableRipple !== "true") {
+            return new Ripple(button);
+        }
+    });

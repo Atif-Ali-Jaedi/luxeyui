@@ -1,73 +1,73 @@
 .textarea-outerbox {
-	@apply w-full;
-	/* Disabled */
-	&[data-disabled] {
-		@apply opacity-50 pointer-events-none;
-	}
-	/* Invalid */
-	&[data-invalid] {
-		& label {
-			@apply text-base-danger;
-		}
-		& .textarea-innerbox.textarea-innerbox {
-			@apply border-base-danger;
-			&::before {
-				@apply bg-base-danger;
-			}
-			& label,
-			& textarea {
-				@apply text-base-danger;
-			}
-		}
-	}
-	/* Label */
-	& > label {
-		@apply text-default-700 text-sm;
-	}
-	/* Required */
-	&:has(.textarea-innerbox > textarea:required) {
-		& > label::after,
-		& .textarea-innerbox > label::after {
-			@apply content-['*'] text-base-danger ml-0.5;
-		}
-	}
-	/* Innerbox */
-	& .textarea-innerbox {
-		@apply bg-default-100 rounded-lg w-full px-3 py-2 mt-1;
-		&:has(label) {
-			@apply py-1;
-		}
-		& > label {
-			@apply text-default-700 text-xs;
-		}
-		/* Textarea */
-		& > textarea {
-			@apply bg-transparent resize-none text-sm w-full text-layout-foreground;
-			&:focus {
-				@apply outline-none;
-			}
-		}
-	}
-	/* Variants */
-	&.faded > .textarea-innerbox,
-	&.bordered > .textarea-innerbox {
-		@apply border-[2.5px] border-default-200;
-	}
-	&.bordered > .textarea-innerbox {
-		@apply bg-transparent transition-all duration-300;
-		&:has(textarea:focus) {
-			@apply border-base-foreground;
-		}
-	}
-	&.underlined > .textarea-innerbox {
-		@apply relative border-b-[2.5px] border-default-200 bg-transparent rounded-none px-0;
-		&::before {
-			@apply content-[''] absolute -bottom-[2px] left-0 w-full h-0.5 bg-base-foreground scale-x-0 transition duration-300;
-		}
-		&:has(textarea:focus) {
-			&::before {
-				@apply scale-x-100;
-			}
-		}
-	}
+    @apply w-full;
+    /* Disabled */
+    &[data-disabled] {
+        @apply pointer-events-none opacity-disabled;
+    }
+    /* Invalid */
+    &[data-invalid] {
+        & label {
+            @apply text-danger;
+        }
+        & .textarea-innerbox.textarea-innerbox {
+            @apply border-danger;
+            &::before {
+                @apply bg-danger;
+            }
+            & label,
+            & textarea {
+                @apply text-danger;
+            }
+        }
+    }
+    /* Label */
+    & > label {
+        @apply text-sm text-default-700;
+    }
+    /* Required */
+    &:has(.textarea-innerbox > textarea:required) {
+        & > label::after,
+        & .textarea-innerbox > label::after {
+            @apply ml-0.5 text-danger content-['*'];
+        }
+    }
+    /* Innerbox */
+    & .textarea-innerbox {
+        @apply mt-1 w-full rounded-small bg-default-100 px-3 py-2;
+        &:has(label) {
+            @apply py-1;
+        }
+        & > label {
+            @apply text-xs text-default-700;
+        }
+        /* Textarea */
+        & > textarea {
+            @apply w-full resize-none bg-transparent text-sm text-foreground;
+            &:focus {
+                @apply outline-none;
+            }
+        }
+    }
+    /* Variants */
+    &.faded > .textarea-innerbox,
+    &.bordered > .textarea-innerbox {
+        @apply border-[2.5px] border-default-200;
+    }
+    &.bordered > .textarea-innerbox {
+        @apply bg-transparent transition-all duration-300;
+        &:has(textarea:focus) {
+            @apply border-foreground;
+        }
+    }
+    &.underlined > .textarea-innerbox {
+        @apply relative rounded-none border-b-[2.5px] border-default-200 bg-transparent px-0;
+        &::before {
+            @apply absolute -bottom-[2px] left-0 h-0.5 w-full scale-x-0 bg-foreground transition duration-300 content-[''];
+        }
+        &:has(textarea:focus) {
+            &::before {
+                @apply scale-x-100;
+            }
+        }
+    }
 }

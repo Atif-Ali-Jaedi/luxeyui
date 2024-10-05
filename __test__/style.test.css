@@ -1,19 +1,23 @@
 body {
-    min-height: 100vh;
-    padding: 2em;
+    min-height: 100dvh;
+    padding: 1.5em;
 }
+
 .main-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
 }
 
 body > .wrapper {
     padding: 2.5em;
-    border-radius: 1em;
-    border: solid #919191 1px;
+    border-radius: 0.75em;
+    border: solid #bbb 1px;
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
+}
+.dark > body > .wrapper {
+    border-color: #444;
 }

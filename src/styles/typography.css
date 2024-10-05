@@ -1,44 +1,44 @@
 /* Typography  Styles */
 
 h1.h1 {
-  @apply scroll-m-20 text-4xl font-extrabold tracking-tight text-base-foreground lg:text-5xl;
+    @apply scroll-m-20 text-4xl font-extrabold tracking-tight text-foreground lg:text-5xl;
 }
 h2.h2 {
-  @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight text-base-foreground first:mt-0;
+    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight text-foreground first:mt-0;
 }
 h3.h3 {
-  @apply scroll-m-20 text-2xl font-semibold tracking-tight text-base-foreground;
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight text-foreground;
 }
 h4.h4 {
-  @apply scroll-m-20 text-xl font-semibold tracking-tight text-base-foreground;
+    @apply scroll-m-20 text-xl font-semibold tracking-tight text-foreground;
 }
 h5.h5 {
-  @apply scroll-m-20 text-lg font-semibold tracking-tight text-base-foreground;
+    @apply scroll-m-20 text-lg font-semibold tracking-tight text-foreground;
 }
 h6.h6 {
-  @apply scroll-m-20 text-base font-semibold tracking-tight text-base-foreground;
+    @apply scroll-m-20 text-base font-semibold tracking-tight text-foreground;
 }
 p.p {
-  @apply leading-7 text-base-foreground;
+    @apply leading-7 text-foreground;
 }
 p.lead {
-  @apply text-xl text-base-foreground/60;
+    @apply text-xl text-foreground/60;
 }
 blockquote.blockquote {
-  @apply mt-6 border-l-2 pl-6 italic text-base-foreground;
+    @apply mt-6 border-l-2 pl-6 italic text-foreground;
 }
 ul.ul {
-  @apply my-6 ml-6 list-disc text-base-foreground [&>li]:mt-2;
+    @apply my-6 ml-6 list-disc text-foreground [&>li]:mt-2;
 }
 .large {
-  @apply text-lg font-semibold text-base-foreground;
+    @apply text-lg font-semibold text-foreground;
 }
 small.small {
-  @apply text-sm font-medium leading-none text-base-foreground;
+    @apply text-sm font-medium leading-none text-foreground;
 }
 .muted {
-  @apply text-sm text-base-foreground/60;
+    @apply text-sm text-foreground/60;
 }
 label.label {
-  @apply text-sm font-medium text-base-foreground;
+    @apply text-sm font-medium text-foreground;
 }

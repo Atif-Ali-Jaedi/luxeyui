@@ -1,108 +1,212 @@
-/* Radio Group styles */
-
 .radio-group {
-	/* Base */
-	@apply flex flex-col gap-2;
-	& > .radio-group-label {
-		@apply text-default-500;
-	}
-	/* Radio Inputs */
-	& .radios {
-		@apply flex flex-col flex-wrap gap-2;
-		&[data-disabled] {
-			@apply opacity-50 pointer-events-none;
-		}
-		&[data-orientation="horizontal"] {
-			@apply flex-row;
-		}
-		/* Checking if has any invalid input that is checked */
-		&:has(.radio[data-is-invalid] > input[type="radio"]:checked) {
-			& > .radio > input[type="radio"] {
-				@apply border-base-danger;
-				&::before {
-					@apply bg-base-danger;
-				}
-			}
-			& > .radio > .radio-label {
-				@apply text-base-danger;
-			}
-		}
-	}
+    @apply relative flex flex-col gap-2;
+    & .group-label {
+        @apply relative text-default-500;
+    }
+    & .radio-wrapper {
+        @apply flex flex-col flex-wrap gap-2;
+    }
+    & > .description {
+        @apply text-tiny text-default-400;
+    }
+    & .error-msg {
+        @apply text-tiny text-danger;
+    }
+
+    &:not(&[data-disable-animation]) > .description {
+        @apply transition-colors !duration-150 motion-reduce:transition-none;
+    }
+
+    &[data-orientation="horizontal"] .radio-wrapper {
+        @apply flex-row;
+    }
+
+    &[data-required] {
+        & .group-label {
+            @apply after:ml-0.5 after:text-danger after:content-['*'];
+        }
+    }
+
+    &:has(.radio-wrapper .radio[data-invalid="true"] :checked) > .description {
+        @apply text-danger;
+    }
+    &:has(.radio-wrapper .radio[data-invalid="true"] :checked) {
+        &:not(.radio-wrapper .radio[data-invalid="true"]) {
+            & .point-wrapper.point-wrapper.point-wrapper {
+                @apply border-danger;
+            }
+            & .label-wrapper {
+                & .label {
+                    @apply text-danger;
+                }
+                & .description {
+                    @apply text-danger-300;
+                }
+            }
+        }
+        & .point-wrapper .point.point {
+            @apply bg-danger text-white;
+        }
+    }
 }
 
-/* 
-  Main radio styles 
-  Don't know why I used ".radio" 2 times.
-*/
-
-.radio,
 .radio {
-	/* Base styles */
-	@apply max-w-fit inline-flex items-center justify-start cursor-pointer p-2 -m-2;
-	&[data-disabled] {
-		@apply opacity-50 pointer-events-none;
-	}
-	/* Radio input */
-	& > input[type="radio"] {
-		@apply relative appearance-none w-5 h-5 rounded-full border-2 border-base-default transition-all duration-300 outline-none;
-		&:checked {
-			@apply border-base-foreground;
-			&::before {
-				@apply bg-base-foreground scale-100;
-			}
-		}
+    @apply relative -m-2 inline-flex max-w-fit cursor-pointer select-none items-center justify-start p-2 [-webkit-tap-highlight-color:transparent];
 
-		&::before {
-			@apply content-[''] absolute top-1/2 left-1/2 w-1/2 h-1/2 rounded-full scale-0 bg-base-foreground transition-all duration-300 -translate-x-1/2 -translate-y-1/2;
-		}
-	}
-	/* Label */
-	& > .radio-label {
-		@apply flex flex-col ml-2 text-base-foreground select-none transition-all duration-300;
-		& > .description {
-			@apply text-base-foreground/40 text-sm;
-		}
-	}
-	/* Colors */
-	&.default > input[type="radio"]:checked {
-		@apply border-default-400;
-		&::before {
-			@apply bg-default-500;
-		}
-	}
+    /* Hidden Input */
+    & > span:has(input) {
+        border: 0px;
+        clip: rect(0px, 0px, 0px, 0px);
+        clip-path: inset(50%);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0px;
+        position: absolute;
+        width: 1px;
+        white-space: nowrap;
+    }
 
-	&.primary > input[type="radio"]:checked {
-		@apply border-base-primary;
-		&::before {
-			@apply bg-base-primary;
-		}
-	}
+    /* When not disabling animations */
+    &:not([data-disable-animation]) {
+        & .point-wrapper {
+            @apply transition-all duration-300 active:scale-95;
+            & .point {
+                @apply transition-all duration-300 motion-reduce:transition-none;
+            }
+        }
+        & .label-wrapper :is(.label, .description) {
+            @apply transition-colors duration-300 motion-reduce:transition-none;
+        }
+    }
 
-	&.secondary > input[type="radio"]:checked {
-		@apply border-base-secondary;
-		&::before {
-			@apply bg-base-secondary;
-		}
-	}
+    &[data-invalid="true"] {
+        &:has(:checked) {
+            & .point-wrapper.point-wrapper.point-wrapper {
+                @apply border-danger;
+            }
+            & .label-wrapper {
+                & .label {
+                    @apply text-danger;
+                }
+                & .description {
+                    @apply text-danger-300;
+                }
+            }
+        }
+        & .point-wrapper .point.point {
+            @apply bg-danger text-white;
+        }
+    }
 
-	&.success > input[type="radio"]:checked {
-		@apply border-base-success;
-		&::before {
-			@apply bg-base-success;
-		}
-	}
+    /* Disabled */
+    &[data-disabled] {
+        @apply pointer-events-none opacity-disabled;
+    }
 
-	&.warning > input[type="radio"]:checked {
-		@apply border-base-warning;
-		&::before {
-			@apply bg-base-warning;
-		}
-	}
+    /* Hover state */
+    &:not(:has(:checked)):hover .point-wrapper {
+        @apply bg-default-100;
+    }
 
-	&.danger > input[type="radio"]:checked {
-		@apply border-base-danger;
-		&::before {
-			@apply bg-base-danger;
-		}
-	}
+    /* Checked state with colors */
+    &:has(:checked) {
+        & .point-wrapper {
+            @apply border-default-500;
+            & .point {
+                @apply scale-100 opacity-100;
+            }
+        }
+        &.primary .point-wrapper {
+            @apply border-primary;
+        }
+        &.secondary .point-wrapper {
+            @apply border-secondary;
+        }
+        &.success .point-wrapper {
+            @apply border-success;
+        }
+        &.warning .point-wrapper {
+            @apply border-warning;
+        }
+        &.danger .point-wrapper {
+            @apply border-danger;
+        }
+        &.foreground .point-wrapper {
+            @apply border-foreground;
+        }
+    }
+
+    & .point-wrapper {
+        @apply relative inline-flex size-5 flex-shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-solid border-default;
+
+        & .point {
+            @apply z-10 size-2 origin-center scale-0 rounded-full bg-default-500 text-foreground opacity-0;
+        }
+    }
+
+    & .label-wrapper {
+        @apply ml-2 flex flex-col;
+        & .label {
+            @apply relative select-none text-medium text-foreground;
+        }
+        & .description {
+            @apply relative text-small text-default-400;
+        }
+    }
+
+    /* Sizes */
+    &.size-sm {
+        & .point-wrapper {
+            @apply size-4;
+            & .point {
+                @apply size-1.5;
+            }
+        }
+        & .label-wrapper {
+            @apply ml-1;
+            & .label {
+                @apply text-small;
+            }
+            & .description {
+                @apply text-tiny;
+            }
+        }
+    }
+    &.size-lg {
+        & .point-wrapper {
+            @apply size-6;
+            & .point {
+                @apply size-2.5;
+            }
+        }
+        & .label-wrapper {
+            & .label {
+                @apply text-large;
+            }
+            & .description {
+                @apply text-medium;
+            }
+        }
+    }
+
+    /* Colors */
+    &.primary .point-wrapper .point {
+        @apply bg-primary text-white;
+    }
+    &.secondary .point-wrapper .point {
+        @apply bg-secondary text-white;
+    }
+    &.success .point-wrapper .point {
+        @apply bg-success text-black;
+    }
+    &.warning .point-wrapper .point {
+        @apply bg-warning text-black;
+    }
+    &.danger .point-wrapper .point {
+        @apply bg-danger text-white;
+    }
+    &.foreground .point-wrapper .point {
+        @apply bg-foreground text-background;
+    }
 }

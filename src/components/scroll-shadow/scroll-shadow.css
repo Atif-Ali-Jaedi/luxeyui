@@ -1,6 +1,6 @@
 .scroll-shadow {
     --scroll-shadow-size: 40px;
-    @apply overflow-y-scroll text-layout-foreground;
+    @apply overflow-y-scroll text-foreground;
 
     &[data-hide-scrollbar] {
         scrollbar-width: none;

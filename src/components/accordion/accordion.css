@@ -3,7 +3,7 @@
 
     /* Disabled */
     &[data-disabled] {
-        @apply pointer-events-none opacity-50;
+        @apply pointer-events-none opacity-disabled;
     }
 
     /* Hide All Indicators */
@@ -53,22 +53,22 @@
 
     /* Variants */
     &.shadow {
-        @apply rounded-xl bg-content-1 px-4 shadow-md;
+        @apply rounded-medium bg-content-1 px-4 shadow-md;
     }
     &.bordered {
-        @apply rounded-xl border-2 border-layout-divider px-4;
+        @apply rounded-medium border-2 border-divider px-4;
     }
     &.splitted {
         @apply flex flex-col gap-2;
         & .accordion-item {
-            @apply rounded-xl bg-content-1 px-4 shadow-md;
+            @apply rounded-medium bg-content-1 px-4 shadow-md;
         }
     }
 
     & .accordion-item {
         /* Disabled */
         &[data-disabled] {
-            @apply pointer-events-none opacity-50;
+            @apply pointer-events-none opacity-disabled;
         }
 
         /* Hide Indicator */
@@ -102,7 +102,7 @@
                 @apply flex flex-1 flex-col text-start;
 
                 & .title {
-                    @apply text-lg text-base-foreground;
+                    @apply text-lg text-foreground;
                 }
 
                 & .subtitle {
