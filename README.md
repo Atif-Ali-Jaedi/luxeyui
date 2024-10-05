@@ -19,9 +19,9 @@ To kick off, use the CDN for now since the components aren't usable individually
 ### CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.6.0/dist/all.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.6.1/dist/all.min.css" />
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.6.0/dist/all.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.6.1/dist/all.min.js" defer></script>
 ```
 
 ### Vite
@@ -32,7 +32,7 @@ npx tailwindcss init -p
 npm i luxeyui@latest
 ```
 
-## What's New in v0.6.0?
+## What's New in v0.6.1?
 
 - **Progress**: Added support for dynamic value management with transition.
 - **Theme**: 

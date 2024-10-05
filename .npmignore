@@ -4,7 +4,7 @@ package-lock.json
 .postcssrc.json
 .prettierrc
 .vscode/
-./colors
+colors/
 .parcel-cache
 .npmignore
 src/
