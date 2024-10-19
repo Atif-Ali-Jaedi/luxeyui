@@ -24,7 +24,19 @@
 
     /* Pressable */
     &[data-pressable="true"] {
-        @apply cursor-pointer [-webkit-tap-highlight-color:transparent] active:scale-97;
+        @apply cursor-pointer [-webkit-tap-highlight-color:transparent];
+        &:not(
+                :has(
+                        a:active,
+                        button:active,
+                        [onclick]:active,
+                        input[type="button"]:active,
+                        input[type="submit"]:active,
+                        [role="button"]:active
+                    )
+            ):active {
+            @apply scale-97;
+        }
     }
 
     /* Blurred */

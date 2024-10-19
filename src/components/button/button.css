@@ -4,6 +4,9 @@
     &[data-full-width] button.button {
         @apply w-full;
     }
+    &[data-disabled] button.button {
+        @apply pointer-events-none opacity-disabled;
+    }
 
     & button.button {
         @apply rounded-none first:rounded-s-medium last:rounded-e-medium;

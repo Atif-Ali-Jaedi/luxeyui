@@ -7,8 +7,10 @@ document
                 let toggled = item.getAttribute("data-open") === "true";
                 toggled = !toggled;
                 // For single selection
-                item.parentElement?.getAttribute("data-selection-mode") ===
-                    "single" &&
+                if (
+                    item.parentElement?.getAttribute("data-selection-mode") ===
+                    "single"
+                )
                     document
                         .querySelectorAll<HTMLDivElement>(
                             ".accordion > .accordion-item",
@@ -22,7 +24,8 @@ document
         // Add <hr> after each item except the last one
         if (
             !item.parentElement?.classList.contains("splitted") &&
-            index < items.length - 1
+            index < items.length - 1 &&
+            item.parentElement?.dataset.showDivider !== "false"
         ) {
             const divider = document.createElement("hr");
             divider.className = "divider";

@@ -37,18 +37,13 @@
     }
 
     /* If Disabling Animation */
-    &[data-disable-animation] .accordion-item {
-        & section {
-            @apply hidden;
-        }
-        &[data-open="true"] section {
-            @apply block;
-        }
+    &[data-disable-animation] .accordion-item section {
+        transition: none;
     }
 
     /* If disabling indicator animation */
-    &[disable-indicator-animation] .accordion-item .trigger .indicator {
-        @apply transition-none;
+    &[data-disable-indicator-animation] .accordion-item .trigger .indicator {
+        @apply !transition-none;
     }
 
     /* Variants */
@@ -74,6 +69,10 @@
         /* Hide Indicator */
         &[data-hide-indicator] .trigger .indicator {
             @apply hidden;
+        }
+
+        &[data-disable-indicator-animation] .trigger .indicator {
+            @apply !transition-none;
         }
 
         /* Opened */

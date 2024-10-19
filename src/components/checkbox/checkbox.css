@@ -5,17 +5,28 @@
         @apply flex-row;
     }
 
-    &[data-required]::after {
+    &[data-disabled] .checkbox-wrapper {
+        @apply pointer-events-none opacity-disabled;
+    }
+
+    &[data-required] .group-label::after {
         @apply ml-0.5 text-danger content-['*'];
     }
 
-    &:has(
-            .checkbox-wrapper
-                .checkbox[data-invalid="true"]
-                input[type="checkbox"]:checked
-        )
-        .description {
-        @apply text-danger;
+    &[data-invalid="true"] {
+        & .icon-wrapper.icon-wrapper {
+            @apply text-white;
+            &::before {
+                @apply border-danger;
+            }
+            &::after {
+                @apply bg-danger;
+            }
+        }
+        & .description,
+        & .checkbox-label {
+            @apply text-danger;
+        }
     }
 
     &:not(&[data-disable-animation]) .description {
@@ -37,7 +48,7 @@
 }
 
 .checkbox {
-    @apply relative -m-2 inline-flex max-w-fit cursor-pointer select-none items-center justify-start p-2 [-webkittap-highlight-color:transparent] [&:hover_.icon-wrapper::before]:bg-default-100;
+    @apply relative -m-2 inline-flex max-w-fit cursor-pointer select-none items-center justify-start p-2 [-webkit-tap-highlight-color:transparent] [&:hover_.icon-wrapper::before]:bg-default-100;
     /* Hidden Input */
     & > span:has(input) {
         border: 0px;
@@ -68,16 +79,6 @@
     /* Disabled */
     &[data-disabled] {
         @apply pointer-events-none opacity-disabled;
-    }
-
-    /* Invalid */
-    &[data-invalid="true"]:has(input[type="checkbox"]:checked) {
-        & .icon-wrapper::before {
-            @apply border-danger;
-        }
-        & .checkbox-label {
-            @apply text-danger;
-        }
     }
 
     &:not(&[data-disable-animation]) {

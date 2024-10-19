@@ -5,7 +5,7 @@
 <p align="center">
     <img src="https://img.shields.io/npm/l/luxeyui?style=flat" alt="License" />
     <img src="https://img.shields.io/npm/v/luxeyui?style=flat&logo=npm&label=version&color=lincolngreen" alt="NPM Version" />
-    <img src="https://img.shields.io/badge/downloads-3.3k+-malachite" alt="Downloads" />
+    <img src="https://img.shields.io/badge/downloads-3.5k+-malachite" alt="Downloads" />
 </p>
 
 A TailwindCSS UI component library built on top of PostCSS and TypeScript. It features components inspired by [shadcn/ui](https://ui.shadcn.com) and [@nextui-org](https://nextui.org), tailored for non-react use.
@@ -19,9 +19,9 @@ To kick off, use the CDN for now since the components aren't usable individually
 ### CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.6.1/dist/all.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.6.2/dist/all.min.css" />
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.6.1/dist/all.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.6.2/dist/all.min.js" defer></script>
 ```
 
 ### Vite
@@ -32,23 +32,17 @@ npx tailwindcss init -p
 npm i luxeyui@latest
 ```
 
-## What's New in v0.6.1?
+## What's New in v0.6.2?
 
-- **Progress**: Added support for dynamic value management with transition.
-- **Theme**: 
-  - Added common colors from [NextUI's Theme](https://nextui.org/docs/customization/colors#common-colors).
-  - Added common layout options from [NextUI's Default Layout](https://nextui.org/docs/customization/layout#default-layout).
-- **Button**: Revised the entire component and made some changes, those are highlighted below:
-  - Fixed an issue where the button's min width was being overridden by `min-w-max` class.
-  - Fixed an issue where the `radius` classes did not work properly when using the `size` classes.
-  - Fixed an issue where the radius of the buttons inside the button group was a bit off.
-  - Added a feature where adjacent variant borders will be collapsed.
-  - Fixed an issue where the `data-full-width` did not work for the button group.
-  - Made sure that the variants has proper colors.
-- Reduced file size using lightningcss and parcel as the bundler.
-- **Checkbox**: Remade the component and structure.
-- **Checkbox Group**: Adjusted styles according to the `Checkbox` configurations & styles.
-- **Radio**: Remade the component and structure.
+- Added support for disabling the `checkbox-group`, `radio-group` and `button-group`.
+- Made the asterisk appear after the group-label in `checkbox-group` when using the `data-required` attribute.
+- Now the validity of the `checkbox-group` and `radio-group` is based on the `data-invalid` attribute of the group.
+- **Accordion**:
+  - Now the indicator animation of the accordion item can be disabled by setting the `data-disable-indicator-animation` attribute.
+  - Instead of changing the display property when using the `data-disable-animation` attribute, only disabling the transition effect.
+  - Now the divider after each items can be disabled by setting the `data-show-divider` attribute.
+- Now you can customize the close icon of the chip.
+- Now the ripple effect of the card will only trigger when using the `data-pressable` attribute is `true` and `data-disable-ripple` attribute is not set to `true`. But when clicking any clickable elements in the card won't trigger the ripple effect.
 
 > **Note**: For the full list of changes, visit [https://luxeyui.vercel.app/docs/changelog](https://luxeyui.vercel.app/docs/changelog).
 
