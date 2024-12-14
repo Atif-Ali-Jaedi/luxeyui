@@ -1,0 +1,174 @@
+.drawer-container {
+    & .backdrop {
+        @apply pointer-events-none fixed inset-0 z-50 h-screen w-screen bg-black/50 opacity-0;
+        transition: opacity 100ms ease-in;
+        &:has(+ .drawer-wrapper[data-open="true"]) {
+            @apply pointer-events-auto opacity-100 duration-300;
+            transition: opacity 200ms ease-out;
+        }
+    }
+
+    & .drawer-wrapper {
+        @apply fixed inset-0 z-50 flex h-dvh w-screen items-end justify-center overflow-x-auto sm:items-center;
+        transition: translate 100ms ease-in;
+        &.drawer-wrapper.drawer-wrapper[data-open="true"] {
+            translate: 0 0;
+            transition: translate 200ms ease-out;
+        }
+
+        & .drawer {
+            @apply absolute z-50 m-0 box-border flex w-full flex-col overflow-y-auto rounded-large bg-content-1 text-foreground outline-none [box-shadow:var(--box-shadow-small)] sm:m-0;
+
+            & button.close-button {
+                @apply absolute end-1 top-1 select-none appearance-none rounded-full p-2 text-default-500 outline-none [-webkit-tap-highlight-color:transparent] hover:bg-default-100 active:bg-default-200;
+            }
+
+            & .drawer-header {
+                @apply flex flex-initial px-6 py-4 text-large font-semibold;
+            }
+
+            & .drawer-body {
+                @apply flex flex-1 flex-col gap-3 px-6 py-2;
+            }
+
+            & .drawer-footer {
+                @apply flex flex-row justify-end gap-2 px-6 py-4;
+            }
+        }
+    }
+
+    /* Sizes */
+    &.size-xs {
+        &:not(&.top, &.bottom) .drawer-wrapper .drawer {
+            @apply max-w-xs;
+        }
+        &.top .drawer-wrapper .drawer,
+        &.bottom .drawer-wrapper .drawer {
+            @apply max-h-[20rem];
+        }
+    }
+    &.size-sm {
+        &:not(&.top, &.bottom) .drawer-wrapper .drawer {
+            @apply max-w-sm;
+        }
+        &.top .drawer-wrapper .drawer,
+        &.bottom .drawer-wrapper .drawer {
+            @apply max-h-[24rem];
+        }
+    }
+    &.size-lg {
+        &:not(&.top, &.bottom) .drawer-wrapper .drawer {
+            @apply max-w-lg;
+        }
+        &.top .drawer-wrapper .drawer,
+        &.bottom .drawer-wrapper .drawer {
+            @apply max-h-[32rem];
+        }
+    }
+    &.size-xl {
+        &:not(&.top, &.bottom) .drawer-wrapper .drawer {
+            @apply max-w-xl;
+        }
+        &.top .drawer-wrapper .drawer,
+        &.bottom .drawer-wrapper .drawer {
+            @apply max-h-[36rem];
+        }
+    }
+    &.size-2xl {
+        &:not(&.top, &.bottom) .drawer-wrapper .drawer {
+            @apply max-w-2xl;
+        }
+        &.top .drawer-wrapper .drawer,
+        &.bottom .drawer-wrapper .drawer {
+            @apply max-h-[42rem];
+        }
+    }
+    &.size-3xl {
+        &:not(&.top, &.bottom) .drawer-wrapper .drawer {
+            @apply max-w-3xl;
+        }
+        &.top .drawer-wrapper .drawer,
+        &.bottom .drawer-wrapper .drawer {
+            @apply max-h-[48rem];
+        }
+    }
+    &.size-4xl {
+        &:not(&.top, &.bottom) .drawer-wrapper .drawer {
+            @apply max-w-4xl;
+        }
+        &.top .drawer-wrapper .drawer,
+        &.bottom .drawer-wrapper .drawer {
+            @apply max-h-[56rem];
+        }
+    }
+    &.size-5xl {
+        &:not(&.top, &.bottom) .drawer-wrapper .drawer {
+            @apply max-w-5xl;
+        }
+        &.top .drawer-wrapper .drawer,
+        &.bottom .drawer-wrapper .drawer {
+            @apply max-h-[64rem];
+        }
+    }
+    &.size-full-screen .drawer-wrapper .drawer {
+        @apply h-dvh max-w-full !rounded-none;
+    }
+
+    &:not(
+            &.size-xs,
+            &.size-sm,
+            &.size-lg,
+            &.size-xl,
+            &.size-2xl,
+            &.size-3xl,
+            &.size-4xl,
+            &.size-5xl,
+            &.size-full-screen
+        ) {
+        &:not(&.top, &.bottom) .drawer-wrapper .drawer {
+            @apply max-w-md;
+        }
+        &.top .drawer-wrapper .drawer,
+        &.bottom .drawer-wrapper .drawer {
+            @apply max-h-[28rem];
+        }
+    }
+
+    /* Radius */
+    &.radius-none .drawer-wrapper .drawer {
+        @apply rounded-none;
+    }
+    &.radius-sm .drawer-wrapper .drawer {
+        @apply rounded-small;
+    }
+    &.radius-md .drawer-wrapper .drawer {
+        @apply rounded-medium;
+    }
+
+    /* Placements */
+    &.top.top .drawer-wrapper {
+        translate: 0 -100%;
+
+        & .drawer {
+            @apply inset-x-0 top-0 max-w-none rounded-t-none;
+        }
+    }
+    &.bottom.bottom .drawer-wrapper {
+        translate: 0 100%;
+        & .drawer {
+            @apply inset-x-0 bottom-0 max-w-none rounded-b-none;
+        }
+    }
+    &.left.left .drawer-wrapper {
+        translate: -100% 0;
+        & .drawer {
+            @apply inset-y-0 left-0 max-h-none rounded-l-none;
+        }
+    }
+    &:not(&.top, &.bottom, &.left) .drawer-wrapper {
+        translate: 100% 0;
+        & .drawer {
+            @apply inset-y-0 right-0 max-h-none rounded-r-none;
+        }
+    }
+}

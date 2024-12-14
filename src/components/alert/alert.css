@@ -1,0 +1,258 @@
+.alert {
+    @apply flex w-full flex-grow flex-row items-start gap-x-1 rounded-medium px-4 py-3;
+
+    /* Hide icon */
+    &[data-hide-icon] .icon-wrapper {
+        @apply hidden;
+    }
+
+    /* Hide icon wrapper */
+    &[data-hide-icon-wrapper] {
+        @apply gap-x-0;
+        &.icon-wrapper {
+            @apply !bg-transparent !shadow-none;
+        }
+    }
+
+    /* If it does not have a description */
+    &:not(:has(.main-wrapper .description)) {
+        @apply items-start;
+        & .main-wrapper {
+            @apply justify-center;
+        }
+    }
+
+    & .icon-wrapper {
+        @apply relative h-9 w-9 flex-none rounded-full;
+        & .alert-icon {
+            @apply absolute left-1/2 top-1/2 w-6 -translate-x-1/2 -translate-y-1/2 fill-current text-inherit;
+        }
+    }
+
+    & .main-wrapper {
+        @apply ms-2 box-border flex h-full min-h-10 flex-grow flex-col items-start text-inherit;
+
+        & .title {
+            @apply block w-full text-small font-medium leading-5 text-inherit;
+        }
+
+        & .description {
+            @apply pl-[1px] text-small font-normal text-inherit;
+        }
+    }
+
+    & .close-button {
+        @apply relative -translate-y-1 translate-x-1 text-inherit;
+    }
+
+    /* Radius */
+    &.radius-none {
+        @apply rounded-none;
+    }
+    &.radius-sm {
+        @apply rounded-small;
+    }
+    &.radius-lg {
+        @apply rounded-large;
+    }
+    &.radius-full {
+        @apply rounded-full;
+    }
+
+    /* Color with variants */
+    &:not(&.bordered, &.flat, &.faded) {
+        @apply bg-default text-foreground;
+        & .close-button:hover {
+            @apply bg-default-100;
+        }
+
+        &.primary {
+            @apply bg-primary text-white;
+            & .icon-wrapper .alert-icon {
+                @apply text-white;
+            }
+        }
+        &.secondary {
+            @apply bg-secondary text-white;
+            & .icon-wrapper .alert-icon {
+                @apply text-white;
+            }
+        }
+        &.success.success {
+            @apply bg-success text-black;
+            & .icon-wrapper .alert-icon {
+                @apply text-black;
+            }
+        }
+        &.warning {
+            @apply bg-warning text-black;
+            & .icon-wrapper .alert-icon {
+                @apply text-black;
+            }
+        }
+        &.danger {
+            @apply bg-danger text-white;
+            & .icon-wrapper .alert-icon {
+                @apply text-white;
+            }
+        }
+    }
+
+    /* Bordered */
+    &.bordered {
+        @apply border border-default bg-transparent text-foreground;
+        &:not(&.primary, &.secondary, &.success, &.warning, &.danger) {
+            & .icon-wrapper {
+                @apply bg-default-200 dark:bg-default-100;
+            }
+            & .main-wrapper .description {
+                @apply text-default-600;
+            }
+            & .close-button {
+                @apply text-default-400;
+            }
+        }
+
+        &.primary {
+            @apply border-primary text-primary;
+            & .icon-wrapper {
+                @apply bg-primary-100 dark:bg-primary-50;
+            }
+            & .close-button:hover {
+                @apply bg-primary-50;
+            }
+        }
+        &.secondary {
+            @apply border-secondary text-secondary;
+            & .icon-wrapper {
+                @apply bg-secondary-100 dark:bg-secondary-50;
+            }
+            & .close-button:hover {
+                @apply bg-secondary-50;
+            }
+        }
+        &.success {
+            @apply border-success text-success;
+            & .icon-wrapper {
+                @apply bg-success-100 dark:bg-success-50;
+            }
+            & .close-button:hover {
+                @apply bg-success-50;
+            }
+        }
+        &.warning {
+            @apply border-warning text-warning;
+            & .icon-wrapper {
+                @apply bg-warning-100 dark:bg-warning-50;
+            }
+            & .close-button:hover {
+                @apply bg-warning-50;
+            }
+        }
+        &.danger {
+            @apply border-danger text-danger;
+            & .icon-wrapper {
+                @apply bg-danger-100 dark:bg-danger-50;
+            }
+            & .close-button:hover {
+                @apply bg-danger-50;
+            }
+        }
+    }
+
+    &.faded,
+    &.bordered,
+    &.flat {
+        & .icon-wrapper {
+            @apply [box-shadow:var(--box-shadow-small)];
+        }
+    }
+
+    &.faded {
+        @apply border;
+        &:not(&.primary, &.secondary, &.success, &.warning, &.danger) {
+            @apply border-default-300 dark:border-default-200;
+        }
+        &.primary {
+            @apply border-primary-200 dark:border-primary-100;
+        }
+        &.secondary {
+            @apply border-secondary-200;
+        }
+        &.success {
+            @apply border-success-300 dark:border-success-100;
+        }
+        &.warning {
+            @apply border-warning-300 dark:border-warning-100;
+        }
+        &.danger {
+            @apply border-danger-200 dark:border-danger-100;
+        }
+    }
+
+    &.flat,
+    &.faded {
+        & .icon-wrapper {
+            @apply border;
+        }
+
+        &:not(&.primary, &.secondary, &.success, &.warning, &.danger) {
+            @apply bg-default-100 text-foreground dark:bg-default-50/50;
+            & .icon-wrapper {
+                @apply border-default-200 bg-default-50 dark:bg-default-100;
+            }
+            & .main-wrapper .description {
+                @apply text-default-600;
+            }
+            & .close-button {
+                @apply text-default-400;
+            }
+        }
+
+        &.primary {
+            @apply bg-primary-50 text-primary-600 dark:bg-primary-50/50;
+            & .icon-wrapper {
+                @apply border-primary-100 bg-primary-50 dark:bg-primary-100;
+            }
+            & .close-button {
+                @apply text-primary-500 hover:bg-primary-200;
+            }
+        }
+        &.secondary {
+            @apply bg-secondary-50 text-secondary-600 dark:bg-secondary-50/50;
+            & .icon-wrapper {
+                @apply border-secondary-100 bg-secondary-50 dark:bg-secondary-100;
+            }
+            & .close-button {
+                @apply text-secondary-500 hover:bg-secondary-200;
+            }
+        }
+        &.success {
+            @apply bg-success-50 text-success-700 dark:bg-success-50/50 dark:text-success;
+            & .icon-wrapper {
+                @apply border-success-100 bg-success-50 dark:bg-success-100;
+            }
+            & .close-button {
+                @apply text-success-500 hover:bg-success-200;
+            }
+        }
+        &.warning {
+            @apply bg-warning-50 text-warning-700 dark:bg-warning-50/50 dark:text-warning;
+            & .icon-wrapper {
+                @apply border-warning-100 bg-warning-50 dark:bg-warning-100;
+            }
+            & .close-button {
+                @apply text-warning-500 hover:bg-warning-200;
+            }
+        }
+        &.danger {
+            @apply bg-danger-50 text-danger-600 dark:bg-danger-50/50 dark:text-danger-500;
+            & .icon-wrapper {
+                @apply border-danger-100 bg-danger-50 dark:bg-danger-100;
+            }
+            & .close-button {
+                @apply text-danger-500 hover:bg-danger-200;
+            }
+        }
+    }
+}

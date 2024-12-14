@@ -21,3 +21,4 @@ move-index.js
 node_modules/
 tailwind.config.js
 tsconfig.json
+maincode.txt

@@ -27,10 +27,10 @@
         & .badge {
             @apply h-5 min-h-5 w-5 min-w-5;
         }
-        &.size-sm {
+        &.size-sm .badge {
             @apply h-4 min-h-4 w-4 min-w-4;
         }
-        &.size-lg {
+        &.size-lg .badge {
             @apply h-6 min-h-6 w-6 min-w-6;
         }
     }
