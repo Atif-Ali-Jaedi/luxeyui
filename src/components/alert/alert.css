@@ -9,7 +9,7 @@
     /* Hide icon wrapper */
     &[data-hide-icon-wrapper] {
         @apply gap-x-0;
-        &.icon-wrapper {
+        & .icon-wrapper {
             @apply !bg-transparent !shadow-none;
         }
     }

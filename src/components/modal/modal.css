@@ -6,6 +6,10 @@
         }
     }
 
+    &[data-draggable="true"] .modal-wrapper .modal .modal-header {
+        @apply cursor-move select-none;
+    }
+
     & .modal-wrapper {
         --scale: 1;
         --y: 80px;
@@ -132,7 +136,7 @@
     /* Scroll Behavior */
     &.scroll-inside .modal-wrapper .modal {
         @apply max-h-[calc(100%-8rem)];
-        * .modal-body {
+        & .modal-body {
             @apply overflow-y-auto;
         }
     }

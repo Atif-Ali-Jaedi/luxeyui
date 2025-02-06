@@ -1,27 +1,36 @@
 <p align="center">
-    <img src="https://luxeyui.vercel.app/logo.png" alt="luxeyUI Logo" width="64" />
+    <img src="https://luxeyui-v1.vercel.app/logo.png" alt="luxeyUI Logo" width="64" />
     <h1 align="center">LuxeyUI</h1>
 </p>
 <p align="center">
     <img src="https://img.shields.io/npm/l/luxeyui?style=flat" alt="License" />
     <img src="https://img.shields.io/npm/v/luxeyui?style=flat&logo=npm&label=version&color=lincolngreen" alt="NPM Version" />
-    <img src="https://img.shields.io/badge/downloads-4k+-malachite" alt="Downloads" />
+    <img src="https://img.shields.io/badge/downloads-5k+-malachite" alt="Downloads" />
 </p>
 
 A TailwindCSS UI component library built on top of PostCSS and TypeScript. It features components inspired by [shadcn/ui](https://ui.shadcn.com) and [@nextui-org](https://nextui.org), tailored for non-react use.
 
-> **Note:** This library is early access. Expect some bugs to occur and more components to be added in the future. Also a brand new website for documentation will be published in this week.
+---
+
+<h2 align="center">Announcement</h2>
+<img src="https://luxeyui-v1.vercel.app/_next/image?url=%2Fintroduction.png&w=1920&q=75"/>
+
+LuxeyUI is finally getting the first full release. This means that, version 1.0 will come with so many new features. This version will be released **12:00 PM EST on February 28**.  
+
+Also it'll use the latest web technologies available. Older versions are advised to not rely on.  
+
+---
 
 ## Getting Started
 
-To kick off, use the CDN for now since the components aren't usable individually. Utilize TailwindCSS for better customization. For full installation process, please visit [https://luxeyui.vercel.app/docs/installation](https://luxeyui.vercel.app/docs/installation).
+To kick off, use the CDN for now since the components aren't usable individually. Utilize TailwindCSS for better customization. For full installation process, please visit [https://luxeyui-v1.vercel.app/docs/installation](https://luxeyui-v1.vercel.app/docs/installation).
 
 ### CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.6.3/dist/index.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.6.4/dist/index.css" />
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.6.3/dist/index.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/luxeyui@0.6.4/dist/index.js" defer></script>
 ```
 
 ### Vite
@@ -32,26 +41,16 @@ npx tailwindcss init -p
 npm i luxeyui@latest
 ```
 
-## What's New in v0.6.3?
+## What's New in v0.6.4?
 
-### New components
+Fixed every bug that was in v0.6.3.
 
-- **Alert**: Temporary notifications that provide concise feedback about an action or event.
-- **Drawer**: Displays a panel that slides in from the edge of the screen, containing supplementary content.
-- **Modal**: Displays a dialog with a custom content that requires attention or provides additional information.
-
-### Bug FIxes
-
-- Circular badge interferes with `size` classes.
-- Improperly sized badges when using `data-one-char` attribute.
-
-
-> **Note**: For the full list of changes, visit [https://luxeyui.vercel.app/docs/changelog](https://luxeyui.vercel.app/docs/changelog).
+> **Note**: For the full list of changes, visit [https://luxeyui-v1.vercel.app/changelog](https://luxeyui.vercel.app/changelog).
 
 ## Documentation
 
 For comprehensive documentation, visit
-[https://luxeyui.vercel.app/introduction](https://luxeyui.vercel.app).
+[https://luxeyui-v1.vercel.app/docs/introduction](https://luxeyui-v1.vercel.app/docs/introduction).
 
 ## License
 

@@ -56,7 +56,7 @@
 85C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\punycode\punycode.es6.js133722756218006912 0
 111C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\prettier-plugin-tailwindcss\dist\licenses\@shopify133722756297177392 1
 99C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\sucrase\dist\parser\util\whitespace.js133722756300026690 0
-60C:\Users\USER\OneDrive\Documents\projects\luxey\.eslintrc.js133722759251386707 0
+60C:\Users\USER\OneDrive\Documents\projects\luxey\.eslintrc.js133833266924916147 0
 102C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\rxjs\src\internal\operators\sampleTime.ts133722756351983506 0
 87C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\jest-runner\build\types.js133722756252869088 0
 79C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\@types\node\timers133722756286987624 1
@@ -150,7 +150,7 @@
 94C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\es-abstract\2019\IteratorClose.js133722756333363849 0
 96C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\type-fest\source\readonly-deep.d.ts133722756258618765 0
 69C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\doctrine133722756236468583 1
-52C:\Users\USER\OneDrive\Documents\projects\luxey\dist133786325040627334 1
+52C:\Users\USER\OneDrive\Documents\projects\luxey\dist133833274814426382 1
 67C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\listr2133722756245915048 1
 57C:\Users\USER\OneDrive\Documents\projects\luxey\index.mjs133725163724805981 0
 97C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\ts-interface-checker\dist\index.d.ts133722756228549900 0
@@ -175,7 +175,7 @@
 110C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\rxjs\dist\cjs\internal\testing\SubscriptionLog.js133722756324502151 0
 69C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\switch133682118080139612 1
 92C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\has-property-descriptors\.nycrc133722756221144839 0
-60C:\Users\USER\OneDrive\Documents\projects\luxey\maincode.txt133782275585943330 0
+60C:\Users\USER\OneDrive\Documents\projects\luxey\maincode.txt133833267038951341 0
 94C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\@sinclair\typebox\value\mutate.js133722756257284679 0
 143C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\@typescript-eslint\eslint-plugin\dist\rules\consistent-indexed-object-style.js.map133722757666565919 0
 87C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\pretty-hrtime\package.json133722756218098625 0
@@ -198,7 +198,7 @@
 60C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules133737988234754067 1
 107C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\css-select\lib\pseudo-selectors\filters.js.map133722756265576567 0
 88C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\es-to-primitive\test\es5.js133722756237636157 0
-56C:\Users\USER\OneDrive\Documents\projects\luxey\__test__133786318800286487 1
+56C:\Users\USER\OneDrive\Documents\projects\luxey\__test__133833266756835440 1
 129C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\@typescript-eslint\eslint-plugin\dist\util\assertionFunctionUtils.js133722757662682952 0
 65C:\Users\USER\OneDrive\Documents\projects\luxey\package-lock.json133737988237343447 0
 107C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\csso\node_modules\css-tree\cjs\lexer\Lexer.cjs133722756301479423 0
@@ -211,7 +211,7 @@
 84C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\undici-types\agent.d.ts133722756226772331 0
 94C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\jest-haste-map\build\ModuleMap.js133722756261192121 0
 92C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\es-abstract\2020\GetIterator.js133722756320529872 0
-60C:\Users\USER\OneDrive\Documents\projects\luxey\package.json133781541388627878 0
+60C:\Users\USER\OneDrive\Documents\projects\luxey\package.json133833274360486204 0
 84C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\strip-ansi\package.json133722756223587081 0
 128C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\msgpackr-extract\node_modules\.bin\node-gyp-build-optional-packages133725126789790771 0
 107C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\rxjs\dist\cjs\internal\observable\never.js.map133722756339597379 0
@@ -226,7 +226,7 @@
 154C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\pure-rand\lib\esm\types\distribution\internals\UnsafeUniformArrayIntDistributionInternal.d.ts133722756269546112 0
 103C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\rxjs\dist\esm\internal\util\workarounds.js133722756327207347 0
 106C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\babel-preset-current-node-syntax\package.json133722756240118207 0
-57C:\Users\USER\OneDrive\Documents\projects\luxey\README.md133786324244260071 0
+57C:\Users\USER\OneDrive\Documents\projects\luxey\README.md133833273300423207 0
 81C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\tapable\package.json133722756250408140 0
 71C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\progress133682118083938400 1
 76C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\normalize-range133722756225553644 1
@@ -263,7 +263,7 @@
 127C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\eslint\lib\source-code\token-store\forward-token-comment-cursor.js133722756303733102 0
 97C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\es-abstract\2018\IsDetachedBuffer.js133722756327607944 0
 93C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\yargs\build\lib\yargs-factory.js133722756285663231 0
-67C:\Users\USER\OneDrive\Documents\projects\luxey\__test__\index.html133786318983936363 0
+67C:\Users\USER\OneDrive\Documents\projects\luxey\__test__\index.html133833266756835440 0
 86C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\es-abstract\2023\floor.js133722756319282200 0
 118C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\@typescript-eslint\scope-manager\dist\lib\es2019.d.ts.map133722757676696715 0
 81C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\commitizen\.eslintrc133722756290007268 0
@@ -342,7 +342,7 @@
 98C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\es-abstract\2020\Number\bitwiseAND.js133722756300609640 0
 80C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\jest-circus\LICENSE133722756237252305 0
 105C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\eslint\node_modules\path-exists\package.json133722756219158519 0
-68C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\modal133782099106677079 1
+68C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\modal133833259925297065 1
 82C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\yargs\locales\fr.json133722756287321825 0
 97C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\@babel\compat-data\data\plugins.json133722756250315390 0
 77C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\sucrase\register133722756298341588 1
@@ -356,7 +356,7 @@
 85C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\diff-sequences\README.md133722756239825328 0
 108C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\rxjs\dist\types\internal\observable\concat.d.ts133722756347475238 0
 113C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\lint-staged\node_modules\strip-final-newline\license133722756297948626 0
-61C:\Users\USER\OneDrive\Documents\projects\luxey\src\index.css133783023993514864 0
+61C:\Users\USER\OneDrive\Documents\projects\luxey\src\index.css133786326428668042 0
 88C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\emoji-regex\es2015\index.js133722756237540105 0
 102C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\typescript\lib\lib.es2023.collection.d.ts133722756319396741 0
 106C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\istanbul-lib-report\lib\summarizer-factory.js133722756251524882 0
@@ -380,7 +380,7 @@
 93C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\tsconfig-paths\node_modules\.bin133722756355198524 1
 109C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\rxjs\dist\cjs\internal\operators\takeLast.js.map133722756343027493 0
 98C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\typescript\lib\lib.es2020.string.d.ts133722756318900009 0
-80C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\drawer\drawer.css133783160387719183 0
+80C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\drawer\drawer.css133832991255084288 0
 107C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\rxjs\dist\esm5\internal\util\isIterable.js.map133722756338548447 0
 88C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\esquery\dist\esquery.min.js133722756245995800 0
 100C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\uri-js\dist\esnext\schemes\https.js.map133722756253311631 0
@@ -645,7 +645,7 @@
 65C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\.bin133725126789790771 1
 82C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\postcss-normalize-url133722756267493704 1
 108C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\rxjs\dist\types\internal\util\isObservable.d.ts133722756349487167 0
-78C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\alert\alert.css133781597420033790 0
+78C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\alert\alert.css133786358063883985 0
 150C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\@typescript-eslint\eslint-plugin\dist\rules\no-unnecessary-boolean-literal-compare.js.map133722757667512015 0
 102C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\yaml\dist\compose\compose-collection.d.ts133722756303072849 0
 98C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\typescript\lib\lib.es2022.string.d.ts133722756319336468 0
@@ -770,14 +770,14 @@
 71C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\stylehacks133722756267302910 1
 96C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\es-abstract\2022\GetSubstitution.js133722756322529280 0
 110C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\@commitlint\rules\lib\footer-max-line-length.d.ts133722756302535350 0
-78C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\modal\modal.css133783093600040991 0
+78C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\modal\modal.css133833238071436892 0
 81C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\any-promise\index.js133722756229369058 0
 84C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\es-abstract\2016\Set.js133722756339355579 0
 79C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\lodash\isNumber.js133722756321202700 0
 115C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\rxjs\dist\types\internal\operators\windowWhen.d.ts.map133722756344744325 0
 113C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\rxjs\dist\esm5\internal\operators\timeoutWith.js.map133722756344088314 0
 73C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\jest-watcher133722756264072190 1
-77C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\modal\modal.ts133786321289614794 0
+77C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\modal\modal.ts133833259996851702 0
 73C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\html-escaper133722756249782178 1
 135C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\@typescript-eslint\eslint-plugin\dist\rules\no-wrapper-object-types.js.map133722757667786978 0
 90C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\source-map-js\source-map.d.ts133722756250753976 0
@@ -896,7 +896,7 @@
 78C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\set-function-name133722756239428189 1
 71C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\type-check133722756232138679 1
 80C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\safe-buffer\LICENSE133722756218078237 0
-79C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\drawer\drawer.ts133786321456154066 0
+79C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\drawer\drawer.ts133786326447933930 0
 100C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\css-tree\cjs\syntax\node\Combinator.cjs133722756251616869 0
 66C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\@lmdb133737988234764233 1
 82C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\divider\divider.css133726036306583641 0
@@ -1056,7 +1056,7 @@
 99C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\node-releases\data\processed\envs.json133722756223653368 0
 65C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\levn133722756233075071 1
 130C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\es-abstract\helpers\records\typed-array-with-buffer-witness-record.js133722756344690472 0
-77C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\alert\alert.ts133783128752179522 0
+77C:\Users\USER\OneDrive\Documents\projects\luxey\src\components\alert\alert.ts133786326447644915 0
 81C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\svgo\lib\svgo\coa.js133722756258553381 0
 111C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\@swc\helpers\cjs\_define_enumerable_properties.cjs133725126529319484 0
 117C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\path-scurry\node_modules\lru-cache\dist\esm\package.json133722756242982941 0
@@ -11335,7 +11335,7 @@
 111C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\rxjs\dist\cjs\internal\scheduler\AsyncScheduler.js133722756294661754 0
 115C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\rxjs\dist\cjs\internal\scheduler\AsyncScheduler.js.map133722756330686295 0
 122C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\rxjs\dist\cjs\internal\scheduler\dateTimestampProvider.js.map133722756334638124 0
-61C:\Users\USER\OneDrive\Documents\projects\luxey\dist\index.js133786325040594685 0
+61C:\Users\USER\OneDrive\Documents\projects\luxey\dist\index.js133833274373865099 0
 93C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\@ampproject\remapping\dist\types133722756263705103 1
 139C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\@istanbuljs\load-nyc-config\node_modules\js-yaml\lib\js-yaml\type\timestamp.js133722756263671915 0
 83C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\mimic-function\license133722756219253936 0
@@ -18076,7 +18076,7 @@
 107C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\eslint-plugin-import\lib\rules\no-namespace.js133722756298168720 0
 115C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\eslint-plugin-import\lib\rules\no-unassigned-import.js133722756299016524 0
 116C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\eslint-plugin-import\lib\rules\prefer-default-export.js133722756300258486 0
-63C:\Users\USER\OneDrive\Documents\projects\luxey\dist\index.d.ts133786325039346326 0
+63C:\Users\USER\OneDrive\Documents\projects\luxey\dist\index.d.ts133833274373834697 0
 106C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\eslint-plugin-import\lib\rules\unambiguous.js133722756301295749 0
 99C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\es-to-primitive\helpers\isPrimitive.js133722756245798411 0
 106C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\eslint-plugin-import\lib\exportMap\builder.js133722756280168884 0
@@ -18528,7 +18528,7 @@
 102C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\eslint\lib\rules\prefer-arrow-callback.js133722756317511611 0
 78C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\dot-prop\index.js133722756271787852 0
 93C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\eslint\lib\rules\prefer-const.js133722756317614882 0
-62C:\Users\USER\OneDrive\Documents\projects\luxey\dist\index.css133786325039671453 0
+62C:\Users\USER\OneDrive\Documents\projects\luxey\dist\index.css133833274814396099 0
 126C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\@typescript-eslint\eslint-plugin\dist\rules\no-unsafe-call.js.map133722757667651413 0
 111C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\eslint\lib\rules\prefer-exponentiation-operator.js133722756317651424 0
 109C:\Users\USER\OneDrive\Documents\projects\luxey\node_modules\@commitlint\load\lib\utils\load-parser-opts.d.ts133722756286444098 0
@@ -26810,7 +26810,7 @@
 69C:\Users\USER\OneDrive\Documents\projects\luxey\.vscode\settings.json133687852197480854 0
 65C:\Users\USER\OneDrive\Documents\projects\luxey\.husky\pre-commit133682118115323143 0
 56C:\Users\USER\OneDrive\Documents\projects\luxey\.husky\_133682118116388288 1
-67C:\Users\USER\OneDrive\Documents\projects\luxey\.husky\_\.gitignore133738021108275540 0
+67C:\Users\USER\OneDrive\Documents\projects\luxey\.husky\_\.gitignore133786327109527148 0
 67C:\Users\USER\OneDrive\Documents\projects\luxey\.husky\_\commit-msg133682118115697992 0
 65C:\Users\USER\OneDrive\Documents\projects\luxey\.husky\_\husky.sh133722756233096689 0
 72C:\Users\USER\OneDrive\Documents\projects\luxey\.husky\_\post-applypatch133682118115986397 0

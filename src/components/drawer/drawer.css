@@ -171,4 +171,12 @@
             @apply inset-y-0 right-0 max-h-none rounded-r-none;
         }
     }
+
+    /* Backdrop */
+    &.backdrop-transparent .backdrop {
+        @apply bg-transparent;
+    }
+    &.backdrop-blurred .backdrop {
+        @apply bg-black/30 backdrop-blur-md backdrop-saturate-150;
+    }
 }

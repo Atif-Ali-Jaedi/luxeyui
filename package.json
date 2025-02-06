@@ -1,7 +1,7 @@
 {
     "name": "luxeyui",
-    "version": "0.6.3",
-    "description": "LuxeyUI is a tailwindCSS UI component library built on top of PostCSS and TypeScript for basic use. It features components inspired by shadcn-ui and @nextui-org, tailored for non-react use.",
+    "version": "0.6.4",
+    "description": "LuxeyUI is a sophisticated UI component library designed with simplicity and efficiency in mind, tailored for both UI challenges and everyday development tasks.",
     "source": "src/index.ts",
     "types": "dist/index.d.ts",
     "main": "index.mjs",
@@ -22,12 +22,16 @@
         "main": false
     },
     "keywords": [
-        "css",
-        "ui",
-        "ui library",
-        "tailwindcss",
         "typescript",
-        "tailwindcss ui library"
+        "tailwind css",
+        "tailwind components",
+        "ui components",
+        "ui kit",
+        "ui library",
+        "ui framework",
+        "ui design system",
+        "luxeyui",
+        "ui library for ui challenges"
     ],
     "repository": {
         "type": "git",
